@@ -1,0 +1,51 @@
+@import '../../theme/colors.scss';
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e8e9ea;
+
+    h3 {
+        margin: $marginTitle;
+        font-size: 24px;
+    }
+
+    .socialNetworks {
+        img {
+            width: 50px;
+        }
+    }
+
+    .fast-acess-Footer {
+
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover {
+                color: $colorPrimary;
+                transition: 0.5s;
+            }
+        }
+
+    }
+
+    .contats {
+        p {
+            width: 300px;
+        }
+
+        img {
+            width: 23px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.pagaments {
+    img {
+        width: 70px;
+    }
+}
