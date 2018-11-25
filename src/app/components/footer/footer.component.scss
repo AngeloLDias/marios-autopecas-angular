@@ -1,8 +1,10 @@
 @import '../../theme/colors.scss';
 
 .footer {
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
   background-color: #e8e9ea;
 
   p {
