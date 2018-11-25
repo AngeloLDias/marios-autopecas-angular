@@ -4,7 +4,7 @@
   // display: flex;
   // justify-content: space-around;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 19% repeat(3,27% 27% 27%);
   background-color: #e8e9ea;
 
   p {
@@ -43,10 +43,11 @@
       margin-right: 10px;
     }
   }
-}
 
-.pagaments {
-  img {
-    width: 70px;
+  .pagaments {
+    img {
+      width: 70px;
+    }
   }
+  
 }
