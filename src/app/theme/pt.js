@@ -19,12 +19,12 @@ export const LANG = {
 
   // Home
 
-  depositions:'DEPOIMENTOS',
-  rafael:'Rafael Roberto Carneiro',
-  depositionsRafael:'"Excelentes produtos e ótimos preços."',
-  alan:'Alan Araujo',
-  depositionsAlan:'"Dono muito gente boa e orienta bem com relação a peça que precisa."',
-  felipe:'Felipe Lima Dias',
-  depositionsFelipe:'"Muito bom, tem todos os tipos de peças e acessórios"',
+  depositions: 'DEPOIMENTOS',
+  rafael: 'Rafael Roberto Carneiro',
+  depositionsRafael: '"Excelentes produtos e ótimos preços."',
+  alan: 'Alan Araujo',
+  depositionsAlan: '"Dono muito gente boa e orienta bem com relação a peça que precisa."',
+  felipe: 'Felipe Lima Dias',
+  depositionsFelipe: '"Muito bom, tem todos os tipos de peças e acessórios"',
 
 }
