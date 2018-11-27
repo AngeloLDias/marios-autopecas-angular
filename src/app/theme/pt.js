@@ -1,6 +1,6 @@
 export const LANG = {
 
-  // Footer
+  // Footer and Header
 
   socialNetwork: "Rede Social",
   quickAccess: "Acesso Rapido",
@@ -16,6 +16,5 @@ export const LANG = {
   whatsappTwo: "(21) 96488-6250",
   whatsappThree: "(21) 96488-2465",
   payment: "Pagamentos",
-
 
 }

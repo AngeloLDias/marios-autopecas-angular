@@ -3,41 +3,46 @@
 /* ============== DEPOIMENT ============== */
 
 .depoiment {
+  text-align: center;
+
+  p {
+    margin: $marginTitle;
+    font-size: 30px;
+    font-family: roboto;
+  }
+
+  hr {
+    width: 50%;
+    height: 2px;
+    margin: 0px 25% 0px 25%;
+    background-color: $colorPrimary;
+  }
+
+  .container-depoiment {
+
     text-align: center;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33% minmax(575px, 300px);
+    margin: 27px 0px;
 
-    h1 {
+
+    .box {
+
+      img {
+        width: 150px;
+        border-radius: 500px;
+      }
+
+      h3 {
         margin: $marginTitle;
-        font-size: 30px;
+        font-family: roboto;
+      }
+
+      p {
+        font-size: 1rem;
+        font-family: roboto;
+        max-width: 500px;
+      }
     }
-
-    hr {
-        width: 50%;
-        height: 2px;
-        margin: 0px 25% 0px 25%;
-        background-color: $colorPrimary;
-    }
-
-    .container-depoiment {
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
-        margin: 70px;
-
-        .box {
-            width: 500px;
-
-            img {
-                width: 150px;
-                border-radius: 500px;
-            }
-
-            h3 {
-                margin: $marginTitle;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-    }
+  }
 }
