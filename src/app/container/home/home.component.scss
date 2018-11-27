@@ -1,0 +1,43 @@
+@import '../../theme/colors.scss';
+
+/* ============== DEPOIMENT ============== */
+
+.depoiment {
+    text-align: center;
+
+    h1 {
+        margin: $marginTitle;
+        font-size: 30px;
+    }
+
+    hr {
+        width: 50%;
+        height: 2px;
+        margin: 0px 25% 0px 25%;
+        background-color: $colorPrimary;
+    }
+
+    .container-depoiment {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin: 70px;
+
+        .box {
+            width: 500px;
+
+            img {
+                width: 150px;
+                border-radius: 500px;
+            }
+
+            h3 {
+                margin: $marginTitle;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
