@@ -6,10 +6,10 @@ import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'quem-somos', component: WhoWeAreComponent},
-  {path: 'produtos', component: ProductsComponent},
-  {path: 'contato', component: ContactComponent},
+  { path: '', component: HomeComponent },
+  { path: 'quem-somos', component: WhoWeAreComponent },
+  { path: 'produtos', component: ProductsComponent },
+  { path: 'contato', component: ContactComponent },
 
 ];
 

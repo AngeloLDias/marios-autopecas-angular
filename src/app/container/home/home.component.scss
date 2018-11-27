@@ -1,6 +1,6 @@
 @import '../../theme/colors.scss';
 
-/* ============== DEPOIMENT ============== */
+// depositions
 
 .depoiment {
   text-align: center;
@@ -29,7 +29,7 @@
     .box {
 
       img {
-        width: 150px;
+        width: 130px;
         border-radius: 500px;
       }
 
@@ -42,6 +42,30 @@
         font-size: 1rem;
         font-family: roboto;
         max-width: 500px;
+      }
+    }
+  }
+}
+
+
+
+@media(max-width:768px) {
+
+  // depositions
+  
+  .depoiment {
+    .container-depoiment {
+      display: grid;
+      margin: 27px 0px;
+      text-align: center;
+      grid-template-columns: auto;
+    }
+
+    .container-depoiment {
+      .box {
+        p {
+          max-width: initial;
+        }
       }
     }
   }

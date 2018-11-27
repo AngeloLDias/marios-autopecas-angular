@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { LANG } from '../../theme/pt'
 
 @Component({
@@ -9,6 +10,7 @@ import { LANG } from '../../theme/pt'
 export class HeaderComponent implements OnInit {
 
   public lang  = LANG
+
   constructor() { }
 
   ngOnInit() {
