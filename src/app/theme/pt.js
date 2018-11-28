@@ -26,5 +26,10 @@ export const LANG = {
   depositionsAlan: '"Dono muito gente boa e orienta bem com relação a peça que precisa."',
   felipe: 'Felipe Lima Dias',
   depositionsFelipe: '"Muito bom, tem todos os tipos de peças e acessórios"',
-
+  fastAcess: 'ACESSO RAPIDO',
+  fastAcess: 'Temos uma grande variedade em peças, óleos e baterias para seu veiculo. Venha conhecer.',
+  fastAcess: 'Tem alguma dúvida, entre em contato conosco. Temos uma equipe para lhe auxiliar.',
+  fastAcess: 'NOSSA HISTORIA',
+  fastAcess: 'Conheça um pouco mais da nossa empresa e encontre a unidade mais próxima de você.',
+  fastAcess: 'Ler mais',
 }
