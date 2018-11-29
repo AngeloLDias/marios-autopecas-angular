@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { UICarouselModule } from "ui-carousel";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,6 @@ import { HomeComponent } from './container/home/home.component';
 import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,9 @@ import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UICarouselModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
