@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
 
   public lang = LANG
 
+
   constructor() {
     this.items = [
       { name: '../../../assets/media/imgm/ate-min.png' },

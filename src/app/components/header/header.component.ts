@@ -10,10 +10,15 @@ import { LANG } from '../../theme/pt'
 export class HeaderComponent implements OnInit {
 
   public lang  = LANG
+  public toogleMenu = false;
 
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
+    
+  toogleSideMenu() {
+    this.toogleMenu = !this.toogleMenu;
+  }
 }

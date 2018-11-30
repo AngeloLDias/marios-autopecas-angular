@@ -1,8 +1,11 @@
-<header class="header">
+<header class="header desktop">
 
   <p routerLink="home">
     <img src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
+
+  <!-- menu desktop -->
+
   <nav class="nav-header">
     <li>
       <p routerLink="">{{lang.home}}</p>
@@ -17,3 +20,24 @@
       <p routerLink="contato">{{lang.contact}}</p>
     </li>
   </nav>
+</header>
+
+<!-- menu mobile -->
+
+<header class="header mobile">
+
+  <p routerLink="home">
+    <img src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+  </p>
+
+  <div class="nav-header" [ngClass]="{'colorSpan': toogleMenu}" (click)="toogleSideMenu()">
+    <div class="line-1"></div>
+    <div class="line-2"></div>
+    <div class="line-3"></div>
+  </div>
+
+
+</header>
+<nav class="menu-mobile" [ngClass]="{'showMenu': toogleMenu}">
+
+</nav>
