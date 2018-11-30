@@ -1,5 +1,18 @@
 @import '../../theme/colors.scss';
 
+// carousel
+
+.carousel-main {
+  img {
+    //     background-position: center;
+    //     background-size: cover;
+    //     width: 100%;
+    //     height: 100%;
+    width: 100%;
+    height: 391px;
+  }
+}
+
 // depositions
 
 .depoiment {
@@ -40,7 +53,8 @@
 
       p {
         font-size: 1rem;
-        margin: 0px 50px;      }
+        margin: 0px 50px;
+      }
     }
   }
 }
@@ -129,8 +143,9 @@
 
     .container-depoiment {
       .box {
-            margin: $marginTitle;
-            width: inherit; 
+        margin: $marginTitle;
+        width: inherit;
+
         p {
           max-width: initial;
         }
@@ -140,10 +155,11 @@
 
   .fast-acess {
     .container-fastAcess {
-        display: grid;
+      display: grid;
+
       .box {
         margin: $marginTitle;
-        width: inherit; 
+        width: inherit;
       }
     }
   }

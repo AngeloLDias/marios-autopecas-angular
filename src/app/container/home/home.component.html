@@ -1,12 +1,20 @@
 <!-- depositions -->
-<ui-carousel [infinite]="false" [fade]="false" [speed]="200" [width]="100" >
-    <ui-carousel-item >
-        <img src="../../../assets/media/carrossel1.png" alt="">
-    </ui-carousel-item>
-    <ui-carousel-item >
-        <img src="../../../assets/media/carrossel2.png" alt="">
-    </ui-carousel-item>
+<ui-carousel class="carousel-main" #uiCarousel [autoPlay]="false" height="391px" slides="ctrl.multiple.slides" slides-to-show="3" slides-to-scroll="3" dots="true">
+  <ui-carousel-item >
+    <img src="../../../assets/media/carrossel 2.png" alt="">
+  </ui-carousel-item>
+  <ui-carousel-item>
+    <img src="../../../assets/media/carrossel2.png" alt="">
+  </ui-carousel-item>
 </ui-carousel>
+
+<ui-carousel slides="ctrl.multiple.slides" slides-to-show="3" slides-to-scroll="3" dots="false" [infinite]="false">
+  <ui-carousel-item *ngFor="let item of items">
+      <img [ui-lazy-load]="item.name">
+  </ui-carousel-item>
+</ui-carousel>
+
+
 <section class="depoiment">
   <p>{{lang.depositions}}</p>
   <hr>
@@ -42,7 +50,7 @@
 </section>
 
 
- <!-- fast acess -->
+<!-- fast acess -->
 
 <section class="fast-acess">
   <h1 class="">ACESSO RAPIDO</h1>

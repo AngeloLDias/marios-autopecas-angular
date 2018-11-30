@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'quem-somos', component: WhoWeAreComponent },
   { path: 'produtos', component: ProductsComponent },
   { path: 'contato', component: ContactComponent },
-
 ];
 
 @NgModule({
