@@ -1,19 +1,26 @@
-<!-- depositions -->
-<ui-carousel class="carousel-main" #uiCarousel [autoPlay]="false" height="391px" slides="ctrl.multiple.slides" slides-to-show="3" slides-to-scroll="3" dots="true">
+<!-- Carousel -->
+
+<ui-carousel class="carousel-main" #uiCarousel slidesToShow="2" [autoPlay]="false" height="500px">
   <ui-carousel-item >
     <img src="../../../assets/media/carrossel 2.png" alt="">
+    <div class="text-carousel">
+    <p>{{lang.imageOne}}</p>
+    </div>
   </ui-carousel-item>
   <ui-carousel-item>
     <img src="../../../assets/media/carrossel2.png" alt="">
   </ui-carousel-item>
 </ui-carousel>
 
-<ui-carousel slides="ctrl.multiple.slides" slides-to-show="3" slides-to-scroll="3" dots="false" [infinite]="false">
+<!-- <ui-carousel>
   <ui-carousel-item *ngFor="let item of items">
       <img [ui-lazy-load]="item.name">
   </ui-carousel-item>
 </ui-carousel>
+ -->
 
+
+<!-- depositions -->
 
 <section class="depoiment">
   <p>{{lang.depositions}}</p>
@@ -53,17 +60,17 @@
 <!-- fast acess -->
 
 <section class="fast-acess">
-  <h1 class="">ACESSO RAPIDO</h1>
+  <h1 class="">{{lang.fastAcess}}</h1>
   <hr>
   <div class="container-fastAcess">
     <div class="box">
 
       <img src="../../../assets/media/box.png" alt="">
 
-      <h3>PRODUTOS</h3>
-      <p>Temos uma grande variedade em peças, óleos e baterias para seu veiculo. Venha conhecer.</p>
+      <h3>{{lang.products}}</h3>
+      <p>{{lang.productDescription}}</p>
 
-      <button class="produtos btn btn-outline-success">Ler mais</button>
+      <button class="produtos btn btn-outline-success">{{lang.ViewMore}}</button>
 
     </div>
 
@@ -72,10 +79,10 @@
 
       <img src="../../../assets/media/phone.png" alt="">
 
-      <h3>CONTATO</h3>
-      <p>Tem alguma dúvida, entre em contato conosco. Temos uma equipe para lhe auxiliar.</p>
+      <h3>{{lang.contact}}</h3>
+      <p>{{lang.contactDescription}}</p>
 
-      <button class="btn btn-outline-success">Ler mais</button>
+      <button class="btn btn-outline-success">{{lang.ViewMore}}</button>
     </div>
 
 
@@ -83,11 +90,11 @@
 
       <img src="../../../assets/media/team.png" alt="">
 
-      <h3>NOSSA HISTORIA
+      <h3>{{lang.story}}
       </h3>
-      <p>Conheça um pouco mais da nossa empresa e encontre a unidade mais próxima de você.</p>
+      <p>{{lang.storyDescription}}</p>
 
-      <button class="btn btn-outline-success">Ler mais</button>
+      <button class="btn btn-outline-success">{{lang.ViewMore}}</button>
     </div>
   </div>
 </section>

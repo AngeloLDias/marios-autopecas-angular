@@ -27,9 +27,13 @@ export const LANG = {
   felipe: 'Felipe Lima Dias',
   depositionsFelipe: '"Muito bom, tem todos os tipos de peças e acessórios"',
   fastAcess: 'ACESSO RAPIDO',
-  fastAcess: 'Temos uma grande variedade em peças, óleos e baterias para seu veiculo. Venha conhecer.',
-  fastAcess: 'Tem alguma dúvida, entre em contato conosco. Temos uma equipe para lhe auxiliar.',
-  fastAcess: 'NOSSA HISTORIA',
-  fastAcess: 'Conheça um pouco mais da nossa empresa e encontre a unidade mais próxima de você.',
-  fastAcess: 'Ler mais',
+  productDescription: 'Temos uma grande variedade em peças, óleos e baterias para seu veiculo. Venha conhecer.',
+  contactDescription: 'Tem alguma dúvida, entre em contato conosco. Temos uma equipe para lhe auxiliar.',
+  story: 'Nossa Historia',
+  storyDescription: 'Conheça um pouco mais da nossa empresa e encontre a unidade mais próxima de você.',
+  ViewMore: 'Ver Mais',
+
+  // Carousel
+
+  imageOne: 'ATENDIMENTO QUALIDADE E PREÇO.',
 }

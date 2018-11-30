@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UICarouselModule } from "ui-carousel";
-
+// import { UICarouselComponent } from '../../node_modules/ui-carousel/src/ui-carousel/ui-carousel.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,6 +19,7 @@ import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
     ProductsComponent,
     ContactComponent,
     WhoWeAreComponent,
+    // UICarouselComponent,
   ],
   imports: [
     BrowserModule,
