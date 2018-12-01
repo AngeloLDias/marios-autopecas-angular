@@ -13,6 +13,10 @@ import other style files */
   }
 }
 
+body {
+  width: 100%;
+}
+
 body::-webkit-scrollbar {
   background-color: white;
   width: 8px;
@@ -23,15 +27,24 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-.mobile{
-    display: none !important;
+// carousel
+
+.arrow{
+    z-index: 0 !important;
+}
+.middle{
+    z-index: 0 !important;
+}
+.mobile {
+  display: none !important;
 }
 
-@media(max-width:768px){
-    .desktop{
-        display: none!important;
-    }
-    .mobile{
-        display: flex !important;
-    }
+@media(max-width:768px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: flex !important;
+  }
 }

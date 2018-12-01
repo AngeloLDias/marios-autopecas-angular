@@ -1,7 +1,7 @@
 <header class="header desktop">
 
   <p routerLink="home">
-    <img src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+    <img  src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
 
   <!-- menu desktop -->
@@ -25,7 +25,10 @@
 <!-- menu mobile -->
 
 <header class="header mobile">
-
+<div class="user-buy">
+<img src="../../../assets/media/iconmonstr-user-19.svg" alt="">
+<img src="../../../assets/media/294547.svg" alt="">
+</div>
   <p routerLink="home">
     <img src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
@@ -36,8 +39,8 @@
     <div class="line-3"></div>
   </div>
 
+  <nav class="menu-mobile" [ngClass]="{'showMenu': toogleMenu}">
 
+    </nav>
 </header>
-<nav class="menu-mobile" [ngClass]="{'showMenu': toogleMenu}">
 
-</nav>
