@@ -10,9 +10,9 @@
   // position: fixed;
 
   img {
-    width: 125px;
-    margin-right: 20px;
+    width: 180px;
     cursor: pointer;
+    margin: 0px 30px;
   }
 
   nav {
@@ -31,7 +31,8 @@
       padding: 10px;
       cursor: pointer;
       border-bottom: 2px solid transparent;
-
+      margin-right: 23px;
+      
       &:hover {
         border-bottom: 2px solid $colorPrimary;
         transition: 0.8s;

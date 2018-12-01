@@ -5,11 +5,13 @@
   grid-template-columns: 19% repeat(3, 27% 27% 27%);
   background-color: #e8e9ea;
   padding: 10px;
-  hr{
+
+  hr {
     background-color: green;
     height: 1px;
     margin: 10px 0px;
-    }
+  }
+
   p {
     font-family: roboto;
   }
@@ -79,7 +81,8 @@
     text-align: center;
     align-items: center;
   }
-  .contats{
+
+  .contats {
     p:nth-child(n+2):nth-child(-n+10) {
       display: inherit !important;
     }
