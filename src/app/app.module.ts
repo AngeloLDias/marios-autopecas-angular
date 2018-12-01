@@ -10,6 +10,8 @@ import { HomeComponent } from './container/home/home.component';
 import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
+import { SlickModule } from 'ngx-slick';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
     BrowserModule,
     AppRoutingModule,
     UICarouselModule,
+    SlickModule.forRoot(),
     
   ],
   providers: [],

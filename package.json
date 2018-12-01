@@ -22,6 +22,7 @@
     "@angular/router": "~7.0.0",
     "angular-ui-carousel": "^0.1.10",
     "core-js": "^2.5.4",
+    "ngx-slick": "^0.2.1",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
     "slick-carousel": "^1.8.1",
