@@ -11,7 +11,7 @@
 
   img {
     width: 125px;
-    // margin-left: 40px;
+    margin-right: 20px;
     cursor: pointer;
   }
 
@@ -59,7 +59,7 @@
 .line-1,
 .line-2,
 .line-3 {
-  width: 40px;
+  width: 32px;
   height: 5px;
   margin: 5px 0px;
   background-color: $colorPrimary;
@@ -80,7 +80,16 @@
   z-index: 3;
 }
 
+
+// toogle menu
+
 .colorSpan {
+
+  .logo-menu {
+    opacity: 1;
+    position: inherit;
+    transition: 0.7s;
+  }
 
   .line-1,
   .line-2,
@@ -95,7 +104,8 @@
 
   .line-2 {
     opacity: 0;
-    position: absolute;  }
+    position: absolute;
+  }
 
   .line-3 {
     transform: rotateZ(-48deg);
@@ -117,15 +127,53 @@
     position: fixed;
     top: 0;
     z-index: 1;
-    .nav-header {
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: initial;
       flex-direction: column;
-      z-index: 4;
-    }
-    .logo-marios {
-      img{
-      width: 125px;
+
+      .menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-left: 14px;
+      }
+
+      img {
+        margin-top: 20px;
+        opacity: 0;
+      }
+
+      p {
+        color: #f1f1f1;
+        width: 100%;
+        text-align: center;
+
+        &:hover {
+          background-color: #f1f1f1;
+          color: black;
+        }
       }
     }
+
+    .nav-header {
+      display: flex;
+      align-items: center;
+      z-index: 4;
+    }
+
+    .logo-marios {
+      img {
+        width: 125px;
+        margin: -30px 10px;
+      }
+    }
+
     .nav-header {
       margin: 0px 10px;
     }

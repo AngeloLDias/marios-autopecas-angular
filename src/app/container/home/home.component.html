@@ -1,10 +1,10 @@
 <!-- Carousel -->
 
-<ui-carousel class="carousel-main" #uiCarousel slidesToShow="2" [autoPlay]="false" height="500px">
-  <ui-carousel-item >
+<ui-carousel class="carousel-main" #uiCarousel slidesToShow="2" [autoPlay]="false">
+  <ui-carousel-item>
     <img src="../../../assets/media/carrossel 2.png" alt="">
     <div class="text-carousel">
-    <p>{{lang.imageOne}}</p>
+      <p>{{lang.imageOne}}</p>
     </div>
   </ui-carousel-item>
   <ui-carousel-item>
@@ -70,7 +70,7 @@
       <h3>{{lang.products}}</h3>
       <p>{{lang.productDescription}}</p>
 
-      <button class="produtos btn btn-outline-success">{{lang.ViewMore}}</button>
+      <button  routerLink="produtos" class="produtos btn btn-outline-success">{{lang.ViewMore}}</button>
 
     </div>
 
@@ -82,7 +82,7 @@
       <h3>{{lang.contact}}</h3>
       <p>{{lang.contactDescription}}</p>
 
-      <button class="btn btn-outline-success">{{lang.ViewMore}}</button>
+      <button  routerLink="contato" class="btn btn-outline-success">{{lang.ViewMore}}</button>
     </div>
 
 
@@ -94,7 +94,7 @@
       </h3>
       <p>{{lang.storyDescription}}</p>
 
-      <button class="btn btn-outline-success">{{lang.ViewMore}}</button>
+      <button  routerLink="quem-somos" class="btn btn-outline-success">{{lang.ViewMore}}</button>
     </div>
   </div>
 </section>

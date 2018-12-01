@@ -6,14 +6,17 @@
   background-color: #e8e9ea;
   padding: 10px;
   hr{
-    width: 50%;
-  }
+    background-color: green;
+    height: 1px;
+    margin: 10px 0px;
+    }
   p {
     font-family: roboto;
   }
 
   p:nth-child(1) {
     font-size: 24px;
+    // width: 320px;
     // text-align: center;
   }
 
@@ -46,10 +49,6 @@
       align-items: center;
       max-width: 300px;
     }
-
-    // p {
-    //   max-width: 300px;
-    // }
 
     img {
       width: 23px;

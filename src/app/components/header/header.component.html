@@ -1,7 +1,7 @@
 <header class="header desktop">
 
   <p routerLink="home">
-    <img  src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+    <img class="logo-marios" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
 
   <!-- menu desktop -->
@@ -24,23 +24,36 @@
 
 <!-- menu mobile -->
 
-<header class="header mobile">
-<div class="user-buy">
-<img src="../../../assets/media/iconmonstr-user-19.svg" alt="">
-<img src="../../../assets/media/294547.svg" alt="">
-</div>
-  <p routerLink="home">
-    <img src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+<header [ngClass]="{'colorSpan': toogleMenu}" class="header mobile ">
+  <!-- <div class="user-buy">
+    <img src="../../../assets/media/iconmonstr-user-19.svg" alt="">
+    <img src="../../../assets/media/294547.svg" alt="">
+  </div> -->
+  <p class="logo-marios" routerLink="home">
+    <img class="logo-marios" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
 
-  <div class="nav-header" [ngClass]="{'colorSpan': toogleMenu}" (click)="toogleSideMenu()">
-    <div class="line-1"></div>
-    <div class="line-2"></div>
-    <div class="line-3"></div>
+  <div class="nav-header" (click)="toogleSideMenu()">
+    <!-- <div>
+      <img class="logo-menu" src="../../../assets/media/logoo-min.png" width="100px" alt="">
+    </div> -->
+    <div>
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
+
   </div>
 
   <nav class="menu-mobile" [ngClass]="{'showMenu': toogleMenu}">
-
-    </nav>
+    <div>
+      <img class="logo-menu" src="../../../assets/media/logoW.png" width="100px" alt="">
+    </div>
+    <div class="menu">
+      <p>HOME</p>
+      <p>QUEM SOMOS</p>
+      <p>PRODUTOS</p>
+      <p>CONTATO</p>
+    </div>
+  </nav>
 </header>
-
