@@ -1,0 +1,176 @@
+
+
+#divTeste{
+    font-size: 20px;
+}
+
+
+.nossahistoria {
+    height: 90px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 110px;
+    
+}
+
+.nossa {
+    box-shadow: 5px 5px 5px rgb(155, 155, 155);
+    background-color: rgb(25, 135, 25);
+    width: 17%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.history {
+    background-color: rgb(25, 135, 25);
+}
+.nossa h1 {
+    font-size: 25px;
+    font-family: roboto;
+    color: white;
+}
+
+.quemsomos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    
+}
+
+.mario {
+   box-shadow: 5px 5px 5px rgb(155, 155, 155);
+    height: 360px;
+    text-align: center;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    /* opacity: 0.8; */
+
+  
+}
+
+.mario p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: roboto;
+    font-size: 20px;
+    color: black;
+    width: 87%;
+    height: 70%;
+    text-align: justify;
+}
+
+.blocos {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 110px;
+}
+
+.blocos li {
+    box-shadow: 5px 5px 5px rgb(155, 155, 155);
+    color: white;
+    font-family: roboto;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+}
+
+.missao {
+    background-color: rgb(43, 99, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11.5%;
+    position: relative;
+}
+
+
+.visao {
+    background-color: rgb(43, 99, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11.5%;
+    position: relative;
+
+}
+
+
+
+.valores {
+    background-color: rgb(43, 99, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11.5%;
+    position: relative;
+}
+
+
+
+.only-smart{
+    display: none;
+}
+#tempalte {
+    display: none;
+}
+
+.blocos li:hover{
+background-color: green;
+transition: 0.2s;
+}
+.footerdevs{
+position: absolute;
+margin-bottom: -16px;
+}
+
+@media(max-width:760px) {
+    .only-desktop{
+        display: none;
+    }
+
+    .only-smart{
+        display: flex;
+    }
+
+
+    .quemsomos {
+        display: none;
+        position: relative;
+    }
+    
+    .nossa{
+        margin: 6px;
+        width: 50%;
+    }
+
+    .nossa h1{
+        font-size: 21px; 
+           }
+
+    .blocos {
+        display: none;
+    }
+    .blocos:hover .valores-texto{
+        display: none;
+    }
+    .blocos:hover .visao-texto{
+    display: none;
+    }
+    .blocos:hover .missao-texto{
+    display: none;
+    }
+
+   
+}

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   public lang = LANG
 
-
+  public breakpoints :any;
   constructor() {
     this.items = [
       { name: '../../../assets/media/imgm/ate-min.png' },
@@ -77,9 +77,34 @@ export class HomeComponent implements OnInit {
       { name: '../../../assets/media/imgm/visconde-min.png' },
 
     ]
+    
   }
 
   ngOnInit() {
   }
+  slideConfig = {
+  "slidesToShow": 8,
+    "slidesToScroll": 1,
+    "arrows":false,
+    "autoplay": true,
+    "autoplaySpeed": 600,
+
+
+  };
+  slideConfigM = {
+    "slidesToShow": 4,
+      "slidesToScroll": 1,
+      "arrows":false,
+      "autoplay": true,
+      "autoplaySpeed": 600,
+  
+  
+    };
+// export class SlickModule {
+//   static forRoot(): ModuleWithProviders {
+//       return {
+//           ngModule: SlickModule,
+//       };
+//   }
 
 }

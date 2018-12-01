@@ -12,13 +12,19 @@
   </ui-carousel-item>
 </ui-carousel>
 
-<!-- <ui-carousel>
-  <ui-carousel-item *ngFor="let item of items">
-      <img [ui-lazy-load]="item.name">
-  </ui-carousel-item>
-</ui-carousel>
- -->
+ <ngx-slick class="carousel desktop"
+  [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let item of items" class="slide">
+          <img src="{{ item.name }}" alt="" width="100%">
+    </div>
+    </ngx-slick>
 
+    <ngx-slick class="carousel mobileB"
+      [config]="slideConfigM" (afterChange)="afterChange($event)">
+        <div ngxSlickItem *ngFor="let item of items" class="slide">
+              <img src="{{ item.name }}" alt="" width="100%">
+        </div>
+    </ngx-slick>
 
 <!-- depositions -->
 
