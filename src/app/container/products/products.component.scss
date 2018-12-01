@@ -1,0 +1,150 @@
+$cor-primaria:rgb(25, 135, 25);
+$cor-secundaria: white;
+#produtos {
+  padding: 10px;
+}
+
+.nossahistoria {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bloco-produtos {
+  border: 1px solid grey;
+  width: 857px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #80808085;
+}
+
+.nossa {
+  box-shadow: 5px 5px 5px rgb(155, 155, 155);
+  background-color: $cor-primaria;
+  width: 17%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history {
+  background-color: $cor-primaria;
+}
+
+.nossa h1 {
+  font-size: 25px;
+  font-family: roboto;
+  color: white;
+}
+
+#produtos img {
+  height: 140px;
+  width: 186px;
+  margin-bottom: 5px;
+  display: block;
+  margin: 10px;
+  margin-left: 70px;
+}
+
+#produtos h3 {
+  background-color: hsl(0, 0%, 65%);
+  font-family: roboto;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+}
+
+#produtos p {
+  display: none;
+  background: rgb(0, 0, 0);
+  margin-bottom: 0px;
+  text-align: center;
+  color: $cor-secundaria;
+}
+
+.bloco-produtos:hover h3 {
+  transition: linear .3s;
+  background-color: $cor-primaria !important;
+  color: $cor-secundaria;
+}
+
+@media(min-width:768px) {
+  .nossa {
+    width: 204px;
+  }
+  .caixa1 {
+    width: 857px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .caixa2 {
+    width: 857px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media(max-width:375px) {
+  .nossa {
+    width: 204px;
+  }
+  .caixa1 {
+    display: block;
+    justify-content: space-around;
+  }
+  #produtos img {
+    margin-left: 30px;
+  }
+}
+
+.col-md-4 {
+  display: block;
+  width: 802px;
+  margin-left: 40px;
+  justify-content: space-around;
+}
+
+.bloco-produtos {
+  display: block;
+  width: 35%;
+}
+
+@media(max-width:320px) {
+  .nossa {
+    width: 204px;
+  }
+  .caixa1 {
+    display: block;
+    justify-content: space-around;
+  }
+  #produtos img {
+    margin-left: 30px;
+  }
+  .bloco-produtos {
+    display: block;
+    width: 38%;
+    margin-left: -25px;
+  }
+}
+@media(max-width:425px) {
+    .nossa {
+      width: 204px;
+    }
+    .caixa1 {
+      display: block;
+      justify-content: space-around;
+    }
+    #produtos img {
+      margin-left: 30px;
+    }
+    .bloco-produtos {
+        display: block;
+        width: 33%;
+        margin-left: -20px;
+    
+    }
+  }
