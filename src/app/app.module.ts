@@ -11,6 +11,7 @@ import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
 import { SlickModule } from 'ngx-slick';
+import { AdminComponent } from './container/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SlickModule } from 'ngx-slick';
     ProductsComponent,
     ContactComponent,
     WhoWeAreComponent,
+    AdminComponent,
     // UICarouselComponent,
   ],
   imports: [

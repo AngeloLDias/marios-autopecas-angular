@@ -47,6 +47,10 @@ body::-webkit-scrollbar-thumb {
   background: black !important;
 }
 
+.slick-list{
+  height: 24vh;
+}
+
 @media(max-width:768px) {
   .desktop {
     display: none !important;

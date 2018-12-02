@@ -1,4 +1,4 @@
-import { Component, OnInit,Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LANG } from '../../theme/pt'
 
 @Component({
@@ -10,28 +10,8 @@ export class HomeComponent implements OnInit {
 
   items: Array<any> = []
 
-  // app.run(['Carousel', (Carousel) => {
-  //   Carousel.setOptions({
-  //     arrows: true,
-  //     autoplay: false,
-  //     autoplaySpeed: 3000,
-  //     cssEase: 'ease',
-  //     dots: false,
-   
-  //     easing: 'linear',
-  //     fade: false,
-  //     infinite: true,
-  //     initialSlide: 0,
-   
-  //     slidesToShow: 1,
-  //     slidesToScroll: 1,
-  //     speed: 500,
-  //   });
-  // }]);
-
   public lang = LANG
 
-  public breakpoints :any;
   constructor() {
     this.items = [
       { name: '../../../assets/media/imgm/ate-min.png' },
@@ -77,15 +57,15 @@ export class HomeComponent implements OnInit {
       { name: '../../../assets/media/imgm/visconde-min.png' },
 
     ]
-    
+
   }
 
   ngOnInit() {
   }
   slideConfig = {
-  "slidesToShow": 8,
-    "slidesToScroll": 1,
-    "arrows":false,
+    "slidesToShow": 8,
+    "slidesToScroll": 2,
+    "arrows": false,
     "autoplay": true,
     "autoplaySpeed": 600,
 
@@ -93,18 +73,11 @@ export class HomeComponent implements OnInit {
   };
   slideConfigM = {
     "slidesToShow": 4,
-      "slidesToScroll": 1,
-      "arrows":false,
-      "autoplay": true,
-      "autoplaySpeed": 600,
-  
-  
-    };
-// export class SlickModule {
-//   static forRoot(): ModuleWithProviders {
-//       return {
-//           ngModule: SlickModule,
-//       };
-//   }
+    "slidesToScroll": 1,
+    "arrows": false,
+    "autoplay": true,
+    "autoplaySpeed": 600,
 
+
+  };
 }
