@@ -1,0 +1,37 @@
+* {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+td {
+  padding: 5px 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+//   border: none;
+}
+
+.new-filter {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+
+  button,
+  input,
+  input {
+    margin: 0px 10px;
+  }
+}
+
+.delete {
+  background-color: #f33e3e;
+}
+
+.edit{
+    background-color: #4f80f9;
+}
+
+.new{
+    background-color: #50e850;
+}

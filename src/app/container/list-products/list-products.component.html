@@ -1,0 +1,35 @@
+<div class="new-filter">
+  <button class="btn">HOME</button>
+  <button class="btn new">NOVO</button>
+  <input type="text">
+  <P>Lista de produtos</P>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>nome</th>
+      <th>tipo</th>
+      <th>preço</th>
+      <th>quantidade</th>
+      <th>marca</th>
+      <th>imagem</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <td></td>
+      <td>{{produto.nome}}</td>
+      <td>{{produto.tipo}}</td>
+      <td>R$ {{produto.preco}}</td>
+      <td>{{produto.quantidade}}</td>
+      <td>{{produto.marca}}</td>
+      <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
+      <td><button class="btn edit">Edit</button></td>
+      <td><button class="btn delete">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
