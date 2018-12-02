@@ -1,11 +1,12 @@
 $cor-primaria:rgb(25, 135, 25);
 $cor-secundaria: white;
+
 #produtos {
   padding: 10px;
 }
 
 .nossahistoria {
-  height: 100px;
+  height: 155px;
   display: flex;
   align-items: flex-end;
 }
@@ -30,6 +31,8 @@ $cor-secundaria: white;
 
 .history {
   background-color: $cor-primaria;
+  width: 150px;
+
 }
 
 .nossa h1 {
@@ -72,79 +75,151 @@ $cor-secundaria: white;
   color: $cor-secundaria;
 }
 
-@media(min-width:768px) {
-  .nossa {
-    width: 204px;
-  }
-  .caixa1 {
-    width: 857px;
-    display: flex;
-    justify-content: space-around;
-  }
-  .caixa2 {
-    width: 857px;
-    display: flex;
-    justify-content: space-around;
-  }
-}
+// @media(max-width:745px) {
+//   .nossa {
+//     width: 204px;
+//   }
 
-@media(max-width:375px) {
+//   .caixa1 {
+//     display: block;
+//     justify-content: space-around;
+//   }
+
+//   #produtos img {
+//     height: 140px;
+//     width: 202px;
+//     margin-bottom: 5px;
+//     display: block;
+//     margin: 10px;
+//     margin-left: 80px;
+//   }
+// }
+
+// .bloco-produtos {
+//   display: block;
+//   width: 50%;
+//   margin-left: 96px;
+// }
+
+@media(max-width:430px) {
   .nossa {
     width: 204px;
   }
+
   .caixa1 {
     display: block;
     justify-content: space-around;
   }
+
   #produtos img {
-    margin-left: 30px;
+    margin-left: 55px;
   }
 }
 
 .col-md-4 {
   display: block;
-  width: 802px;
   margin-left: 40px;
   justify-content: space-around;
 }
 
 .bloco-produtos {
   display: block;
-  width: 35%;
+  width: 90%;
 }
 
-@media(max-width:320px) {
+@media(max-width:415px) {
   .nossa {
     width: 204px;
   }
+
   .caixa1 {
     display: block;
     justify-content: space-around;
   }
+
   #produtos img {
-    margin-left: 30px;
-  }
-  .bloco-produtos {
-    display: block;
-    width: 38%;
-    margin-left: -25px;
+    margin-left: 55px;
   }
 }
-@media(max-width:425px) {
-    .nossa {
-      width: 204px;
-    }
-    .caixa1 {
-      display: block;
-      justify-content: space-around;
-    }
-    #produtos img {
-      margin-left: 30px;
-    }
-    .bloco-produtos {
-        display: block;
-        width: 33%;
-        margin-left: -20px;
-    
-    }
+
+.col-md-4 {
+  display: block;
+  margin-left: 40px;
+  justify-content: space-around;
+}
+
+.bloco-produtos {
+  display: block;
+  width: 90%;
+}
+
+@media(max-width:414px) {
+  .nossa {
+    width: 204px;
   }
+
+  .caixa1 {
+    display: block;
+    justify-content: space-around;
+  }
+
+  #produtos img {
+    margin-left: 55px;
+  }
+}
+
+.col-md-4 {
+  display: block;
+  margin-left: 40px;
+  justify-content: space-around;
+}
+
+.bloco-produtos {
+  display: block;
+  width: 90%;
+}
+
+@media(max-width:360px) {
+  .nossa {
+    width: 204px;
+  }
+
+  .caixa1 {
+    display: block;
+    justify-content: space-around;
+  }
+
+  #produtos img {
+    margin-left: 25px;
+  }
+}
+
+.col-md-4 {
+  display: block;
+  margin-left: 40px;
+  justify-content: space-around;
+}
+
+.bloco-produtos {
+  display: block;
+  width: 90%;
+}
+
+// @media(max-width:425px) {
+//     .nossa {
+//       width: 204px;
+//     }
+//     .caixa1 {
+//       display: block;
+//       justify-content: space-around;
+//     }
+//     #produtos img {
+//       margin-left: 30px;
+//     }
+//     .bloco-produtos {
+//         display: block;
+//         width: 33%;
+//         margin-left: -20px;
+
+//     }
+//   }
