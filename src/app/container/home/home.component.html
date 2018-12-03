@@ -13,14 +13,14 @@
 </ui-carousel>
 
  <ngx-slick class="carousel desktop"
-  [config]="slideConfig" (afterChange)="afterChange($event)">
+  [config]="slideConfig">
     <div ngxSlickItem *ngFor="let item of items" class="slide">
           <img src="{{ item.name }}" alt="" width="100%">
     </div>
     </ngx-slick>
 
     <ngx-slick class="carousel mobileB"
-      [config]="slideConfigM" (afterChange)="afterChange($event)">
+      [config]="slideConfigM">
         <div ngxSlickItem *ngFor="let item of items" class="slide">
               <img src="{{ item.name }}" alt="" width="100%">
         </div>
