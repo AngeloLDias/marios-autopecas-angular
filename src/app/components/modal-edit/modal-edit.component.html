@@ -1,0 +1,18 @@
+<section *ngIf="showModal" class="modal-container-parent">
+  <div class="modal-container-child">
+      <p>Lista de Produtos</p>
+    <div class="edit-modal">
+      <input placeholder="Nome" type="text">
+      <input placeholder="Tipo" type="text">
+      <input placeholder="Preço" type="number">
+      <input placeholder="Quantidade" type="number">
+      <input placeholder="Marca" type="text">
+    </div>
+
+    <div>
+      <button class="btn">Salvar</button>
+      <button (click)="closeModal()" class="btn">Cancelar</button>
+    </div>
+
+  </div>
+</section>

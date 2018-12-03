@@ -13,6 +13,7 @@ import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
 import { SlickModule } from 'ngx-slick';
 import { AdminComponent } from './container/admin/admin.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
+import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ListProductsComponent } from './container/list-products/list-products.c
     WhoWeAreComponent,
     AdminComponent,
     ListProductsComponent,
+    ModalEditComponent,
     // UICarouselComponent,
   ],
   imports: [
