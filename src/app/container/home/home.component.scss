@@ -5,11 +5,11 @@
 .carousel-main {
   height: 58vh !important;
 
-  img {
-    width: 100%;
+  .img1 {
     height: 59vh;
-    position: absolute;
-    top: -2px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .text-carousel {

@@ -40,14 +40,17 @@ body::-webkit-scrollbar-thumb {
 .mobile {
   display: none !important;
 }
+
 .mobileB {
   display: none !important;
 }
+
 .ui-carousel-item {
   background: black !important;
+  cursor: grab;
 }
 
-.slick-list{
+.slick-list {
   height: 24vh;
 }
 
@@ -59,7 +62,8 @@ body::-webkit-scrollbar-thumb {
   .mobile {
     display: flex !important;
   }
+
   .mobileB {
-    display:block!important;
+    display: block !important;
   }
 }

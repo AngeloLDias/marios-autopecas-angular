@@ -80,4 +80,13 @@ export class HomeComponent implements OnInit {
 
 
   };
+
+  // getUrl()
+  // {
+  //   return `url('${this.items.name}')`;
+  // }
+  getUrl()
+  {
+    return "url('../../../assets/media/carrossel 2.png')";
+  }
 }
