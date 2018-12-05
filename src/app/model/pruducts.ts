@@ -4,6 +4,6 @@ export class Produtos {
     preco: number;
     quantidade: number;
     marca: string;
-    // imagem: Array<string>;
-    imagem: string;
+    imagem: Array<string>;
+    // imagem: string;
 };
