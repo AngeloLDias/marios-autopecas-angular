@@ -1,30 +1,37 @@
 <!-- Carousel -->
 
-<ui-carousel class="carousel-main" #uiCarousel slidesToShow="2" [autoPlay]="false">
-  <ui-carousel-item>
-    <img src="../../../assets/media/carrossel 2.png" alt="">
-    <div class="text-carousel">
-      <p>{{lang.imageOne}}</p>
-    </div>
+<ui-carousel class="carousel-main" #uiCarousel slidesToShow="3" [autoPlay]="false">
+
+  <ui-carousel-item >
+      <div class="img1" [style.background-image]="getUrl()">      <div class="text-carousel">
+          <p>{{lang.imageOne}}</p>
+        </div></div>
+
   </ui-carousel-item>
+
   <ui-carousel-item>
-    <img src="../../../assets/media/carrossel.png" alt="">
+      <div class="img1" [style.background-image]="getUrl()"></div>
+    </ui-carousel-item>
+
+  <ui-carousel-item>
+    <div class="img1" [style.background-image]="getUrl()"></div>
   </ui-carousel-item>
+
 </ui-carousel>
 
- <ngx-slick class="carousel desktop"
-  [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let item of items" class="slide">
-          <img src="{{ item.name }}" alt="" width="100%">
-    </div>
-    </ngx-slick>
+<!-- Carosel Marcar -->
 
-    <ngx-slick class="carousel mobileB"
-      [config]="slideConfigM">
-        <div ngxSlickItem *ngFor="let item of items" class="slide">
-              <img src="{{ item.name }}" alt="" width="100%">
-        </div>
-    </ngx-slick>
+<ngx-slick class="carousel desktop" [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let item of items" class="slide">
+    <img src="{{ item.name }}" alt="" width="100%">
+  </div>
+</ngx-slick>
+
+<ngx-slick class="carousel mobileB" [config]="slideConfigM">
+  <div ngxSlickItem *ngFor="let item of items" class="slide">
+    <img src="{{ item.name }}" alt="" width="100%">
+  </div>
+</ngx-slick>
 
 <!-- depositions -->
 
@@ -76,7 +83,7 @@
       <h3>{{lang.products}}</h3>
       <p>{{lang.productDescription}}</p>
 
-      <button  routerLink="produtos" class="produtos btn btn-outline-success">{{lang.ViewMore}}</button>
+      <button routerLink="produtos" class="produtos btn btn-outline-success">{{lang.ViewMore}}</button>
 
     </div>
 
@@ -88,7 +95,7 @@
       <h3>{{lang.contact}}</h3>
       <p>{{lang.contactDescription}}</p>
 
-      <button  routerLink="contato" class="btn btn-outline-success">{{lang.ViewMore}}</button>
+      <button routerLink="contato" class="btn btn-outline-success">{{lang.ViewMore}}</button>
     </div>
 
 
@@ -100,7 +107,7 @@
       </h3>
       <p>{{lang.storyDescription}}</p>
 
-      <button  routerLink="quem-somos" class="btn btn-outline-success">{{lang.ViewMore}}</button>
+      <button routerLink="quem-somos" class="btn btn-outline-success">{{lang.ViewMore}}</button>
     </div>
   </div>
 </section>
