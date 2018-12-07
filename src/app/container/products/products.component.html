@@ -1,5 +1,5 @@
 <!-- ================== PRODUTOS =================== -->
-<div class="nossahistoria only-desktop">
+<!-- <div class="nossahistoria only-desktop">
   <div class="nossa history">
     <h1 class="PRODUTOS">{{lang.PRODUTOS}}</h1>
   </div>
@@ -58,12 +58,12 @@
   </div>
 </section>
 
-<div class="margem2"></div>
+<div class="margem2"></div> -->
 <!-- Modal -->
 
-<div id="template-texto">
+<!-- <div id="template-texto">
   <p></p>
-</div>
+</div> -->
 
 <!-- Modal -->
 
@@ -169,3 +169,11 @@
     </div>
   </div>
 </div> -->
+<section class="prducts">
+  <div class="box-product" *ngFor="let produto of produtos">
+    <img src="{{produto.imagem}}" alt="">
+    <p>{{produto.nome}}</p>
+    <p>Por: R${{produto.preco}}</p>
+    <button>ADICIONAR</button>
+  </div>
+</section>
