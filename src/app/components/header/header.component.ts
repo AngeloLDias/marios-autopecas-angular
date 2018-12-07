@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 import { LANG } from '../../theme/pt'
 
@@ -12,10 +12,36 @@ export class HeaderComponent implements OnInit {
   public lang  = LANG
   public toogleMenu = false;
 
+  @Input() active: string;
+
+  public homeActive: boolean = false;
+  
+  public productActive: boolean = false;
+
+  public companyActive: boolean = false;
+
+  public contactActive: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
-
+    console.log(this.active);
+    switch (this.active) {
+      case 'home':
+        this.homeActive = true;
+        break;
+      case 'produtos':
+        this.productActive = true;
+        break;
+      case 'quem-somos':
+        this.companyActive = true;
+        break;
+      case 'contato':
+        this.contactActive = true;
+        break;
+      default:
+        break;
+    }
   }
     
   toogleSideMenu() {

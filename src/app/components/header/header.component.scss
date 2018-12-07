@@ -23,7 +23,6 @@
     li {
       list-style: none;
     }
-
     p {
       font-family: roboto;
       color: $colorPrimary;
@@ -32,7 +31,12 @@
       cursor: pointer;
       border-bottom: 2px solid transparent;
       margin-right: 23px;
-      
+      .active{
+        border-bottom: 2px solid $colorPrimary;
+        background-color: black;
+        font-size: 300px;
+        // transition: 0.8s;
+      }
       &:hover {
         border-bottom: 2px solid $colorPrimary;
         transition: 0.8s;
