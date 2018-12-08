@@ -12,13 +12,9 @@ export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
 
-  // public catego:Array<any>;
-  public catego = [
-    { 'nome': ['angelo', 'danilo', 'felipe'] }
-  ]
   public lists = [
     {
-      'section': ' MARCA',
+      'section': ' MARCAS',
 
       'marcas': [
         { 'marca': 'BARDAHL' },
