@@ -21,8 +21,8 @@ export class ListProductsComponent implements OnInit {
   public showModalDontFound: boolean = false;
 
 
-  // constructor(private productsService : ProductsService) {
-    constructor() {
+  constructor(private productsService : ProductsService) {
+    // constructor() {
 
 
 
@@ -41,9 +41,9 @@ export class ListProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.productsService.getProdutos().subscribe((dados: any) => {
-    //   this.produtos = dados;
-    // });
+    this.productsService.getProdutos().subscribe( dados => 
+      this.produtos = dados
+    );
   }
 
  

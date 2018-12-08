@@ -25,11 +25,11 @@
   <tbody>
     <tr *ngFor="let produto of produtos">
       <td></td>
-      <td>{{produtos.nome}}</td>
-      <td>{{produto.tipo}}</td>
-      <td>R$ {{produto.preco}}</td>
-      <td>{{produto.quantidade}}</td>
-      <td>{{produto.marca}}</td>
+      <td>{{produto.nome}}</td>
+      <td>{{produto.imc}}</td>
+      <td>R$ {{produto.peso}}</td>
+      <td>{{produto.altura}}</td>
+      <td>{{produto.gordura}}</td>
       <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
       <td><button (click)="toggleModal()" class="btn edit">Edit</button></td>
       <td><button class="btn delete">Delete</button></td>

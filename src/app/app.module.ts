@@ -14,6 +14,9 @@ import { SlickModule } from 'ngx-slick';
 import { AdminComponent } from './container/admin/admin.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
+import { HttpModule } from '@angular/http'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,13 @@ import { ModalEditComponent } from './components/modal-edit/modal-edit.component
     ListProductsComponent,
     ModalEditComponent,
     // UICarouselComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UICarouselModule,
+    HttpClientModule,
     SlickModule.forRoot(),
     
   ],
