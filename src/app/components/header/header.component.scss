@@ -144,7 +144,7 @@
 }
 
 .menu-mobile {
-  background-color: $colorPrimary;
+  background-color: white;
   top: 0px;
   height: 100vh;
   right: 0;
@@ -170,7 +170,7 @@
   .line-1,
   .line-2,
   .line-3 {
-    background-color: white;
+    background-color: $colorPrimary;
   }
 
   .line-1 {
@@ -217,7 +217,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 10px;
-        margin-left: 14px;
+        margin-left: 52px;
       }
 
       img {
@@ -226,9 +226,9 @@
       }
 
       p {
-        color: #f1f1f1;
+        color: #000;
         width: 100%;
-        text-align: center;
+        // text-align: center;
 
         &:hover {
           background-color: #f1f1f1;
