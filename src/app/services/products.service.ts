@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from 'selenium-webdriver/http';
 import { Observable } from 'rxjs';
-import { Http } from '@angular/http';
+// import { Http } from '@angular/http';
 // import { Http, respo } from '@angular/http'
 // import { IProdutos } from '../model/pruducts'  
 
@@ -12,7 +12,8 @@ export class ProductsService {
 
   // public produto = Produtos;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
+  // constructor(private http: HttpClient) { }
 
   // getProdutos(): Observable<Produtos>{
 
@@ -27,13 +28,13 @@ export class ProductsService {
   //   );
   // }
 
-  // getProdutos():Observable<Produtos[]>{
-  //   // const url = 'http://api-pacientes.herokuapp.com/pacientes';~
+//   getProdutos():Observable<Produtos[]>{
+//     // const url = 'http://api-pacientes.herokuapp.com/pacientes';~
       
-  //   return this.http.get<Produtos[]>('http://api-pacientes.herokuapp.com/pacientes');
-  // }
+//     return this.http.get<Produtos[]>('http://api-pacientes.herokuapp.com/pacientes');
+//   }
 
-}
+// }
 
 // class Produtos{
 //   nome: string;
@@ -41,4 +42,4 @@ export class ProductsService {
 //   altura: number;
 //   gordura: number;
 //   imc: number;
-// }
+}

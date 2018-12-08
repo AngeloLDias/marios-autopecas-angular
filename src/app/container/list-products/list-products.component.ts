@@ -21,7 +21,8 @@ export class ListProductsComponent implements OnInit {
   public showModalDontFound: boolean = false;
 
 
-  constructor(private productsService : ProductsService) {
+  // constructor(private productsService : ProductsService) {
+    constructor() {
 
 
 
@@ -45,6 +46,7 @@ export class ListProductsComponent implements OnInit {
     // });
   }
 
+ 
   openModal() {
     this.showModal = true;
   }
