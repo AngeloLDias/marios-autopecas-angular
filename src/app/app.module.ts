@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { UICarouselModule } from "ui-carousel";
 // import { UICarouselComponent } from '../../node_modules/ui-carousel/src/ui-carousel/ui-carousel.component'
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,11 @@ import { SlickModule } from 'ngx-slick';
 import { AdminComponent } from './container/admin/admin.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
+import { LoginComponent } from './container/login/login.component';
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,8 @@ import { ModalEditComponent } from './components/modal-edit/modal-edit.component
     AdminComponent,
     ListProductsComponent,
     ModalEditComponent,
+    LoginComponent,
+
     // UICarouselComponent,
   ],
   imports: [
@@ -34,7 +41,12 @@ import { ModalEditComponent } from './components/modal-edit/modal-edit.component
     AppRoutingModule,
     UICarouselModule,
     SlickModule.forRoot(),
-    
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBGgHmDeD5_Q7Mh5sUPgaQKOtPE6vElSWA&callback',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
