@@ -1,3 +1,66 @@
-<p>
-  contact works!
-</p>
+<!-- ==================== Contatos =================== -->
+  
+  
+<section class="locaisicon">
+  <div class="nossahistoria only-desktop">
+    <div class="nossa history"><h1 class="textlocalizacao">LOCALIZAÇÃO</h1></div>
+</div> 
+      <div class="orçamento">
+          
+          <img src="../../../assets/media/ORÇAMENTO-min.png" alt="ORÇAMENTO_-_ICONE-min.png" height="70px" width="70px">
+      
+      <p class="orcamento"> ORÇAMENTO </p>
+  </div>
+  </section>    
+  <section class="sec-contato">
+
+      <div id="map"></div>
+
+      <form class="formulario" action="crud.php" method="POST">            
+          <!-- <label for="nome">Nome:</label> -->
+          <input type="text" name="nomes" id="nome" placeholder="Digite Seu Nome">
+
+          <!-- <label for="tel">Telefone:</label> -->
+          <input type="text" name="telefone" id="tel" placeholder="Digite Seu Telefone">
+         
+          <select form="carform"  id="marca" name="marca">
+              <option  value="">Selecione Uma Marca</option>
+          </select>
+          <select id="modelo" name="modelo">
+                  <option value="">Modelo</option>
+          </select>
+          <select id="ano" name="ano"> 
+              <option value="">Ano</option>                
+          </select>
+
+          <textarea name="mensagem" id="comentario" rows="10" placeholder="Digite Seu Comentario"></textarea>
+          <div class="botaoo">
+          <button type="button" class="btao" onClick="envioFormulario()"> Enviar </button>
+          </div>
+          <!-- <div class="dlocis">
+              <p class="locais">LOCALIZAÇÃO</p>
+          </div>   -->
+      </form>
+
+  </section>
+  <!-- ==================== TELEFONES =================== -->
+
+  <section class="telefone">
+      <div class="tel">
+       <!-- <img src="../../../assets/media/TELEFONE_-_ICONE-min.png" alt="TELEFONE_-_ICONE-min.png" width="50px" height="50px"> -->
+       <p class="info">2417-2379<br>2417-3234</p>
+      </div>
+      <div class="whatsapp">
+       <img src="../../../assets/media/ORÇAMENTO-min.png" alt="WHATSAPP_-_ICONE-min.png" width="50px" height="50px">
+       <p class="info">96428-1299 <br> 96488-6250 <br> 96488-2465</p>
+      </div>
+      <div class="localizaçao">
+       <img src="../../../assets/media/localizacao.png" alt="LOCALIZAÇÃO_-_ICONE-min.png" width="65px" height="65px">
+       <p class="info">Estrada da Pedra, 7364 <br> Pedra de Guaratiba, RJ</p>
+      </div>
+  </section>   
+
+    <agm-map [latitude]="-22.9871293" [longitude]="-43.6514069">
+      <agm-marker [latitude]="-22.9871293" [longitude]="-43.6514069"></agm-marker>
+    </agm-map>
+               

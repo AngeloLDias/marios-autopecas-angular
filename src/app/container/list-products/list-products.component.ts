@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produtos } from '../../model/pruducts';
-import { ProductsService } from '../../services/products.service' 
+import { ProductsService } from '../../services/products.service'
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
@@ -12,17 +12,13 @@ export class ListProductsComponent implements OnInit {
   public produtos: Produtos[];
 
   //  produtos:Array<any>
-  //   public lists = [
-  //     {'section': 'Médicos', 'items': ['João', 'Mário', 'Silveira', 'Assis'] },
-  //     {'section': 'Bairros', 'items': ['Barra', 'Ipanema', 'Copacabana'] }
-  //  ];
+
 
   public showModal: boolean = false;
   public showModalDontFound: boolean = false;
 
 
-  constructor(private productsService : ProductsService) {
-    // constructor() {
+  constructor(private productsService: ProductsService) {
 
 
 
@@ -41,12 +37,12 @@ export class ListProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productsService.getProdutos().subscribe( dados => 
+    this.productsService.getProdutos().subscribe(dados =>
       this.produtos = dados
     );
   }
 
- 
+
   openModal() {
     this.showModal = true;
   }

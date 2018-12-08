@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { UICarouselModule } from "ui-carousel";
 // import { UICarouselComponent } from '../../node_modules/ui-carousel/src/ui-carousel/ui-carousel.component'
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,11 @@ import { ModalEditComponent } from './components/modal-edit/modal-edit.component
 import { HttpModule } from '@angular/http'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
+import { LoginComponent } from './container/login/login.component';
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,8 @@ import { ProductsService } from './services/products.service';
     AdminComponent,
     ListProductsComponent,
     ModalEditComponent,
+    LoginComponent,
+
     // UICarouselComponent,
     
   ],
@@ -39,7 +46,12 @@ import { ProductsService } from './services/products.service';
     UICarouselModule,
     HttpClientModule,
     SlickModule.forRoot(),
-    
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBGgHmDeD5_Q7Mh5sUPgaQKOtPE6vElSWA&callback',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
