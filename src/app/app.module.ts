@@ -22,6 +22,7 @@ import { LoginComponent } from './container/login/login.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { CartComponent } from './container/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AgmCoreModule } from '@agm/core';
     ListProductsComponent,
     ModalEditComponent,
     LoginComponent,
+    CartComponent,
 
     // UICarouselComponent,
     

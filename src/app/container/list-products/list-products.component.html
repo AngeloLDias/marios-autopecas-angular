@@ -10,7 +10,7 @@
 
   <thead>
     <tr>
-      <th></th>
+      <th>item</th>
       <th>nome</th>
       <th>tipo</th>
       <th>preço</th>
@@ -23,9 +23,9 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let produto of produtos">
-      <td></td>
-      <td>{{produto.nome}}</td>
+    <tr *ngFor="let produto of produtos; let i = index">
+      <td>{{i + 1}} </td>
+      <td class="nn">{{produto.nome}}</td>
       <td>{{produto.imc}}</td>
       <td>R$ {{produto.peso}}</td>
       <td>{{produto.altura}}</td>
