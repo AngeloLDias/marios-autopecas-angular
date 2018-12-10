@@ -10,7 +10,7 @@
 
   <thead>
     <tr>
-      <th></th>
+      <th>item</th>
       <th>nome</th>
       <th>tipo</th>
       <th>preço</th>
@@ -23,16 +23,19 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let produto of produtos">
-      <td></td>
-      <td>{{produtos.nome}}</td>
-      <td>{{produto.tipo}}</td>
-      <td>R$ {{produto.preco}}</td>
-      <td>{{produto.quantidade}}</td>
-      <td>{{produto.marca}}</td>
+    <tr  #nome *ngFor="let produto of produtos; let i = index; ">
+      <td>{{i + 1}} </td>
+      <td  class="nn">{{produto.nome}}</td>
+      <td>{{produto.imc}}</td>
+      <td>R$ {{produto.peso}}</td>
+      <td>{{produto.altura}}</td>
+      <td>{{produto.gordura}}</td>
       <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
       <td><button (click)="toggleModal()" class="btn edit">Edit</button></td>
-      <td><button class="btn delete">Delete</button></td>
+      <td><button  (click)="someMethod(i)" class="btn delete">Delete</button></td>
+      <td><button  (click)="removee(i)" class="btn delete">Delete</button></td>
+      <td><button  (click)="outputIt(i)" class="btn delete">Delete</button></td>
+
     </tr>
   </tbody>
 </table>

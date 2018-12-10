@@ -7,6 +7,7 @@ import { ContactComponent } from './container/contact/contact.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 import { LoginComponent } from './container/login/login.component';
+import { CartComponent } from './container/cart/cart.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,10 @@ const routes: Routes = [
   { path: 'produtos', component: ProductsComponent },
   { path: 'contato', component: ContactComponent },
   { path: 'lista-produtos', component: ListProductsComponent },
-  { path: 'dev-a', component: ModalEditComponent },
   { path: 'login', component: LoginComponent },
+
+  { path: 'dev-a', component: CartComponent },
+  { path: 'dev-b', component: ListProductsComponent },
 
 ];
 

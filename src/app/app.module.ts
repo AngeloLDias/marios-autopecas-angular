@@ -11,6 +11,9 @@ import { SlickModule } from 'ngx-slick';
 import { AdminComponent } from './container/admin/admin.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
+import { HttpModule } from '@angular/http'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductsService } from './services/products.service';
 import { LoginComponent } from './container/login/login.component';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { CartComponent } from './container/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +38,16 @@ import { AgmCoreModule } from '@agm/core';
     ListProductsComponent,
     ModalEditComponent,
     LoginComponent,
+    CartComponent,
 
     // UICarouselComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UICarouselModule,
+    HttpClientModule,
     SlickModule.forRoot(),
     BrowserModule,
     CommonModule,
