@@ -1,1 +1,4 @@
-<p *ngFor="let produc of produtos">{{produc.nome}}</p>
+<p id="nn" (click)="someMethod(i)" *ngFor="let produc of produtos; let i = index">{{produc.nome}}</p>
+
+
+<p class="aa" #aaa (click)="someOtherMethod()">aaaaaaaaaaaaa</p>

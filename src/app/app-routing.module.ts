@@ -16,8 +16,10 @@ const routes: Routes = [
   { path: 'produtos', component: ProductsComponent },
   { path: 'contato', component: ContactComponent },
   { path: 'lista-produtos', component: ListProductsComponent },
-  { path: 'dev-a', component: CartComponent },
   { path: 'login', component: LoginComponent },
+
+  { path: 'dev-a', component: CartComponent },
+  { path: 'dev-b', component: ListProductsComponent },
 
 ];
 

@@ -10,7 +10,7 @@ import { ProductsService } from '../../services/products.service'
 
 export class ListProductsComponent implements OnInit {
   public produtos: Produtos[];
-
+  public myData;
   public nomeP = 'eu';
   //  produtos:Array<any>
 
@@ -44,6 +44,26 @@ ngOnInit() {
 }
 
 
+
+someMethod(index) {
+  const myData = {produtos: this.produtos[index++]};
+  
+  this.productsService.set('produtos', myData);
+ 
+  // this.produtos.splice(index, 1);
+}
+
+someOtherMethod() {
+  this.myData = this.productsService.get('produtos');
+  // myData.push(this.productsService)
+}
+
+removee(index){
+  const myData = {produtos: this.produtos[index]};
+  this.productsService.remove('produtos', myData);
+
+
+  
 openModal() {
   this.showModal = true;
 }
