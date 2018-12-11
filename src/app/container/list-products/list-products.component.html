@@ -34,8 +34,7 @@
       <td><button (click)="toggleModal()" class="btn edit">Edit</button></td>
       <td><button  (click)="someMethod(i)" class="btn delete">Delete</button></td>
       <td><button  (click)="removee(i)" class="btn delete">Delete</button></td>
-      <td><button  (click)="outputIt(i)" class="btn delete">Delete</button></td>
-
+      <p [innerHtml]='someOtherMethod()'></p>
     </tr>
   </tbody>
 </table>

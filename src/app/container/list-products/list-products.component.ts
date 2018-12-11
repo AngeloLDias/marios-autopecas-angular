@@ -10,84 +10,76 @@ import { ProductsService } from '../../services/products.service'
 
 export class ListProductsComponent implements OnInit {
   public produtos: Produtos[];
-  public myData;
-  public nomeP = 'eu';
+  // public myData;
+  // public nomeP = 'eu';
   //  produtos:Array<any>
 
   // let nomes = document.querySelector('.nn') as HTMLElement;s
   public showModal: boolean = false;
   public showModalDontFound: boolean = false;
 
+  // testhtml = "<p>Hello world</p>";
+        
 
-constructor(private productsService: ProductsService) {
-
-
-
-  // this.produtos = [
-  //   { 'nome': 'VOLANTE DE DIREÇÃO ORIGINAL VOLKSWAGEN SEM TECLA DE BUZINA GOL VOYAGE SAVEIRO G6 2013 EM DIANTE', 'tipo': 'Direção', 'preco': 180, 'quantidade': 19, 'marca': 'VOLKSWAGEN', 'imagem': ['../../../assets/media/volante.jpg'] },
-
-  //   { 'nome': 'BARRA DE DIREÇÃO AXIAL COM ROSCA FINA FIAT MOBI NOVO UNO NOVO PALIO NOVO FIORINO E GRAND SIENA TODAS AS VERSÕES MECÂNICO E HIDRÁULICO', 'tipo': 'Direção', 'preco': 188.50, 'quantidade': 9, 'marca': 'AXIAL', 'imagem': ['../../../assets/media/barra.jpg'] },
-
-  //   {
-  //     'nome': `MACACO JACARÉ PORTÁTIL 2 TONELADAS COM MALETA`, 'tipo': 'Ferramentas', 'preco': 137.00, 'quantidade': 10, 'marca': 'JACARÉ', 'imagem': ['../../../assets/media/Macaco.jpg']
-  //   },
-
-
-  // ];
-
-}
-
-ngOnInit() {
-  this.productsService.getProdutos().subscribe(dados =>
-    this.produtos = dados
-  );
-}
+  constructor(private productsService: ProductsService) {
 
 
 
-someMethod(index) {
-  const myData = {produtos: this.produtos[index++]};
-  
-  this.productsService.set('produtos', myData);
- 
-  // this.produtos.splice(index, 1);
-}
+    // this.produtos = [
+    //   { 'nome': 'VOLANTE DE DIREÇÃO ORIGINAL VOLKSWAGEN SEM TECLA DE BUZINA GOL VOYAGE SAVEIRO G6 2013 EM DIANTE', 'tipo': 'Direção', 'preco': 180, 'quantidade': 19, 'marca': 'VOLKSWAGEN', 'imagem': ['../../../assets/media/volante.jpg'] },
 
-someOtherMethod() {
-  this.myData = this.productsService.get('produtos');
-  // myData.push(this.productsService)
-}
+    //   { 'nome': 'BARRA DE DIREÇÃO AXIAL COM ROSCA FINA FIAT MOBI NOVO UNO NOVO PALIO NOVO FIORINO E GRAND SIENA TODAS AS VERSÕES MECÂNICO E HIDRÁULICO', 'tipo': 'Direção', 'preco': 188.50, 'quantidade': 9, 'marca': 'AXIAL', 'imagem': ['../../../assets/media/barra.jpg'] },
 
-removee(index){
-  const myData = {produtos: this.produtos[index]};
-  this.productsService.remove('produtos', myData);
+    //   {
+    //     'nome': `MACACO JACARÉ PORTÁTIL 2 TONELADAS COM MALETA`, 'tipo': 'Ferramentas', 'preco': 137.00, 'quantidade': 10, 'marca': 'JACARÉ', 'imagem': ['../../../assets/media/Macaco.jpg']
+    //   },
 
 
-  
-openModal() {
-  this.showModal = true;
-}
-// closeModal() {
-//   this.showModal = false;
-// }
-toggleModal() {
-  if (this.showModal == false) {
+    // ];
+
+  }
+
+  ngOnInit() {
+    this.productsService.getProdutos().subscribe(dados =>
+      this.produtos = dados
+    );
+  }
+
+
+  // modal
+
+
+  openModal() {
     this.showModal = true;
   }
-  else {
-    this.showModal = false;
+  // closeModal() {
+  //   this.showModal = false;
+  // }
+  toggleModal() {
+    if (this.showModal == false) {
+      this.showModal = true;
+    }
+    else {
+      this.showModal = false;
+    }
   }
-}
 
 
-// local storage
+  // local storage
 
-creatlocal() {
-  localStorage.setItem(this.nomeP, 'Value');
-}
-  // trackByFn(index, item) {
+  someMethod(index) {
+    const myData = { produtos: this.produtos[index] };
+    this.productsService.set(index , myData);
+  }
 
-  //    item.value.Id = index+1
-  //   return index; 
-  // } 
+  someOtherMethod(index) {
+    const myData = this.productsService.get(index);
+    
+    return myData;
+  }
+
+  removee(index) {
+    const myData = { produtos: this.produtos[index] };
+    this.productsService.remove(index, myData);
+  }
 }
