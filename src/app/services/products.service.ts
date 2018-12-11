@@ -16,6 +16,14 @@ export class ProductsService {
   // constructor() { }
   constructor(private http: HttpClient) { }
 
+  getProdutos(): Observable<Produtos[]> {
+
+    return this.http.get<Produtos[]>(this.url);
+  }
+
+
+  // local storage
+
   set(key: string, data: any): void {
     try {
       localStorage.setItem(key, JSON.stringify(data));
@@ -36,13 +44,6 @@ export class ProductsService {
     localStorage.removeItem(key)
     localStorage.removeItem(JSON.stringify(data))
   }
-  
-  getProdutos(): Observable<Produtos[]> {
-
-    return this.http.get<Produtos[]>(this.url);
-  }
-
-   
 
 }
 

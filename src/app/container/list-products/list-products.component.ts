@@ -69,17 +69,21 @@ export class ListProductsComponent implements OnInit {
 
   someMethod(index) {
     const myData = { produtos: this.produtos[index] };
-    this.productsService.set(index , myData);
+    this.productsService.set('produto'+index , myData);
+    console.log(myData.produtos.nome)
   }
 
   someOtherMethod(index) {
-    const myData = this.productsService.get(index);
-    
-    return myData;
+    const myData2 = { produtos: this.produtos[index] };
+
+    document.body.querySelector("#minhadiv").innerHTML = myData2.produtos.nome;
+    console.log(myData2.produtos)
   }
 
   removee(index) {
     const myData = { produtos: this.produtos[index] };
-    this.productsService.remove(index, myData);
+    this.productsService.remove('produto'+index, myData);
   }
+
+  
 }
