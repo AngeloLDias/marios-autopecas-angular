@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Produtos } from '../../model/pruducts';
 // import { Pacientes } from '../../model/pruducts';
 import { ProductsService } from '../../services/products.service'
@@ -10,7 +10,7 @@ import { ProductsService } from '../../services/products.service'
 
 
 export class ListProductsComponent implements OnInit {
-  public produtos: Produtos[];
+    produtos: Produtos[];
   // public pacientes: Paciente[];
   // public myData;
   // public nomeP = 'eu';
@@ -21,7 +21,7 @@ export class ListProductsComponent implements OnInit {
   public showModalDontFound: boolean = false;
 
   // testhtml = "<p>Hello world</p>";
-        
+
 
   constructor(private productsService: ProductsService) {
 
@@ -30,7 +30,7 @@ export class ListProductsComponent implements OnInit {
   ngOnInit() {
     this.productsService.getProdutos().subscribe(dados =>
       this.produtos = dados
-    );
+    );  
   }
 
 
@@ -105,30 +105,32 @@ export class ListProductsComponent implements OnInit {
 
 
 
-  
+
   // public nome;
   someMethod(index) {
     const myData = { produtos: this.produtos[index] };
+    this.produtos.push(myData.produtos)
+    console.log(myData)
     // this.productsService.set('produto'+index , myData);
-    this.productsService.set('nome'+index ,myData.produtos.nome);
-    this.productsService.set('peso'+index , myData.produtos.peso);
-    this.productsService.set('altura'+index , myData.produtos.altura);
+    this.productsService.set('nome' + index, myData.produtos.nome);
+    this.productsService.set('peso' + index, myData.produtos.peso);
+    this.productsService.set('altura' + index, myData.produtos.altura);
     // this.productsService.set('gordura'+index , myData.produtos.gordura);
     // this.productsService.set('imc'+index , myData.produtos.imc);
     // this.produtos.push(myData.produtos);
     // this.someOtherMethod(index)
-    document.getElementById("nome").innerHTML += this.productsService.get('nome'+index);
-    document.getElementById("nome").innerHTML += this.productsService.get('peso'+index);
-    document.getElementById("nome").innerHTML += this.productsService.get('altura'+index);
+    document.getElementById("nome").innerHTML += this.productsService.get('nome' + index);
+    document.getElementById("nome").innerHTML += this.productsService.get('peso' + index);
+    document.getElementById("nome").innerHTML += this.productsService.get('altura' + index);
     alert("Produto adicionado ao carrinho!");
   }
-  
+
   someOtherMethod(index) {
     // const myData = this.productsService.get('nome'+index);
     // const myData2 = this.productsService.get('peso'+index);
     // const myData3 = this.productsService.get('altura'+index);
     // this.pacientes.push(myData2.produtos);
-    
+
     // document.getElementById("nome").innerHTML += this.productsService.get('nome'+index);
     // document.getElementById("nome").innerHTML += this.productsService.get('peso'+index);
     // document.getElementById("nome").innerHTML += this.productsService.get('altura'+index);
