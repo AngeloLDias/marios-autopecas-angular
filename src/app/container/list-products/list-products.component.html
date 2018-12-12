@@ -38,7 +38,53 @@
     </tr>
   </tbody>
 </table> 
-
+<!-- 
  <div id="minhadiv"></div>
 <button (click)="someOtherMethod()">fffffffffff</button> 
 <button (click)="someOtherMethod(i)">fffffffffff</button> 
+<div *ngFor="let list of list1">
+<p>{{list.nome}} - {{list.peso}}</p>
+</div> -->
+
+
+
+
+<!-- 
+<table>
+
+  <thead>
+    <tr>
+      <th>item</th>
+      <th>nome</th>
+      <th>tipo</th>
+      <th>preço</th>
+      <th>quantidade</th>
+      <th>marca</th>
+      <th>imagem</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr  #nome *ngFor="let paciente of pacientes; let i = index; ">
+      <td>{{i + 1}} </td>
+      <td  class="nn">{{paciente.nome}}</td>
+      <td>{{paciente.imc}}</td>
+      <td>R$ {{paciente.peso}}</td>
+      <td>{{paciente.altura}}</td>
+      <td>{{paciente.gordura}}</td>
+      <td><img src="{{paciente.imagem}}" width="95px" alt=""></td>
+      <td><button (click)="toggleModal()" class="btn edit">Edit</button></td>
+      <td><button  (click)="someMethod(i) " class="btn delete">Delete</button></td>
+      <td><button  (click)="someOtherMethod(i)" class="btn delete">Delete</button></td> -->
+      <!-- <p [innerHtml]='someOtherMethod()'></p> -->
+    <!-- </tr>
+  </tbody>
+</table>  -->
+
+<button type="button" id="adicionar1" id="produto1" (click)="someMethod('Sabão', document.getElementById('peso1'), '2.00', 1)"> Comprar </button>
+
+<div id="nome"></div>
+<!-- <div id="peso"></div>
+<div id="altura"></div> -->

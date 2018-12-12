@@ -5,5 +5,11 @@ export class Produtos {
     quantidade: number;
     marca: string;
     imagem: Array<string>;
+    peso: any;
+    altura: number;
+    imc: number;
+    gordura: number;
+
     // imagem: string;
 };
+
