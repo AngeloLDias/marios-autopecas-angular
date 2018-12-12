@@ -1,17 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { LANG } from '../../theme/pt'
-import { Produtos } from '../../model/pruducts';
+
 import { ProductsService } from '../../services/products.service'
+import  { CartService } from '../../services/cart.service';
+
+import { Produtos } from '../../model/pruducts';
 
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
+  // providers: [ ProductsService, CartService ]
 })
 export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
+
+  constructor(private productsService: ProductsService,
+    private cartService:CartService
+    ) { }
+
+
+    ngOnInit() {
+      this.productsService.getProdutos().subscribe(dados =>
+        this.produtos = dados)
+        
+        console.log('aabbba', this.cartService.exibirItens())
+    
+      ;  
+    }
+
+    addItemCart(index):void{
+      // this.cartService.additem(this)
+      console.log(index)
+    }
 
   public lists = [
     {
@@ -67,7 +90,6 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  constructor(private productsService: ProductsService) { }
   // constructor() {
 
   // this.produtos = [
@@ -114,10 +136,6 @@ export class ProductsComponent implements OnInit {
 
 
 
-ngOnInit() {
-  this.productsService.getProdutos().subscribe(dados =>
-    this.produtos = dados
-  );  
-}
+
 
 }

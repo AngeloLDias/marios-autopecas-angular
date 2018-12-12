@@ -8,11 +8,13 @@
   </div>
 
   <div class="product">
-    <div class="box-product" *ngFor="let produto of produtos">
+    <div class="box-product" *ngFor="let produto of produtos; let i of index ">
       <img src="{{produto.imagem}}" alt="">
       <p>{{produto.nome}}</p>
       <p>Por: R${{produto.imc}}</p>
-      <button>ADICIONAR</button>
+      <button
+      (click)="addItemCart(i)"
+      >ADICIONAR</button>
     </div>
   </div>
 </section>
