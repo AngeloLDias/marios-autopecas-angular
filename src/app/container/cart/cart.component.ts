@@ -15,11 +15,11 @@ export class CartComponent implements OnInit {
     private cartService: CartService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() {  
     this.productsService.getProdutos().subscribe(dados =>
     this.produtos = dados)
     
-    console.log('aaa', this.cartService.exibirItens())
+    console.log('aaa', this.cartService.displayItens())
   }
 
 

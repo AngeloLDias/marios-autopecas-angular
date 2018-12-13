@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LANG } from '../../theme/pt'
 
 import { ProductsService } from '../../services/products.service'
-import  { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service';
 
 import { Produtos } from '../../model/pruducts';
 
@@ -18,23 +18,23 @@ export class ProductsComponent implements OnInit {
   public produtos: Produtos[];
 
   constructor(private productsService: ProductsService,
-    private cartService:CartService
-    ) { }
+    private cartService: CartService
+  ) { }
 
 
-    ngOnInit() {
-      this.productsService.getProdutos().subscribe(dados =>
-        this.produtos = dados)
-        
-        console.log('aabbba', this.cartService.exibirItens())
-    
-      ;  
-    }
+  ngOnInit() {
+    this.productsService.getProdutos().subscribe(dados =>
+      this.produtos = dados)
 
-    addItemCart(index):void{
-      // this.cartService.additem(this)
-      console.log(index)
-    }
+    // console.log('aabbba', this.cartService.displayItens())
+
+      ;
+  }
+
+  addItemCart(index): void {
+    // this.cartService.additem(this)
+    console.log(index)
+  }
 
   public lists = [
     {
