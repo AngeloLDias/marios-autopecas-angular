@@ -12,7 +12,7 @@ export class CartService {
   }
 
   public includeItem(produtos: Produtos): void {
-    console.log('dsfsdfdsf', produtos)
+    console.log('produtos recebida ', produtos)
   }
 
 }

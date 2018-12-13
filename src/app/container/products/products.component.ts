@@ -26,14 +26,14 @@ export class ProductsComponent implements OnInit {
     this.productsService.getProdutos().subscribe(dados =>
       this.produtos = dados)
 
-    // console.log('aabbba', this.cartService.displayItens())
+    console.log('aabbba', this.cartService.displayItens())
 
       ;
   }
 
-  addItemCart(index): void {
-    // this.cartService.additem(this)
-    console.log(index)
+  public  addItemCart(index): void {
+    this.cartService.includeItem(index)
+    // console.log('esse eh o prod', index)
   }
 
   public lists = [
