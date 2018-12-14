@@ -11,8 +11,9 @@
     <div class="box-product" *ngFor="let produto of produtos; let i of index ">
       <img src="{{produto.imagem}}" alt="">
       <p>{{produto.nome}}</p>
-      <p>Por: R${{produto.imc}}</p>
+      <p>Por: R${{produto.preco}}</p>
       <button (click)="addItemCart(i)">ADICIONAR</button>
+      <button (click)="removee(produto)">ADICIONAR</button>
     </div>
   </div>
 </section>

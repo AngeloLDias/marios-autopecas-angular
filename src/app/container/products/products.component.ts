@@ -23,19 +23,27 @@ export class ProductsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.productsService.getProdutos().subscribe(dados =>
-      this.produtos = dados)
-
-    console.log('aabbba', this.cartService.displayItens())
-
-      ;
+    // this.productsService.getProdutos().subscribe(dados =>
+    // this.produtos = dados)
+    this.produtos = this.productsService.produtos
+    this.cartService.displayItens()
   }
 
-  public  addItemCart(index): void {
+  public addItemCart(produtos:Produtos,index) {
+    // this.cartService.includeItem(this.productsService.produtos)
+    // console.log('s', this.cartService.displayItens())
+
     this.cartService.includeItem(index)
-    // console.log('esse eh o prod', index)
-  }
 
+    // console.log('esse eh o prod', produtos)
+  }
+  id(index){
+    return index;
+  }
+  removee(index) {
+    this.cartService.remove(index);
+
+  }
   public lists = [
     {
       'section': ' MARCAS',

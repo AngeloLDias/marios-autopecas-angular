@@ -28,9 +28,9 @@ export class ListProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productsService.getProdutos().subscribe(dados =>
-      this.produtos = dados
-    );  
+    // this.productsService.getProdutos().subscribe(dados =>
+    //   this.produtos = dados
+    // );  
   }
 
 
@@ -107,23 +107,23 @@ export class ListProductsComponent implements OnInit {
 
 
   // public nome;
-  someMethod(index) {
-    const myData = { produtos: this.produtos[index] };
-    this.produtos.push(myData.produtos)
-    console.log(myData)
-    // this.productsService.set('produto'+index , myData);
-    this.productsService.set('nome' + index, myData.produtos.nome);
-    this.productsService.set('peso' + index, myData.produtos.peso);
-    this.productsService.set('altura' + index, myData.produtos.altura);
-    // this.productsService.set('gordura'+index , myData.produtos.gordura);
-    // this.productsService.set('imc'+index , myData.produtos.imc);
-    // this.produtos.push(myData.produtos);
-    // this.someOtherMethod(index)
-    document.getElementById("nome").innerHTML += this.productsService.get('nome' + index);
-    document.getElementById("nome").innerHTML += this.productsService.get('peso' + index);
-    document.getElementById("nome").innerHTML += this.productsService.get('altura' + index);
-    alert("Produto adicionado ao carrinho!");
-  }
+  // someMethod(index) {
+  //   const myData = { produtos: this.produtos[index] };
+  //   this.produtos.push(myData.produtos)
+  //   console.log(myData)
+  //   // this.productsService.set('produto'+index , myData);
+  //   this.productsService.set('nome' + index, myData.produtos.nome);
+  //   this.productsService.set('peso' + index, myData.produtos.peso);
+  //   this.productsService.set('altura' + index, myData.produtos.altura);
+  //   // this.productsService.set('gordura'+index , myData.produtos.gordura);
+  //   // this.productsService.set('imc'+index , myData.produtos.imc);
+  //   // this.produtos.push(myData.produtos);
+  //   // this.someOtherMethod(index)
+  //   document.getElementById("nome").innerHTML += this.productsService.get('nome' + index);
+  //   document.getElementById("nome").innerHTML += this.productsService.get('peso' + index);
+  //   document.getElementById("nome").innerHTML += this.productsService.get('altura' + index);
+  //   alert("Produto adicionado ao carrinho!");
+  // }
 
   someOtherMethod(index) {
     // const myData = this.productsService.get('nome'+index);
