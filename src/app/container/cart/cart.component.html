@@ -1,13 +1,16 @@
+<div class="title">
+  <p>Produtos</p>
+</div>
 <table>
 
   <thead>
     <tr>
       <th>item</th>
       <th>nome</th>
-      <th>tipo</th>
+      <!-- <th>tipo</th> -->
       <th>preço</th>
       <th>quantidade</th>
-      <th>marca</th>
+      <!-- <th>marca</th> -->
       <th>imagem</th>
       <th></th>
       <th></th>
@@ -18,15 +21,15 @@
     <tr #nome *ngFor="let produto of produtos; let i = index; ">
       <td>{{i + 1}} </td>
       <td class="nn">{{produto.nome}}</td>
-      <td>{{produto.imc}}</td>
       <td>R$ {{produto.peso}}</td>
-      <td>{{produto.altura}}</td>
-      <td>{{produto.gordura}}</td>
+      <td><input type="number"></td>
       <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
-      <!-- <td><button (click)="toggleModal()" class="btn edit">Edit</button></td> -->
       <td><button (click)="someMethod(i)" class="btn delete">Delete</button></td>
-      <!-- <td><button (click)="removee(i)" class="btn delete">Delete</button></td> -->
-      <!-- <p [innerHtml]='someOtherMethod()'></p> -->
+
     </tr>
   </tbody>
 </table>
+
+<div class="btn-finalizar">
+  <button class="btn edit">Finlizar Compra</button>
+</div>

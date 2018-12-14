@@ -1,0 +1,54 @@
+* {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+
+  td {
+    padding: 0px 15px;
+  }
+
+}
+
+.btn-finalizar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px -49px;
+
+}
+
+.btn {
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  //   border: none;
+}
+
+.delete {
+  background-color: #f33e3e;
+}
+
+.edit {
+  background-color: #4f80f9;
+}
+
+.new {
+  background-color: #50e850;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin: 5px 0px;
+  background-color: green;
+
+  p {
+    font-size: 30px;
+    color: white;
+  }
+}

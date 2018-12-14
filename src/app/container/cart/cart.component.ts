@@ -16,10 +16,8 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit() {  
-    this.produtos = this.productsService.produtos
-
-    
-    console.log('aaa', this.cartService.displayItens())
+    this.productsService.getProdutos().subscribe(dados =>
+      this.produtos = dados)
   }
 
 
