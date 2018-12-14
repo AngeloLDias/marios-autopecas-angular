@@ -17,7 +17,9 @@ export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService,
+    private cartService: CartService
+    ) { }
 
 
   ngOnInit() {
@@ -25,11 +27,23 @@ export class ProductsComponent implements OnInit {
     this.produtos = dados)
   }
 
-  addItemCart(index) {
+  public addItemCart(index) {
     const myData = { produtos: this.produtos[index]};
     this.productsService.set('produto'+index , myData);
-    console.log(myData.produtos)
+    this.readItemCart(index)
+
+    // this.cartService.pushArray2()
   }
+
+  public readItemCart(index){
+    const myData = this.productsService.get('produto'+index);
+
+    let prod =  this.cartService.pushArray()
+    prod.push(myData.produtos)
+
+    // return myData;
+    console.log(prod)
+ }
 
   public lists = [
     {

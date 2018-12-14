@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   constructor(private productsService: ProductsService,
     private cartService: CartService
   ) { }
-
+    
   ngOnInit() {  
     this.productsService.getProdutos().subscribe(dados =>
       this.produtos = dados)
