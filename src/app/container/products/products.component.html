@@ -8,7 +8,7 @@
   </div>
 
   <div class="product">
-    <div class="box-product" *ngFor="let produto of produtos; let i of index ">
+    <div class="box-product" *ngFor="let produto of produtos; let i = index;">
       <img src="{{produto.imagem}}" alt="">
       <p>{{produto.nome}}</p>
       <p>Por: R${{produto.preco}}</p>
