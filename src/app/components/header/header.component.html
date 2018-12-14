@@ -7,8 +7,12 @@
   <div class="search">
     <div><input type="text"><button>BUSCA</button></div>
     <div class="user-buy">
-      <div><img routerLink="login" class="img-login" src="../../../assets/media/iconmonstr-user-19.svg" alt=""> <p>Login ou <br>Cadastro</p></div>
-      <div class="car"> <img src="../../../assets/media/294547.svg" alt=""> <p>0</p></div>
+      <div><img routerLink="login" class="img-login" src="../../../assets/media/iconmonstr-user-19.svg" alt="">
+        <p>Login ou <br>Cadastro</p>
+      </div>
+      <div class="car" routerLink="carrinho"> <img src="../../../assets/media/294547.svg" alt="">
+        <p>0</p>
+      </div>
     </div>
   </div>
   <!-- menu desktop -->
@@ -31,18 +35,18 @@
 
 <!-- sub menu -->
 
-<section class="sub-menu">
+<!-- <section class="sub-menu">
   <ul>
-    <li>NOME</li>
-    <li>NOME</li>
-    <li>NOME</li>
-    <li>NOME</li>
-    <li>NOME</li>
-    <li>NOME</li>
-    <li>NOME</li>
-    <li>NOME</li>
+
+    <li *ngFor="let list of lists; let i = index" (click)='toogleDropDown(i)'>{{list.section}}
+      <div [ngClass]="{'open-dropDown': toogle}" class="dropDown">
+    <li class="item-drop" *ngFor="let cat of list.items">{{cat.item}}</li>
+
+    </div>
+    </li>
+
   </ul>
-</section>
+</section> -->
 
 <!-- menu mobile -->
 

@@ -6,7 +6,7 @@ import { CartService } from '../../services/cart.service';
 
 import { Produtos } from '../../model/pruducts';
 
-
+import { CartComponent } from '../../container/cart/cart.component'
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -16,6 +16,12 @@ import { Produtos } from '../../model/pruducts';
 export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
+
+
+  // public storageName :string = "cart";
+  // public cartArray = JSON.parse(localStorage.getItem(this.storageName));
+
+  // public cartComponent:CartComponent
 
   constructor(private productsService: ProductsService,
     private cartService: CartService
@@ -30,7 +36,13 @@ export class ProductsComponent implements OnInit {
   public addItemCart(index) {
     const myData = { produtos: this.produtos[index]};
     this.productsService.set('produto'+index , myData);
-    this.readItemCart(index)
+
+    let prod =  this.cartService.pushArray()
+    prod.push(myData.produtos)
+
+    console.log(prod)
+
+    // this.readItemCart(index)
 
     // this.cartService.pushArray2()
   }
@@ -38,11 +50,9 @@ export class ProductsComponent implements OnInit {
   public readItemCart(index){
     const myData = this.productsService.get('produto'+index);
 
-    let prod =  this.cartService.pushArray()
-    prod.push(myData.produtos)
+
 
     // return myData;
-    console.log(prod)
  }
 
   public lists = [

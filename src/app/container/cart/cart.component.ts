@@ -9,36 +9,38 @@ import  { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit {
   public produtos: Produtos[];
+  public number;
+  public data:Produtos[]
 
-  // aaa= 'aaaa'
+  // pushArray():Produtos {
+  //   const itemCarrinho = []
+  //       return this.produtos;
+  //   console.log(itemCarrinho)
+  // }
+  
+
   constructor(private productsService: ProductsService,
     private cartService: CartService
   ) { }
     
   ngOnInit() {  
-    this.productsService.getProdutos().subscribe(dados =>
-      this.produtos = dados)
+    
+    // this.productsService.getProdutos().subscribe(dados =>
+    //   this.produtos = dados)
+    for (let i = -1; i < 10; i++) {
+      console.log(i);
+      this.data =  JSON.parse(localStorage.getItem('produto'+i))
+      // document.getElementById("nome").innerHTML += this.data
+
+    console.log(this.data)
+
   }
-
-
-  // someMethod(index) {
-  //   const myData = { produtos: this.produtos[index] };
-  //   this.productsService.set('SOME_KEY', myData);
-  //   // this.produtos.splice(index, 1);
-
-
+    // let aa = ;
+  }
+  // createOptions() {
+  //   for (let i = 1; i < 100; i++) {
+  //     console.log(i);
+  //   }
   // }
-
-  // someOtherMethod() {
-  //   const myData = this.productsService.get('SOME_KEY');
-  // }
+  
 }
-// let dd = document.getElementById('nn');
-// let aa = document.querySelector('.aa')
-// console.log(dd);
-// console.log(aa);
-// console.log('hehe')
-
-// this.produtos.forEach(value => {
-//   console.log(value)
-// });

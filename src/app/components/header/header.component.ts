@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { LANG } from '../../theme/pt'
 
@@ -9,42 +9,107 @@ import { LANG } from '../../theme/pt'
 })
 export class HeaderComponent implements OnInit {
 
-  public lang  = LANG
+  public lang = LANG
   public toogleMenu = false;
+  public toogle = false;
+  public listMenu = [];
 
+
+  public lists = [
+    {
+      'section': 'ACESSÓRIO',
+
+      'items': [
+
+        { 'item': 'Aspiradores de Pó' },
+        { 'item': 'Cabos de Bateria' },
+        { 'item': 'Cabos de Som' },
+        { 'item': 'Calotas' },
+        { 'item': 'Calhas de Chuva' },
+        { 'item': 'Câmeras de ré' },
+        { 'item': 'Capas de Volante, Para-Sol e Capas de Carro' },
+        { 'item': 'Carregadores' },
+        { 'item': 'GPS' },
+
+      ]
+    },
+
+    {
+      'section': 'FERRAMENTAS',
+
+      'items': [
+
+        { 'item': 'Aspiradores de Pó' },
+        { 'item': 'Cabos de Bateria' },
+        { 'item': 'Cabos de Som' },
+        { 'item': 'Calotas' },
+        { 'item': 'Calhas de Chuva' },
+        { 'item': 'Câmeras de ré' },
+        { 'item': 'Capas de Volante, Para-Sol e Capas de Carro' },
+        { 'item': 'Carregadores' },
+        { 'item': 'GPS' },
+
+      ]
+    },
+
+    {
+      'section': 'ACESSÓRIO',
+
+      'items': [
+
+        { 'item': 'Aspiradores de Pó' },
+        { 'item': 'Cabos de Bateria' },
+        { 'item': 'Cabos de Som' },
+        { 'item': 'Calotas' },
+        { 'item': 'Calhas de Chuva' },
+        { 'item': 'Câmeras de ré' },
+        { 'item': 'Capas de Volante, Para-Sol e Capas de Carro' },
+        { 'item': 'Carregadores' },
+        { 'item': 'GPS' },
+
+      ]
+    },
+  ];
   @Input() active: string;
 
   public homeActive: boolean = false;
-  
+
   public productActive: boolean = false;
 
   public companyActive: boolean = false;
 
   public contactActive: boolean = false;
 
-  constructor() { }
+  constructor() {
+
+  }
+
+
 
   ngOnInit() {
-    console.log(this.active);
-    switch (this.active) {
-      case 'home':
-        this.homeActive = true;
-        break;
-      case 'produtos':
-        this.productActive = true;
-        break;
-      case 'quem-somos':
-        this.companyActive = true;
-        break;
-      case 'contato':
-        this.contactActive = true;
-        break;
-      default:
-        break;
-    }
+    // console.log(this.active);
+    // switch (this.active) {
+    //   case 'home':
+    //     this.homeActive = true;
+    //     break;
+    //   case 'produtos':
+    //     this.productActive = true;
+    //     break;
+    //   case 'quem-somos':
+    //     this.companyActive = true;
+    //     break;
+    //   case 'contato':
+    //     this.contactActive = true;
+    //     break;
+    //   default:
+    //     break;
+    // }
   }
-    
+
   toogleSideMenu() {
     this.toogleMenu = !this.toogleMenu;
+  }
+  toogleDropDown(index) {
+    this.toogle = !this.toogle
   }
 }
