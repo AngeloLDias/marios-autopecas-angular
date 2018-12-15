@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 import { LANG } from '../../theme/pt'
 
@@ -14,6 +15,8 @@ export class HeaderComponent implements OnInit {
   public toogle = false;
   public listMenu = [];
 
+  constructor(private cartService: CartService) {}
+  
 
   public lists = [
     {
@@ -80,13 +83,14 @@ export class HeaderComponent implements OnInit {
 
   public contactActive: boolean = false;
 
-  constructor() {
 
-  }
+  
 
 
 
   ngOnInit() {
+this.cartService.contItemCart()
+
     // console.log(this.active);
     // switch (this.active) {
     //   case 'home':

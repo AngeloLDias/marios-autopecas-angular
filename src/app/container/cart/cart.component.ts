@@ -1,46 +1,39 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Produtos } from '../../model/pruducts'
 import { ProductsService } from '../../services/products.service'
-import  { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service';
+
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+
   public produtos: Produtos[];
-  public number;
-  public data:Produtos[]
 
-  // pushArray():Produtos {
-  //   const itemCarrinho = []
-  //       return this.produtos;
-  //   console.log(itemCarrinho)
-  // }
-  
+  public qtdOptions = [];
+  private productsArray = Produtos;
 
-  constructor(private productsService: ProductsService,
+
+  //EventEmited
+  public productClicked: any;
+  private subscription: Subscription;
+
+  public cartArray: Produtos[];
+
+
+  constructor(
     private cartService: CartService
-  ) { }
-    
-  ngOnInit() {  
-    
-    // this.productsService.getProdutos().subscribe(dados =>
-    //   this.produtos = dados)
-    for (let i = -1; i < 10; i++) {
-      console.log(i);
-      this.data =  JSON.parse(localStorage.getItem('produto'+i))
-      // document.getElementById("nome").innerHTML += this.data
+  ) {     this.produtos = this.cartService.cartArray;}
 
-    console.log(this.data)
+  deleteProduct(_index){
+    this.cartService.deleteProduct(_index);
+  }
+  ngOnInit() {
 
   }
-    // let aa = ;
-  }
-  // createOptions() {
-  //   for (let i = 1; i < 100; i++) {
-  //     console.log(i);
-  //   }
-  // }
-  
+
 }

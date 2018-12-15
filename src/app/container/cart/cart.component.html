@@ -17,20 +17,20 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody  *ngFor="let produto of produtos; let i = index">
     <tr>
       <td> </td>
-      <td class="nn"></td>
+      <td class="nn">{{produto.nome}}</td>
       <td>R$ {{produto.peso}}</td>
       <td><input type="number"></td>
       <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
-      <td><button (click)="someMethod(i)" class="btn delete">Delete</button></td>
+      <td><button (click)="deleteProduct(i)" class="btn delete">Delete</button></td>
 
     </tr>
   </tbody>
 </table>
 
 <div class="btn-finalizar">
-  <button (click)="createOptions()" class="btn edit">Finlizar Compra</button>
+  <button class="btn edit">Finlizar Compra</button>
 </div>
 <div id="nome"></div>

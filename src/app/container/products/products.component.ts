@@ -17,43 +17,27 @@ export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
 
-
-  // public storageName :string = "cart";
-  // public cartArray = JSON.parse(localStorage.getItem(this.storageName));
-
-  // public cartComponent:CartComponent
+  // public productsList: Array<any> = Produtos;
 
   constructor(private productsService: ProductsService,
     private cartService: CartService
     ) { }
 
+  addToCart(produto){
+    this.cartService.addToCart(produto);
+    console.log(this.produtos)
+  }
+
+
 
   ngOnInit() {
     this.productsService.getProdutos().subscribe(dados =>
     this.produtos = dados)
+
+    this.cartService.initStorage()
+
   }
 
-  public addItemCart(index) {
-    const myData = { produtos: this.produtos[index]};
-    this.productsService.set('produto'+index , myData);
-
-    let prod =  this.cartService.pushArray()
-    prod.push(myData.produtos)
-
-    console.log(prod)
-
-    // this.readItemCart(index)
-
-    // this.cartService.pushArray2()
-  }
-
-  public readItemCart(index){
-    const myData = this.productsService.get('produto'+index);
-
-
-
-    // return myData;
- }
 
   public lists = [
     {

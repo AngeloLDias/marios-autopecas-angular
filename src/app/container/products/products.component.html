@@ -11,8 +11,8 @@
     <div class="box-product" *ngFor="let produto of produtos; let i = index;">
       <img src="{{produto.imagem}}" alt="">
       <p>{{produto.nome}}</p>
-      <p>Por: R${{produto.preco}}</p>
-      <button (click)="addItemCart(i)">ADICIONAR</button>
+      <p>Por: R${{produto.peso}}</p>
+      <button (click)="addToCart(produto)">ADICIONAR</button>
       <!-- <button (click)="readItemCart(i)">ADICIONAR</button> -->
       <!-- <button (click)="removee(produto)">ADICIONAR</button> -->
     </div>
