@@ -11,6 +11,10 @@ import { Produtos } from '../model/pruducts';
 export class CartService {
   produtos: Produtos[];
   public qtdOptions = [];
+  // private productsArray = produtos;
+  public storageName :string = "cart";
+  public cartArray = JSON.parse(localStorage.getItem(this.storageName));
+
 
   public pushArray(): Produtos[] {
     let aa = this.produtos 
