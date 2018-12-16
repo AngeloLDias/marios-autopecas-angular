@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ModalService } from '../../../services/modal.service'
 @Component({
   selector: 'app-modal-confirm-product',
   templateUrl: './modal-confirm-product.component.html',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalConfirmProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService:ModalService) { }
+  public showModal: boolean = true;
 
   ngOnInit() {
   }
-
+  // closeModal(){
+  //   this.showModal = false
+  // }
+  toggleModal() {
+    if (this.showModal == false) {
+      this.showModal = true;
+    }
+    else {
+      this.showModal = false
+    }
+  }
 }

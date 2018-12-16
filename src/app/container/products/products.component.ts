@@ -5,7 +5,7 @@ import { LANG } from '../../theme/pt'
 
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
-import { ModalService} from '../../services/modal.service';
+import { ModalService } from '../../services/modal.service';
 // modelos
 
 import { Produtos } from '../../model/pruducts';
@@ -22,17 +22,18 @@ import { CartComponent } from '../../container/cart/cart.component'
 export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
+
   public showModal: boolean = false;
 
   // public showModal2 = this.modalService
-    // public productsList: Array<any> = Produtos;
+  // public productsList: Array<any> = Produtos;
 
   constructor(private productsService: ProductsService,
     private cartService: CartService,
-    private modalService:ModalService
-    ) { }
+    // private modalService:ModalService
+  ) { }
 
-  addToCart(produto){
+  addToCart(produto) {
     this.cartService.addToCart(produto);
     console.log(this.produtos)
   }
@@ -41,17 +42,26 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.productsService.getProdutos().subscribe(dados =>
-    this.produtos = dados)
+      this.produtos = dados)
 
     this.cartService.initStorage()
 
   }
 
-  op(){
-    this.modalService.openModal()
-  }
-  cp(){
-    this.modalService.closeModal()
+  // openModal() {
+  //   this.showModal = true;
+  // }
+  // closeModal() {
+  //   this.showModal = false;
+  // }
+
+  toggleModal() {
+    if (this.showModal == false) {
+      this.showModal = true;
+    }
+    else {
+      this.showModal = false
+    }
   }
 
   public lists = [

@@ -9,6 +9,8 @@
   height: 14vh;
   position: fixed;
   box-shadow: 1px -2px 14px;
+  z-index: 3;
+
   img {
     width: 22vh;
     cursor: pointer;
@@ -125,20 +127,22 @@
     display: none;
 
   }
-  .open-dropDown{
+
+  .open-dropDown {
     display: block;
     position: absolute;
     margin: 20px 0px;
   }
 
-  .item-drop{
+  .item-drop {
     background-color: green;
     padding: 2px 17px;
     max-width: 274px;
     margin: -1px;
     align-items: end;
-    display: flex;  }
-    
+    display: flex;
+  }
+
 }
 
 // menu mobile

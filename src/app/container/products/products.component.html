@@ -13,7 +13,16 @@
       <img src="{{produto.imagem}}" alt="">
       <p>{{produto.nome}}</p>
       <p>Por: R${{produto.peso}}</p>
-      <button (click)="op()" (click)="addToCart(produto)">ADICIONAR</button>
+      <app-button
+       (click)="toggleModal()"
+       (click)="addToCart(produto)"
+       text="ADICIONAR"
+       BC="#2a7023"
+       width="150px"
+       height="42px"
+       color="#fff"
+       ></app-button>
+      
     </div>
   </div>
 </section>

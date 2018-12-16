@@ -25,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
 import { CartComponent } from './container/cart/cart.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalConfirmProductComponent } from './container/modal-content/modal-confirm-product/modal-confirm-product.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ModalConfirmProductComponent } from './container/modal-content/modal-co
     CartComponent,
     ModalComponent,
     ModalConfirmProductComponent,
+    ButtonComponent,
 
     // UICarouselComponent,
     
