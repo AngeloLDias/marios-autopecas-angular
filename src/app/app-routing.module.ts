@@ -5,10 +5,10 @@ import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
 import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
-import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 import { LoginComponent } from './container/login/login.component';
 import { CartComponent } from './container/cart/cart.component';
 import { AdminComponent } from './container/admin/admin.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'carrinho', component: CartComponent },
   { path: 'admin', component: AdminComponent },
 
-  { path: 'dev-a', component: CartComponent },
+  { path: 'dev-a', component: ModalComponent },
   { path: 'dev-b', component: ListProductsComponent },
 
 ];

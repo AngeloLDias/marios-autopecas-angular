@@ -1,5 +1,6 @@
-<section class="products">
 
+<app-modal-confirm-product *ngIf="showModal"></app-modal-confirm-product>
+<section class="products">
   <div class="filter" *ngFor="let list of lists">
     <p>{{list.section}}</p>
     <ul>
@@ -12,9 +13,7 @@
       <img src="{{produto.imagem}}" alt="">
       <p>{{produto.nome}}</p>
       <p>Por: R${{produto.peso}}</p>
-      <button (click)="addToCart(produto)">ADICIONAR</button>
-      <!-- <button (click)="readItemCart(i)">ADICIONAR</button> -->
-      <!-- <button (click)="removee(produto)">ADICIONAR</button> -->
+      <button (click)="op()" (click)="addToCart(produto)">ADICIONAR</button>
     </div>
   </div>
 </section>

@@ -10,7 +10,6 @@ import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
 import { SlickModule } from 'ngx-slick';
 import { AdminComponent } from './container/admin/admin.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
-import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 import { HttpModule } from '@angular/http'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
@@ -24,6 +23,8 @@ import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { CartComponent } from './container/cart/cart.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalConfirmProductComponent } from './container/modal-content/modal-confirm-product/modal-confirm-product.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +37,10 @@ import { CartComponent } from './container/cart/cart.component';
     WhoWeAreComponent,
     AdminComponent,
     ListProductsComponent,
-    ModalEditComponent,
     LoginComponent,
     CartComponent,
+    ModalComponent,
+    ModalConfirmProductComponent,
 
     // UICarouselComponent,
     

@@ -26,6 +26,10 @@ body::-webkit-scrollbar-thumb {
   background-color: $colorPrimary;
   border-radius: 10px;
 }
+
+.content{
+  padding-top: 14vh;
+}
 button{
   cursor: pointer;
 }

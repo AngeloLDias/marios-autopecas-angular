@@ -13,8 +13,7 @@ export class ListProductsComponent implements OnInit {
     produtos: Produtos[];
 
 
-  public showModal: boolean = false;
-  public showModalDontFound: boolean = false;
+
 
 
 
@@ -32,18 +31,7 @@ export class ListProductsComponent implements OnInit {
   // modal
 
 
-  openModal() {
-    this.showModal = true;
-  }
 
-  toggleModal() {
-    if (this.showModal == false) {
-      this.showModal = true;
-    }
-    else {
-      this.showModal = false;
-    }
-  }
 
 
   // local storage

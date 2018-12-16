@@ -18,7 +18,7 @@ export class CartService {
   public storageName: string = "cart";
 
   public cartArray: Produtos[] = JSON.parse(localStorage.getItem(this.storageName)) ? JSON.parse(localStorage.getItem(this.storageName)) : [];
-  
+
   private productsArray = Produtos;
   private initArr = [];
 
@@ -29,6 +29,13 @@ export class CartService {
     this.cartArray.push(produto);
     this.updateStorage(this.cartArray);
     this.contItemCart()
+
+    if(this.cartArray == this.cartArray){
+      console.log('qunatida',+1)
+    }
+    else{
+      console.log('qunatidade ehj a msms')
+    }
   }
 
   initStorage() {
@@ -48,12 +55,13 @@ export class CartService {
     localStorage.setItem(this.storageName, updateString);
   }
 
-  contItemCart(){
-    let a =this.cartArray.length;
-    let b = document.querySelector("#nome")
-     b.textContent = a.toString()
-     
-     // return a;
-  } 
+  contItemCart() {
+    // let a = this.cartArray.length;
+    // let b = document.querySelector("#nome")
+    // b.textContent = a.toString()
+
+    document.querySelector("#nome").textContent = this.cartArray.length.toString()
+
+  }
 
 }

@@ -3,6 +3,8 @@
 .products {
   display: flex;
   padding: 20px;
+  // margin-top:14vh;
+  // padding-top: 18vh;
 
   .filter {
     width: 363px;
@@ -13,6 +15,7 @@
       background-color: green;
       color: white;
       padding: 13px;
+      
       text-align: center;
     }
 

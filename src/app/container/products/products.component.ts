@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { LANG } from '../../theme/pt'
 
+// serviços
+
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
+import { ModalService} from '../../services/modal.service';
+// modelos
 
 import { Produtos } from '../../model/pruducts';
+
+// components
 
 import { CartComponent } from '../../container/cart/cart.component'
 @Component({
@@ -16,11 +22,14 @@ import { CartComponent } from '../../container/cart/cart.component'
 export class ProductsComponent implements OnInit {
   public lang = LANG
   public produtos: Produtos[];
+  public showModal: boolean = false;
 
-  // public productsList: Array<any> = Produtos;
+  // public showModal2 = this.modalService
+    // public productsList: Array<any> = Produtos;
 
   constructor(private productsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private modalService:ModalService
     ) { }
 
   addToCart(produto){
@@ -38,6 +47,12 @@ export class ProductsComponent implements OnInit {
 
   }
 
+  op(){
+    this.modalService.openModal()
+  }
+  cp(){
+    this.modalService.closeModal()
+  }
 
   public lists = [
     {
