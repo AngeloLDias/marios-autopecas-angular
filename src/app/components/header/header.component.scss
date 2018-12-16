@@ -6,21 +6,27 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 14vh;
+  height: 107px;
   position: fixed;
   box-shadow: 1px -2px 14px;
   z-index: 3;
 
+  .logo {
+    flex: 1;
+  }
+
   img {
-    width: 22vh;
+    width: 165px;
     cursor: pointer;
-    margin: 0px 30px;
+    margin: 0px 85px;
   }
 
   nav {
     display: flex;
     justify-content: space-around;
-    // width: 40%;
+    /* flex: 1; */
+    // width: -37px;
+    width: 35%;
 
     li {
       list-style: none;
@@ -33,7 +39,7 @@
       padding: 10px;
       cursor: pointer;
       border-bottom: 2px solid transparent;
-      margin-right: 23px;
+      // margin-right: 23px;
 
       .active {
         border-bottom: 2px solid $colorPrimary;
@@ -51,15 +57,40 @@
 
   .search {
     display: flex;
+    margin: 0px 13px;
+
+    .user-buy {
+      display: flex;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0px 10px;
+      }
+
+    }
+
+    .login {
+      flex-direction: column;
+      border-right: 1px solid;
+      p {
+        margin: 4px 0px;
+        display: none;
+      }
+    }
 
     .car {
       p {
         font-weight: bolder;
-        font-size: 18px;
-        color: white;
-        background-color: green;
-        padding: 3px 9px;
+        font-size: 21px;
+        color: black;
+        /* background-color: green; */
+        /* padding: 3px 9px; */
         border-radius: 100%;
+        position: absolute;
+        // top: 26px; 
+        /* left: 98%; */
+        margin-top: -15px;
       }
     }
 
@@ -147,16 +178,7 @@
 
 // menu mobile
 
-.user-buy {
-  display: flex;
 
-  img {
-    width: 35px;
-    height: 35px;
-    margin: 0px 10px;
-  }
-
-}
 
 .line-1,
 .line-2,

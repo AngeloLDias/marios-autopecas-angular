@@ -57,7 +57,10 @@ button{
 }
 
 .slick-list {
-  height: 24vh;
+  height: 15vh;
+}
+.slick-slide img {
+  width: 138px !important;
 }
 
 @media(max-width:768px) {

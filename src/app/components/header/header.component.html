@@ -1,21 +1,11 @@
+<!-- menu desktop -->
 <header class="header desktop">
 
-  <p routerLink="home">
+  <p class="logo" routerLink="home">
     <img class="logo-marios" routerLink="" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
 
-  <div class="search">
-    <!-- <div><input type="text"><button>BUSCA</button></div> -->
-    <div class="user-buy">
-      <div><img routerLink="login" class="img-login" src="../../../assets/media/iconmonstr-user-19.svg" alt="">
-        <p>Login ou <br>Cadastro</p>
-      </div>
-      <div class="car" routerLink="carrinho"> <img src="../../../assets/media/294547.svg" alt="">
-        <p id="nome"></p>
-      </div>
-    </div>
-  </div>
-  <!-- menu desktop -->
+
 
   <nav class="nav-header">
     <li>
@@ -31,6 +21,18 @@
       <p routerLink="contato" [ngClass]="{'active': productActive}">{{lang.contact}}</p>
     </li>
   </nav>
+  <div class="search">
+    <!-- <div><input type="text"><button>BUSCA</button></div> -->
+    <div class="user-buy">
+      <div class="login"><img routerLink="login" class="img-login" src="../../../assets/media/iconmonstr-user-19.svg"
+          alt="">
+        <p>Login</p>
+      </div>
+      <div class="car" routerLink="carrinho"> <img src="../../../assets/media/294547.svg" alt="">
+        <p id="nome"></p>
+      </div>
+    </div>
+  </div>
 </header>
 
 <!-- sub menu -->
