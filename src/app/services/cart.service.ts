@@ -24,25 +24,36 @@ export class CartService {
 
   addToCart(produto) {
     //get array of API
-    console.log(this.cartArray);
+    // console.log(this.cartArray);
     // console.log(this.cartArray.length);
     this.cartArray.push(produto);
     this.updateStorage(this.cartArray);
     this.contItemCart()
 
-    if(this.cartArray == this.cartArray){
-      console.log('qunatida',+1)
-    }
-    else{
-      console.log('qunatidade ehj a msms')
-    }
+    // if(this.cartArray == this.cartArray){
+    //   console.log('qunatida',+1)
+    // }
+    // else{
+    //   console.log('qunatidade ehj a msms')
+    // }
   }
 
   initStorage() {
-    // if (!localStorage.getItem(this.storageName)) {
-    localStorage.setItem(this.storageName, JSON.stringify(this.initArr));
-    console.log(this.initArr)
+
+    if(this.cartArray.length == 0){
+      console.log('vazio')
+
+      document.querySelector(".nome").textContent = "CARRINHO VAZIO"
+      // localStorage.setItem(this.storageName, JSON.stringify(this.initArr));
+    }
+      // else{
+      //   localStorage.setItem(this.storageName, JSON.stringify(this.initArr));
+      //   console.log('item adicionado');
+      // }
+    
+
   }
+  
 
   deleteProduct(_index) {
     this.cartArray.splice(_index, 1);

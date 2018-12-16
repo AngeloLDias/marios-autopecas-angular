@@ -33,6 +33,7 @@ export class CartComponent implements OnInit {
     this.cartService.deleteProduct(_index);
   }
   ngOnInit() {
+    this.cartService.initStorage()
 
   }
 

@@ -3,18 +3,18 @@
 <ui-carousel class="carousel-main" #uiCarousel slidesToShow="3" [autoPlay]="false">
 
   <ui-carousel-item >
-      <div class="img1" [style.background-image]="getUrl()">      <div class="text-carousel">
+      <div class="img1" [style.background-image]="imgCarousel1()">      <div class="text-carousel">
           <p>{{lang.imageOne}}</p>
         </div></div>
 
   </ui-carousel-item>
 
   <ui-carousel-item>
-      <div class="img1" [style.background-image]="getUrl()"></div>
+      <div class="img1" [style.background-image]="imgCarousel2()"></div>
     </ui-carousel-item>
 
   <ui-carousel-item>
-    <div class="img1" [style.background-image]="getUrl()"></div>
+    <div class="img1" [style.background-image]="imgCarousel3()"></div>
   </ui-carousel-item>
 
 </ui-carousel>
