@@ -1,9 +1,9 @@
 <div class="title">
   <p>Produtos</p>
 </div>
-<table>
+<table >
 
-  <thead>
+  <thead *ngIf="!cartEmpty"> 
     <tr>
       <th>item</th>
       <th>nome</th>
@@ -17,7 +17,7 @@
     </tr>
   </thead>
 
-  <tbody  *ngFor="let produto of produtos; let i = index">
+  <tbody *ngFor="let produto of produtos; let i = index">
     <tr>
       <td> </td>
       <td class="nn">{{produto.nome}}</td>
@@ -30,7 +30,11 @@
   </tbody>
 </table>
 
-<div class="btn-finalizar">
+<div *ngIf="!cartEmpty" class="btn-finalizar">
   <button class="btn edit">Finlizar Compra</button>
 </div>
-<div class="nome"></div>
+
+<div *ngIf="cartEmpty" class="nome">
+  <p>CARRINHO VAZIO</p>
+  <button>Voltar pra home</button>
+</div>
