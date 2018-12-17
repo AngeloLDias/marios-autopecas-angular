@@ -5,7 +5,6 @@
   padding: 20px;
   // margin-top:14vh;
   padding-top: 18vh;
-
   .filter {
     width: 363px;
     border: 1px solid #000;
@@ -44,6 +43,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 25%);
     // grid-template-columns: repeat(auto-fill,minmax(113px,279px));
+    height: 20%;
 
 
   }
