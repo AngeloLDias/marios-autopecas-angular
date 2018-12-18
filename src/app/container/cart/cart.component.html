@@ -34,7 +34,15 @@
   <button class="btn edit">Finlizar Compra</button>
 </div>
 
-<div *ngIf="cartEmpty" class="nome">
+<div *ngIf="cartEmpty" class="cart-empty">
   <p>CARRINHO VAZIO</p>
-  <button>Voltar pra home</button>
+  <app-button
+  (click)="toggleModal()"
+  (click)="addToCart(produto)"
+  text="RETORNAR PARA A LOJA"
+  BC="#2a7023"
+  width="257px" 
+  height="50px"
+  color="#fff"
+  ></app-button>
 </div>

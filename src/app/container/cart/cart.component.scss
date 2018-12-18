@@ -6,6 +6,7 @@
 table {
   width: 100%;
   padding-top: 107px;
+
   td {
     padding: 0px 15px;
   }
@@ -50,5 +51,21 @@ table {
   p {
     font-size: 30px;
     color: white;
+  }
+}
+
+.cart-empty {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-size: 37px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  app-button{
+    margin: 20px 0px;
   }
 }

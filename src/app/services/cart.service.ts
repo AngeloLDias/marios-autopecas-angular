@@ -37,7 +37,6 @@ export class CartService {
     this.cartArray.splice(_index, 1);
     this.updateStorage(this.cartArray);
     this.contItemCart()
-    // this.initStorage()
   }
 
   updateStorage(update) {
