@@ -44,8 +44,6 @@ export class ProductsComponent implements OnInit {
     this.productsService.getProdutos().subscribe(dados =>
       this.produtos = dados)
 
-    this.cartService.initStorage()
-
   }
 
   // openModal() {
