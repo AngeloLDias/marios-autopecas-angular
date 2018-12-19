@@ -28,6 +28,12 @@ import { ModalConfirmProductComponent } from './container/modal-content/modal-co
 import { ButtonComponent } from './components/button/button.component';
 import { CadastroComponent } from './container/cadastro/cadastro.component';
 
+
+import { AngularFireModule } from '@angular/fire';
+
+import { environment } from '../environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,9 +66,11 @@ import { CadastroComponent } from './container/cadastro/cadastro.component';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGgHmDeD5_Q7Mh5sUPgaQKOtPE6vElSWA'
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase, 'fcc-produtos-trading'),
+
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

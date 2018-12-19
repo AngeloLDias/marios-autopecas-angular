@@ -1,10 +1,23 @@
 
-<div class="new-filter">
-  <button class="btn">HOME</button>
-  <button class="btn new">NOVO</button>
-  <input type="text">
-  <P>Lista de produtos</P>
+<div class="painel">
+<input type="text" #nome placeholder="nome" />
+<input type="text" #tipo placeholder="tipo" />
+<input type="text" #preco placeholder="preco" />
+<input type="text" #quantidade placeholder="quantidade" />
+<input type="text" #marca placeholder="marca" />
+
+<input type="button" (click)="add({
+  nome: nome.value,
+  tipo: tipo.value,
+  preco: preco.value,
+  quantidade: quantidade.value,
+  marca: marca.value})" placeholder="telefone" value="Salvar" />
+
 </div>
+
+
+
+
 <table>
 
   <thead>
@@ -22,68 +35,16 @@
   </thead>
 
   <tbody>
-    <tr  #nome *ngFor="let produto of produtos; let i = index; ">
+    <tr  *ngFor="let book of produtos | async; let i = index; ">
       <td>{{i + 1}} </td>
-      <td  class="nn">{{produto.nome}}</td>
-      <td>{{produto.imc}}</td>
-      <td>R$ {{produto.peso}}</td>
-      <td>{{produto.altura}}</td>
-      <td>{{produto.gordura}}</td>
-      <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
-      <td><button (click)="toggleModal()" class="btn edit">Edit</button></td>
-      <td><button  (click)="someMethod(i)" class="btn delete">Delete</button></td>
-      <td><button  (click)="removee(i)" class="btn delete">Delete</button></td>
-      <!-- <p [innerHtml]='someOtherMethod()'></p> -->
-    </tr>
+      <td  class="nn">{{book.nome}}</td>
+      <td>{{book.tipo}}</td>
+      <td>R$ {{book.preco}}</td>
+      <td>{{book.quantidade}}</td>
+      <td>{{book.marca}}</td>
+      <td><button  class="btn edit">Edit</button></td>
+      <td><button  (click)="someMethod(i) " class="btn delete">Delete</button></td>
+ </tr>
   </tbody>
 </table> 
-<!-- 
- <div id="minhadiv"></div>
-<button (click)="someOtherMethod()">fffffffffff</button> 
-<button (click)="someOtherMethod(i)">fffffffffff</button> 
-<div *ngFor="let list of list1">
-<p>{{list.nome}} - {{list.peso}}</p>
-</div> -->
 
-
-
-
-<!-- 
-<table>
-
-  <thead>
-    <tr>
-      <th>item</th>
-      <th>nome</th>
-      <th>tipo</th>
-      <th>preço</th>
-      <th>quantidade</th>
-      <th>marca</th>
-      <th>imagem</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr  #nome *ngFor="let paciente of pacientes; let i = index; ">
-      <td>{{i + 1}} </td>
-      <td  class="nn">{{paciente.nome}}</td>
-      <td>{{paciente.imc}}</td>
-      <td>R$ {{paciente.peso}}</td>
-      <td>{{paciente.altura}}</td>
-      <td>{{paciente.gordura}}</td>
-      <td><img src="{{paciente.imagem}}" width="95px" alt=""></td>
-      <td><button (click)="toggleModal()" class="btn edit">Edit</button></td>
-      <td><button  (click)="someMethod(i) " class="btn delete">Delete</button></td>
-      <td><button  (click)="someOtherMethod(i)" class="btn delete">Delete</button></td> -->
-      <!-- <p [innerHtml]='someOtherMethod()'></p> -->
-    <!-- </tr>
-  </tbody>
-</table>  -->
-
-<button type="button" id="adicionar1" id="produto1" (click)="someMethod('Sabão', document.getElementById('peso1'), '2.00', 1)"> Comprar </button>
-
-<div id="nome"></div>
-<!-- <div id="peso"></div>
-<div id="altura"></div> -->
