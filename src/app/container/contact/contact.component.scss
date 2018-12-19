@@ -159,6 +159,11 @@ label {
 }
 
 @media(max-width:700px) {
+  .locaisicon {
+    display: flex;
+    padding-top: 6vh;
+    justify-content: space-between;
+  }
   .sec-contato {
     display: flex;
     width: 100%;
@@ -169,7 +174,7 @@ label {
 
   .formulario,
   #map {
-    width: 90%;
+    width: 86%;
   }
 
   .btao,
@@ -205,6 +210,7 @@ label {
 
   agm-map {
     height: 100%;
+    width: 112%;
   }
 
   .tel,

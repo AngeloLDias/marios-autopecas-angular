@@ -26,6 +26,7 @@ import { CartComponent } from './container/cart/cart.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalConfirmProductComponent } from './container/modal-content/modal-confirm-product/modal-confirm-product.component';
 import { ButtonComponent } from './components/button/button.component';
+import { CadastroComponent } from './container/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ButtonComponent } from './components/button/button.component';
     ModalComponent,
     ModalConfirmProductComponent,
     ButtonComponent,
+    CadastroComponent,
 
     // UICarouselComponent,
     
