@@ -9,6 +9,7 @@ import { LoginComponent } from './container/login/login.component';
 import { CartComponent } from './container/cart/cart.component';
 import { AdminComponent } from './container/admin/admin.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { CadastroComponent } from './container/cadastro/cadastro.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'carrinho', component: CartComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'cadastro', component: CadastroComponent },
 
   { path: 'dev-a', component: ModalComponent },
   { path: 'dev-b', component: ListProductsComponent },
