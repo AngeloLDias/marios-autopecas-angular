@@ -1,17 +1,12 @@
-
 <div class="painel">
-<input type="text" #nome placeholder="nome" />
-<input type="text" #tipo placeholder="tipo" />
-<input type="text" #preco placeholder="preco" />
-<input type="text" #quantidade placeholder="quantidade" />
-<input type="text" #marca placeholder="marca" />
+  <input type="text" #uid placeholder="nome" />
+  <input type="text" #nome placeholder="nome" />
+  <input type="text" #tipo placeholder="tipo" />
+  <input type="text" #preco placeholder="preco" />
+  <input type="text" #quantidade placeholder="quantidade" />
+  <input type="text" #marca placeholder="marca" />
 
-<input type="button" (click)="add({
-  nome: nome.value,
-  tipo: tipo.value,
-  preco: preco.value,
-  quantidade: quantidade.value,
-  marca: marca.value})" placeholder="telefone" value="Salvar" />
+  <input type="button" (click)="add({nome: nome.value,uid: uid.value})" placeholder="telefone" value="Salvar" />
 
 </div>
 
@@ -35,16 +30,15 @@
   </thead>
 
   <tbody>
-    <tr  *ngFor="let book of produtos | async; let i = index; ">
+    <tr *ngFor="let book of produtos | async; let i = index; ">
       <td>{{i + 1}} </td>
-      <td  class="nn">{{book.nome}}</td>
+      <td class="nn">{{book.nome}}</td>
       <td>{{book.tipo}}</td>
       <td>R$ {{book.preco}}</td>
       <td>{{book.quantidade}}</td>
       <td>{{book.marca}}</td>
-      <td><button  class="btn edit">Edit</button></td>
-      <td><button  (click)="someMethod(i) " class="btn delete">Delete</button></td>
- </tr>
+      <td><button class="btn edit">Edit</button></td>
+      <td><button (click)="delete(book)" class="btn delete">Delete</button></td>
+    </tr>
   </tbody>
-</table> 
-
+</table>

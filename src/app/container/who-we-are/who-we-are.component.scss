@@ -1,178 +1,209 @@
-#divTeste{
-    font-size: 20px;
+#divTeste {
+  font-size: 20px;
 }
 
 
 .nossahistoria {
-    height: 90px;
-    display: flex;
-    align-items: flex-end;   
+  height: 90px;
+  display: flex;
+  align-items: flex-end;
+  background: #2b632ae8;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding-top: 89px;
+  height: 90px;
 
-    h1{
-        background: #2b632ae8;
-        box-shadow: 4px 4px 7px #9b9b9b;
-    }
+  h1 {
+    // box-shadow: 4px 4px 7px #9b9b9b;
+    color: white;
+    margin: 10px 20px;
+  }
 }
 
 .nossa {
-    box-shadow: 5px 5px 5px rgb(155, 155, 155);
-    background-color: rgb(25, 135, 25);
-    width: 17%;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  box-shadow: 5px 5px 5px rgb(155, 155, 155);
+  background-color: rgb(25, 135, 25);
+  width: 17%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
+
 .history {
-    background-color: rgb(25, 135, 25);
+  background-color: rgb(25, 135, 25);
 }
+
 .nossa h1 {
-    font-size: 25px;
-    font-family: roboto;
-    color: white;
+  font-size: 25px;
+  font-family: roboto;
+  color: white;
 }
 
 .quemsomos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 380px;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  margin-top: 30px;
 }
 
 .mario {
-    box-shadow: 0px 0px 10px #9b9b9b;
-    height: 360px;
-    /* text-align: center; */
-    width: 55%;
-    display: grid;
-    /* margin-left: 0px; */
-    align-items: center;
-    /* justify-content: center; */
-    /* background-color: white; */
+  box-shadow: 0px 0px 10px #9b9b9b;
+  height: 360px;
+  /* text-align: center; */
+  width: 55%;
+  display: grid;
+  /* margin-left: 0px; */
+  align-items: center;
+  /* justify-content: center; */
+  /* background-color: white; */
 
-  
+
 }
 
 .mario p {
-    display: grid;
-    align-items: center;
-    /* justify-content: center; */
-    /* font-family: roboto; */
-    font-size: 22px;
-    color: black;
-    font-weight: 300;
-    width: 87%;
-    height: 130%;
-    margin-top: 5px;
-    margin-left: 31px;
-    /* text-align: center; */
-    text-align: justify;
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+  /* font-family: roboto; */
+  font-size: 22px;
+  color: black;
+  font-weight: 300;
+  width: 87%;
+  height: 130%;
+  margin-top: 5px;
+  margin-left: 31px;
+  /* text-align: center; */
+  text-align: justify;
 }
 
 .blocos {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 110px;
 }
 
 .blocos li {
-    box-shadow: 5px 5px 5px rgb(155, 155, 155);
-    color: white;
-    font-family: roboto;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 65px;
+  box-shadow: 5px 5px 5px rgb(155, 155, 155);
+  color: white;
+  font-family: roboto;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
 }
 
 .missao {
-    background-color: rgb(43, 99, 42);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 11.5%;
-    position: relative;
+  background-color: rgb(43, 99, 42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.5%;
+  position: relative;
 }
 
 
 .visao {
-    background-color: rgb(43, 99, 42);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 11.5%;
-    position: relative;
+  background-color: rgb(43, 99, 42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.5%;
+  position: relative;
 
 }
 
 
 
 .valores {
-    background-color: rgb(43, 99, 42);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 11.5%;
-    position: relative;
+  background-color: rgb(43, 99, 42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.5%;
+  position: relative;
 }
 
-.only-smart{
-    display: none;
+.only-smart {
+  display: none;
 }
+
 #tempalte {
-    display: none;
+  display: none;
 }
 
-.blocos li:hover{
-background-color: green;
-transition: 0.2s;
-}
-.footerdevs{
-position: absolute;
-margin-bottom: -16px;
+.blocos li:hover {
+  background-color: green;
+  transition: 0.2s;
 }
 
-@media(max-width:760px) {
-    .only-desktop{
-        display: none;
-    }
-
-    .only-smart{
-        display: flex;
-    }
+.footerdevs {
+  position: absolute;
+  margin-bottom: -16px;
+}
 
 
-    .quemsomos {
-        display: none;
-        position: relative;
+.mobile-none {
+  display: none;
+  margin: 0px 17px;
+
+  .logo-historic {
+    margin-top: 29px;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      div {
+        flex-direction: column;
+        align-items: end;
+
+        p:nth-child(1) {
+          font-size: 27px;
+          font-weight: 600;
+          color: green;
+        }
+
+        p:nth-child(2) {
+
+          font-weight: 300;
+          font-size: 14px;
+        }
+      }
+
+      img {
+        width: 140px;
+      }
+
     }
+  }
+
+  .text {
+    p {
+      margin-top: 30px;
+      color: #303030;
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 15px;
+      // font-family: 'intro_lightregular';
+    }
+  }
+}
+.quemsomos-desktop{
     
-    .nossa{
-        margin: 6px;
-        width: 50%;
+}
+@media(max-width:760px) {
+    .mobile-none{
+        display: block  ;
+    }
+    .quemsomos-desktop{
+        display: none
     }
 
-    .nossa h1{
-        font-size: 21px; 
-           }
-
-    .blocos {
-        display: none;
-    }
-    .blocos:hover .valores-texto{
-        display: none;
-    }
-    .blocos:hover .visao-texto{
-    display: none;
-    }
-    .blocos:hover .missao-texto{
-    display: none;
-    }
-
-   
 }

@@ -21,7 +21,7 @@ export class ListProductsComponent implements OnInit {
 
   // public books: Observable<any[]>;
   public produtos: Observable<any[]>;
-
+  public  uid
   // private booksCollection: AngularFirestoreCollection<Book>;
   private produtosCollection: AngularFirestoreCollection<Produtos>;
 
@@ -31,9 +31,31 @@ export class ListProductsComponent implements OnInit {
   }
 
   add(_produtos: Produtos) {
+    this.uid = this.db.createId()
+    // this.produtosCollection.doc<Produtos>(uid).set({
+    //   uid,
+    //   nome: _produtos.nome,
+    //   tipo:  _produtos.tipo,
+    //   preco:  _produtos.preco,
+    //   quantidade:  _produtos.quantidade,
+    //   marca:  _produtos.marca
+    // });
+
+    console.log('sssss',this.produtosCollection)
     this.produtosCollection.add(_produtos);
   }
 
+  update(_produtos: Produtos){
+    this.produtosCollection.doc<Produtos>(_produtos.uid).update(_produtos)
+  }
+
+  delete(_produtos: Produtos){
+    this.produtosCollection.doc<Produtos>(_produtos.uid).delete()
+  }
+
+  // get(uid: string): Observable<Produtos>{
+  //   this.produtosCollection.doc<Produtos>(uid).valueChanges()>
+  // }
 
   ngOnInit() {
 
