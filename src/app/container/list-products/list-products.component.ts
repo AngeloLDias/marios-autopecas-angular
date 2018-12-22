@@ -19,6 +19,7 @@ export class ListProductsComponent implements OnInit {
 
   private produtosCollection: AngularFireList<Produto>
   public produtos: Observable<any[]>;  
+  produtosRef: AngularFireList<any>;
 
   // public produto: Produto = new Produto()
 
@@ -38,6 +39,13 @@ export class ListProductsComponent implements OnInit {
     this.produtos = db.list('/').valueChanges();
     this.produtos.subscribe(console.log)
    console.log("hehe",this.produtos)
+
+   this.produtosRef = db.list('/');
+   this.produtos = this.produtosRef.snapshotChanges().pipe(
+     map(change =>
+        change.map(c => ({key: c.payload.key, ...c.payload.val() }))
+      )
+   );
   }
 
   // fadsd.array.forEach(element => {
@@ -49,6 +57,8 @@ export class ListProductsComponent implements OnInit {
   //   return this.items;
   // }
   add(_produto: Produto) {
+    const list = this.db.list('/')
+    list.push(_produto);
     // const id = this.db.createId()
     //   const item: Produto = { id, ..._produto };
     //   this.produtosCollection.doc(id).set(item); 
@@ -63,8 +73,9 @@ export class ListProductsComponent implements OnInit {
   }
   // public produto2s: AngularFirestoreDocument<Produto>;
 
-  edit(produto){
-    // this.produto = Object.assign({},produto)
+  edit(key, produto){
+    // this.produtosRef = Object.assign({},produto)
+    this.produtosRef.update(key,produto);
 
     // let produto2 = this.produtosCollection.doc<Produto>(`produtos/${this.produto.id}`); 
 
@@ -74,7 +85,11 @@ export class ListProductsComponent implements OnInit {
 
   }
 
-  delete(_produto: Produto){
+  delete(key){
+    // const list = this.db.list('/')
+    // list.set('aa', produto);
+    this.produtosRef.remove(key);
+
     // this.produtosCollection.doc<Produto>(_produto.id).delete()
   }
 

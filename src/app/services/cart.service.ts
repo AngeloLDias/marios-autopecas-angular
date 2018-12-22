@@ -4,7 +4,7 @@ import { Subject, Observable } from 'rxjs';
 import { ProductsComponent } from '../container/products/products.component'
 
 import { Cart } from '../model/cart'
-import { Produtos } from '../model/pruducts';
+import { Produto } from '../model/pruducts';
 
 
 
@@ -17,9 +17,9 @@ export class CartService {
 
   public storageName: string = "cart";
 
-  public cartArray: Produtos[] = JSON.parse(localStorage.getItem(this.storageName)) ? JSON.parse(localStorage.getItem(this.storageName)) : [];
+  public cartArray: Produto[] = JSON.parse(localStorage.getItem(this.storageName)) ? JSON.parse(localStorage.getItem(this.storageName)) : [];
   public cartEmpty:boolean =false;
-  private productsArray = Produtos;
+  private productsArray = Produto;
   private initArr = [];
 
   addToCart(produto) {

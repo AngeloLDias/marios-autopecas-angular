@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { Produtos } from '../../model/pruducts'
+import { Produto } from '../../model/pruducts'
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
 
@@ -12,10 +12,10 @@ import { Subscription } from 'rxjs';
 })
 export class CartComponent implements OnInit {
 
-  public produtos: Produtos[];
+  public produtos: Produto[];
 
   public qtdOptions = [];
-  private productsArray = Produtos;
+  private productsArray = Produto;
 
   public cartEmpty: boolean = false;
 
@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   public productClicked: any;
   private subscription: Subscription;
 
-  public cartArray: Produtos[];
+  public cartArray: Produto[];
 
 
   constructor(

@@ -8,7 +8,7 @@ import { CartService } from '../../services/cart.service';
 import { ModalService } from '../../services/modal.service';
 // modelos
 
-import { Produtos } from '../../model/pruducts';
+import { Produto } from '../../model/pruducts';
 
 // components
 
@@ -21,7 +21,7 @@ import { CartComponent } from '../../container/cart/cart.component'
 })
 export class ProductsComponent implements OnInit {
   public lang = LANG
-  public produtos: Produtos[];
+  public produtos: Produto[];
 
   public showModal: boolean = false;
 
@@ -53,7 +53,7 @@ export class ProductsComponent implements OnInit {
   //   this.showModal = false;
   // }
 
-  toggleModal() {
+  toggleModal() { 
     if (this.showModal == false) {
       this.showModal = true;
     }
