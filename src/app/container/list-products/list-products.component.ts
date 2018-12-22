@@ -1,61 +1,82 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Produtos } from '../../model/pruducts';
+import { Produto } from '../../model/pruducts';
 // import { Pacientes } from '../../model/pruducts';
 import { ProductsService } from '../../services/products.service';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import {AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 import { Observable } from 'rxjs';
 import { defineBase } from '@angular/core/src/render3';
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
   styleUrls: ['./list-products.component.scss']
-  ,
 })
 
 
 export class ListProductsComponent implements OnInit {
-  // produtos: Produtos[];
+
+  private produtosCollection: AngularFireList<Produto>
+  public produtos: Observable<any[]>;  
+
+  // public produto: Produto = new Produto()
 
 
 
 
   // public books: Observable<any[]>;
-  public produtos: Observable<any[]>;
-  public  uid
+  // public  uid
   // private booksCollection: AngularFirestoreCollection<Book>;
-  private produtosCollection: AngularFirestoreCollection<Produtos>;
+  // private produtosCollection: AngularFirestoreCollection<Produtos>;
 
-  constructor(private db: AngularFirestore) {
-    this.produtosCollection = db.collection<Produtos>('produtos');
-    this.produtos = db.collection('produtos').valueChanges();
+  constructor(private db: AngularFireDatabase ) {
+    // this.produtosCollection = db.list<any>('/teste333-1c9f0');
+    // this.produtos = this.produtosCollection.snapshotChanges().pipe(
+    //   map(item => item.map(console.log))
+    // )
+    this.produtos = db.list('/').valueChanges();
+    this.produtos.subscribe(console.log)
+   console.log("hehe",this.produtos)
   }
 
-  add(_produtos: Produtos) {
-    this.uid = this.db.createId()
-    // this.produtosCollection.doc<Produtos>(uid).set({
-    //   uid,
-    //   nome: _produtos.nome,
-    //   tipo:  _produtos.tipo,
-    //   preco:  _produtos.preco,
-    //   quantidade:  _produtos.quantidade,
-    //   marca:  _produtos.marca
-    // });
-
-    console.log('sssss',this.produtosCollection)
-    this.produtosCollection.add(_produtos);
-  }
-
-  update(_produtos: Produtos){
-    this.produtosCollection.doc<Produtos>(_produtos.uid).update(_produtos)
-  }
-
-  delete(_produtos: Produtos){
-    this.produtosCollection.doc<Produtos>(_produtos.uid).delete()
-  }
-
-  // get(uid: string): Observable<Produtos>{
-  //   this.produtosCollection.doc<Produtos>(uid).valueChanges()>
+  // fadsd.array.forEach(element => {
+    
+  // });
+  // getAll() {
+  //   // Buscando todos os itens no no "/task"
+  //   this.produtos = this.db.database.list('');
+  //   return this.items;
   // }
+  add(_produto: Produto) {
+    // const id = this.db.createId()
+    //   const item: Produto = { id, ..._produto };
+    //   this.produtosCollection.doc(id).set(item); 
+    // if(this.produto.id != null){
+    //   this.edit(_produto)
+    //   alert('!null')
+    // }
+    // else{
+    //   const item: Produto = { id, ..._produto };
+    //   this.produtosCollection.doc(id).set(item); 
+    // } 
+  }
+  // public produto2s: AngularFirestoreDocument<Produto>;
+
+  edit(produto){
+    // this.produto = Object.assign({},produto)
+
+    // let produto2 = this.produtosCollection.doc<Produto>(`produtos/${this.produto.id}`); 
+
+    //   produto2.update(produto);
+
+    // console.log('AA', this.produto.id)
+
+  }
+
+  delete(_produto: Produto){
+    // this.produtosCollection.doc<Produto>(_produto.id).delete()
+  }
 
   ngOnInit() {
 

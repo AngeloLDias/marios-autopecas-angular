@@ -1,12 +1,12 @@
 <div class="painel">
-  <input type="text" #uid placeholder="nome" />
-  <input type="text" #nome placeholder="nome" />
+  <!-- <input type="text" #id placeholder="nome" /> -->
+  <!-- <input [(ngModel)]="produto.nome" type="text" #nome placeholder="nome" /> -->
   <input type="text" #tipo placeholder="tipo" />
   <input type="text" #preco placeholder="preco" />
   <input type="text" #quantidade placeholder="quantidade" />
   <input type="text" #marca placeholder="marca" />
-
-  <input type="button" (click)="add({nome: nome.value,uid: uid.value})" placeholder="telefone" value="Salvar" />
+  
+  <input type="button" (click)="add({nome: nome.value})" placeholder="telefone" value="Salvar" />
 
 </div>
 
@@ -30,15 +30,16 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let book of produtos | async; let i = index; ">
+    <tr *ngFor="let produto of produtos | async; let i = index; ">
       <td>{{i + 1}} </td>
-      <td class="nn">{{book.nome}}</td>
-      <td>{{book.tipo}}</td>
-      <td>R$ {{book.preco}}</td>
-      <td>{{book.quantidade}}</td>
-      <td>{{book.marca}}</td>
-      <td><button class="btn edit">Edit</button></td>
-      <td><button (click)="delete(book)" class="btn delete">Delete</button></td>
+      <td ng-repeat="produto in produtos | limitTo : 3" class="nn">{{produto.name}}</td>
+      <!-- <td>{{produto}}</td>
+      <td>R$ {{produto.preco}}</td>
+      <td>{{produto.quantidade}}</td>
+      <td>{{produto.marca.}}</td> -->
+      <td><button (click)="edit(produto)" class="btn edit">Edit</button></td>
+      <td><button (click)="delete(produto)" class="btn delete">Delete</button></td>
     </tr>
   </tbody>
+
 </table>

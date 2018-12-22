@@ -33,6 +33,7 @@ import { AngularFireModule } from '@angular/fire';
 
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase, 'fcc-produtos-trading'),
 
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
