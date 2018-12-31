@@ -21,7 +21,7 @@ export class ListProductsComponent implements OnInit {
   public produtos: Observable<any[]>;  
   produtosRef: AngularFireList<any>;
 
-  public produto: Produto = new Produto()
+  // public produto: Produto = new Produto()
 
 
 
@@ -77,7 +77,7 @@ export class ListProductsComponent implements OnInit {
   // public produto2s: AngularFirestoreDocument<Produto>;
 
   edit(produto){
-    this.produtosRef = Object.assign({},produto)
+    // this.produtosRef = Object.assign({},produto)
     // this.produtosRef.update(key,produto);
     console.log('fwefwef', produto)
 

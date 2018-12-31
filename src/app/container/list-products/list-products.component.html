@@ -1,12 +1,12 @@
 <div class="painel">
   <!-- <input type="text" #id placeholder="nome" /> -->
   <input #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
-  <input type="text" #tipo placeholder="tipo" />
-  <input type="text" #preco placeholder="preco" />
-  <input type="text" #quantidade placeholder="quantidade" />
-  <input type="text" #marca placeholder="marca" />
+  <input [(ngModel)]="produtosRef.application"  type="text" #tipo placeholder="application" />
+  <!-- <input type="text" #preco placeholder="preco" /> -->
+  <input [(ngModel)]="produtosRef.stock"  type="text" #quantidade placeholder="stock" />
+  <!-- <input type="text" #marca placeholder="marca" /> -->
   
-  <input typSSe="button" (click)="add({name: name.value})" placeholder="telefone" value="Salvar" />
+  <input class="btn new" typSSe="button" (click)="add({name: name.value})" placeholder="telefone" value="Salvar" />
 
 </div>
 
@@ -19,11 +19,11 @@
     <tr>
       <th>item</th>
       <th>nome</th>
-      <th>tipo</th>
-      <th>preço</th>
-      <th>quantidade</th>
-      <th>marca</th>
-      <th>imagem</th>
+      <!-- <th>Categoria</th> -->
+      <th>application</th>
+      <th>stock</th>
+      <!-- <th>marca</th>
+      <th>imagem</th> -->
       <th></th>
       <th></th>
     </tr>
@@ -33,6 +33,15 @@
     <tr *ngFor="let produto of produtos | async; let i = index; ">
       <td>{{i + 1}} </td>
       <td class="nn">{{produto.name}}</td>
+      <td  class="nn">{{produto.application}}</td>
+      <td class="nn">{{produto.stock}}</td>
+
+      <!-- <td class="nn">{{produto.name}}</td>
+      <td class="nn">{{produto.name}}</td>
+      <td class="nn">{{produto.name}}</td>
+      <td class="nn">{{produto.name}}</td>
+      <td class="nn">{{produto.name}}</td>
+      <td class="nn">{{produto.name}}</td> -->
       
       <!-- <td>{{produto}}</td>
       <td>R$ {{produto.preco}}</td>
