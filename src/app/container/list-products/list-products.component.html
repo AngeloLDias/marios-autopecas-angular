@@ -1,12 +1,12 @@
 <div class="painel">
   <!-- <input type="text" #id placeholder="nome" /> -->
-  <input [(ngModel)]="produtos.name" type="text" placeholder="nome" />
+  <input #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
   <input type="text" #tipo placeholder="tipo" />
   <input type="text" #preco placeholder="preco" />
   <input type="text" #quantidade placeholder="quantidade" />
   <input type="text" #marca placeholder="marca" />
   
-  <input type="button" (click)="add({name: name.value})" placeholder="telefone" value="Salvar" />
+  <input typSSe="button" (click)="add({name: name.value})" placeholder="telefone" value="Salvar" />
 
 </div>
 
@@ -38,7 +38,7 @@
       <td>R$ {{produto.preco}}</td>
       <td>{{produto.quantidade}}</td>
       <td>{{produto.marca.}}</td> -->
-      <td><button (click)="edit(produto.key)" class="btn edit">Edit</button></td>
+      <td><button (click)="edit(produto)" class="btn edit">Edit</button></td>
       <td><button (click)="delete(produto.key)" class="btn delete">Delete</button></td>
     </tr>
   </tbody>

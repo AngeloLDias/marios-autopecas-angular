@@ -21,7 +21,7 @@ export class ListProductsComponent implements OnInit {
   public produtos: Observable<any[]>;  
   produtosRef: AngularFireList<any>;
 
-  // public produto: Produto = new Produto()
+  public produto: Produto = new Produto()
 
 
 
@@ -36,16 +36,19 @@ export class ListProductsComponent implements OnInit {
     // this.produtos = this.produtosCollection.snapshotChanges().pipe(
     //   map(item => item.map(console.log))
     // )
-    this.produtos = db.list('/').valueChanges();
-    this.produtos.subscribe(console.log)
-   console.log("hehe",this.produtos)
+  //   this.produtos = db.list('/')  .valueChanges();
+  //   this.produtos.subscribe(console.log)
+  //  console.log("hehe",this.produtos)
 
-   this.produtosRef = db.list('/');
+   this.produtosRef = db.list('/', ref => ref.orderByChild('/id').limitToFirst(10));
+
    this.produtos = this.produtosRef.snapshotChanges().pipe(
      map(change =>
         change.map(c => ({key: c.payload.key, ...c.payload.val() }))
       )
    );
+
+   this.produtos
   }
 
   // fadsd.array.forEach(element => {
@@ -73,9 +76,10 @@ export class ListProductsComponent implements OnInit {
   }
   // public produto2s: AngularFirestoreDocument<Produto>;
 
-  edit(key, produto){
-    // this.produtosRef = Object.assign({},produto)
-    this.produtosRef.update(key,produto);
+  edit(produto){
+    this.produtosRef = Object.assign({},produto)
+    // this.produtosRef.update(key,produto);
+    console.log('fwefwef', produto)
 
     // let produto2 = this.produtosCollection.doc<Produto>(`produtos/${this.produto.id}`); 
 
