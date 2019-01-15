@@ -3,7 +3,7 @@ import { Produto } from '../../model/pruducts';
 // import { Pacientes } from '../../model/pruducts';
 import { ProductsService } from '../../services/products.service';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
-import {AngularFireDatabase, AngularFireList } from '@angular/fire/database'
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 import { Observable } from 'rxjs';
 import { defineBase } from '@angular/core/src/render3';
 import { map } from 'rxjs/operators';
@@ -18,83 +18,111 @@ import { map } from 'rxjs/operators';
 export class ListProductsComponent implements OnInit {
 
   private produtosCollection: AngularFireList<Produto>
-  public produtos: Observable<any[]>;  
+  public produtos: Observable<any[]>;
+  public produtos2: Observable<any[]>;
   produtosRef: AngularFireList<any>;
 
-  // public produto: Produto = new Produto()
+
+  public showModal: boolean = false;
+  public showModalAdd: boolean = false;
 
 
+  constructor(private db: AngularFireDatabase) {
 
+    this.produtosRef = db.list('/', ref => ref.orderByChild('/name').limitToFirst(10));
+    // this.produtosRef = db.list('/', ref => ref.orderByChild('/name').limitToFirst(10));
 
-  // public books: Observable<any[]>;
-  // public  uid
-  // private booksCollection: AngularFirestoreCollection<Book>;
-  // private produtosCollection: AngularFirestoreCollection<Produtos>;
-
-  constructor(private db: AngularFireDatabase ) {
-    // this.produtosCollection = db.list<any>('/teste333-1c9f0');
-    // this.produtos = this.produtosCollection.snapshotChanges().pipe(
-    //   map(item => item.map(console.log))
-    // )
-  //   this.produtos = db.list('/')  .valueChanges();
-  //   this.produtos.subscribe(console.log)
-  //  console.log("hehe",this.produtos)
-
-   this.produtosRef = db.list('/', ref => ref.orderByChild('/id').limitToFirst(10));
-
-   this.produtos = this.produtosRef.snapshotChanges().pipe(
-     map(change =>
-        change.map(c => ({key: c.payload.key, ...c.payload.val() }))
+    this.produtos = this.produtosRef.snapshotChanges().pipe(
+      map(change =>
+        change.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
-   );
+    );
 
-   this.produtos
+    // this.produtosRef = db.object('/');
+    // this.produtosRef.snapshotChanges().subscribe(action => {
+    //   console.log(action.type);
+    //   console.log(action.key)
+    //   console.log(action.payload.val())
+    // });
+
+    // console.log(this.produtos.pipe())
+    //   var produtos = db.list('/');
+   
+    //   var produtos2 = this.produtos.subscribe(console.log)
+    //  console.log("hehe",produtos2)
+  }
+  private handleError(error) {
+    console.log(error);
+  }
+  
+  updateCustomer(key: string, value: any): void {
+    this.produtosRef.update(key, value).catch(error => this.handleError(error));
   }
 
-  // fadsd.array.forEach(element => {
-    
-  // });
-  // getAll() {
-  //   // Buscando todos os itens no no "/task"
-  //   this.produtos = this.db.database.list('');
-  //   return this.items;
-  // }
-  add(_produto: Produto) {
+add2(key: string, change){
+  this.produtosRef.update(key, change);
+  this.edit(Produto)
+}
+  add(_produto: Produto, change):void {
     const list = this.db.list('/')
-    list.push(_produto);
-    // const id = this.db.createId()
-    //   const item: Produto = { id, ..._produto };
-    //   this.produtosCollection.doc(id).set(item); 
-    // if(this.produto.id != null){
-    //   this.edit(_produto)
-    //   alert('!null')
-    // }
-    // else{
-    //   const item: Produto = { id, ..._produto };
-    //   this.produtosCollection.doc(id).set(item); 
-    // } 
+    
+    console.log('aqs', _produto.key)
+    // console.log('aqs', this.produtos.key)
+
+    if(_produto.key != null){
+      alert('editado com sucesso')
+      this.produtosRef.update(_produto.key, change);
+
+    }
+    else{
+      alert('salvo com sucesso')
+      list.push(_produto);
+      
+    }
+      // if (_produto.id != 0) {
+
+      //   alert('old product')
+      // }
+      // else {
+      //   alert('new product')
+      //   // const list = this.db.list('/')
+      //   // list.push(_produto);
+      //   // const item: Produto = { id, ..._produto };
+      //   // this.produtosCollection.doc(id).set(item); 
+      // }
   }
   // public produto2s: AngularFirestoreDocument<Produto>;
 
-  edit(produto){
-    // this.produtosRef = Object.assign({},produto)
-    // this.produtosRef.update(key,produto);
-    console.log('fwefwef', produto)
+  edit(produto):void {
 
-    // let produto2 = this.produtosCollection.doc<Produto>(`produtos/${this.produto.id}`); 
+    // this.produtosRef.update(key,produto)
+    // const list = this.db.list('/') x x 
+    // this.produtosRef.update(key, { newname: newname });
+     this.produtosRef = Object(produto)
+      // console.log(this.produtosRef)
+  }
+  
+  delete(key:string) {
+    // this.produtosRef = Object(key)
 
-    //   produto2.update(produto);
-
-    // console.log('AA', this.produto.id)
-
+    this.produtosRef.remove(key);
   }
 
-  delete(key){
-    // const list = this.db.list('/')
-    // list.set('aa', produto);
-    this.produtosRef.remove(key);
-
-    // this.produtosCollection.doc<Produto>(_produto.id).delete()
+  toggleModal() { 
+    if (this.showModal == false) {
+      this.showModal = true;
+    }
+    else {
+      this.showModal = false
+    }
+  }
+  toggleModalAdd() { 
+    if (this.showModalAdd == false) {
+      this.showModalAdd = true;
+    }
+    else {
+      this.showModalAdd = false
+    }
   }
 
   ngOnInit() {
@@ -104,16 +132,7 @@ export class ListProductsComponent implements OnInit {
 
 
 }
-// class Produtos {
-// //   nome?: string;
-// //   telefone?: string;
-// nome: string;
-// peso: number;
-// altura: number;
-// imc: number;
-// gordura: number;
-// imagem: string;
-// }
+
 
 
 

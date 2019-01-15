@@ -34,6 +34,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from "@angular/fire/database";
+import { ModalAddComponent } from './container/modal-add/modal-add.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AngularFireDatabase } from "@angular/fire/database";
     ModalConfirmProductComponent,
     ButtonComponent,
     CadastroComponent,
+    ModalAddComponent,
 
     // UICarouselComponent,
     

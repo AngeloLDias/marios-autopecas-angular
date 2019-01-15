@@ -1,13 +1,56 @@
-<div class="painel">
-  <!-- <input type="text" #id placeholder="nome" /> -->
-  <input #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
-  <input [(ngModel)]="produtosRef.application"  type="text" #tipo placeholder="application" />
-  <!-- <input type="text" #preco placeholder="preco" /> -->
-  <input [(ngModel)]="produtosRef.stock"  type="text" #quantidade placeholder="stock" />
-  <!-- <input type="text" #marca placeholder="marca" /> -->
-  
-  <input class="btn new" typSSe="button" (click)="add({name: name.value})" placeholder="telefone" value="Salvar" />
+<!-- <app-modal-add addprod={{add()}} *ngIf="showModal" prodname={{produtosRef.name}}></app-modal-add> -->
 
+  <!-- Modal Edit -->
+
+<!-- <app-modal *ngIf="showModal">
+    <section class="modal-add">
+    <div class="form">
+      <input [(ngModel)]="produtosRef.name" type="text" placeholder="name" /> -->
+      <!-- <input [(ngModel)]="produtosRef.application" type="text" placeholder="name" />
+      <input [(ngModel)]="produtosRef.stock" type="text" placeholder="name" />
+      <input #key [(ngModel)]="produtosRef.key" type="text" placeholder="key" /> -->
+<!--       
+    </div>
+  
+    <div class="btn-save">
+      <button (click)="edit(produtosRef.$key, produtosRef.name )" (click)="toggleModal()">Continuar Comprando</button>
+    </div>
+  </section>
+  </app-modal> -->
+
+  <!-- Modal add -->
+
+  <app-modal *ngIf="showModalAdd">
+      <section class="modal-add">
+        <h1>new</h1>
+      <div class="form">
+
+        <input #name  type="text" placeholder="name" />
+        <input #tipo  type="text" placeholder="application" />
+        <input #stock type="text" placeholder="stock" />
+        <input #id type="text" placeholder="id" />
+        
+      </div>
+      <div class="btn-save">
+        <button (click)="add({name: name.value, stock:stock.value, id:id.value,tipo:tipo.value })" (click)="toggleModalAdd()">Continuar Comprando</button>
+      </div>
+    </section>
+    </app-modal>
+
+
+<div class="painel">
+
+  <input #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
+    <input #key [(ngModel)]="produtosRef.key" type="text" placeholder="name" />
+<!-- 
+  <input  [(ngModel)]="produtosRef.application"  type="text" #tipo placeholder="application" />
+
+  <input [(ngModel)]="produtosRef.stock"  type="text" #stock placeholder="stock" />
+
+  <input #id  [(ngModel)]="produtosRef.id"  type="text" placeholder="stock" /> -->
+  
+  <input class="btn new" type="button" (click)="add2(produtosRef, {name: name.value, key:key.value})" placeholder="telefone" value="Salvar" />
+  <button (click)="toggleModalAdd()" class="btn edit">new</button>
 </div>
 
 
@@ -19,11 +62,8 @@
     <tr>
       <th>item</th>
       <th>nome</th>
-      <!-- <th>Categoria</th> -->
       <th>application</th>
       <th>stock</th>
-      <!-- <th>marca</th>
-      <th>imagem</th> -->
       <th></th>
       <th></th>
     </tr>
@@ -35,19 +75,9 @@
       <td class="nn">{{produto.name}}</td>
       <td  class="nn">{{produto.application}}</td>
       <td class="nn">{{produto.stock}}</td>
+      <td class="nn">{{produto.id}}</td>
 
-      <!-- <td class="nn">{{produto.name}}</td>
-      <td class="nn">{{produto.name}}</td>
-      <td class="nn">{{produto.name}}</td>
-      <td class="nn">{{produto.name}}</td>
-      <td class="nn">{{produto.name}}</td>
-      <td class="nn">{{produto.name}}</td> -->
-      
-      <!-- <td>{{produto}}</td>
-      <td>R$ {{produto.preco}}</td>
-      <td>{{produto.quantidade}}</td>
-      <td>{{produto.marca.}}</td> -->
-      <td><button (click)="edit(produto)" class="btn edit">Edit</button></td>
+      <td><button (click)="toggleModal()" (click)="edit(produto)" class="btn edit">Edit</button></td>
       <td><button (click)="delete(produto.key)" class="btn delete">Delete</button></td>
     </tr>
   </tbody>

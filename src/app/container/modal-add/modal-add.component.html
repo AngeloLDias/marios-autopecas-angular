@@ -1,0 +1,16 @@
+<app-modal *ngIf="showModal">
+  <section class="modal-add">
+  <div class="form">
+    <input  [(ngModel)]="prodname" type="text" placeholder="name" />
+    <input [(ngModel)]="prodname" type="text" placeholder="name" />
+    <input [(ngModel)]="prodname" type="text" placeholder="name" />
+    <input [(ngModel)]="prodname" type="text" placeholder="name" />
+    
+  </div>
+
+  <div class="btn-save">
+    <button (click)="addprod" (click)="toggleModal()">Continuar Comprando</button>
+  </div>
+</section>
+</app-modal>
+
