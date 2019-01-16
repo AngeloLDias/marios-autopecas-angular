@@ -1,37 +1,37 @@
-<!-- 
 <div class="nossahistoria">
-  <h1>Quem Somos</h1>
-</div> -->
-
-<div class="nossahistoria">
-  <h1 class="titulo5">Quem Somos</h1>
+  <h1 class="titulo5">QUEM SOMOS</h1>
 </div>
 
 <section class="quemsomos-desktop">
-<section class="quemsomos">
-  <div class="mario">
-    <p id="texto-HMarios">
-      <p class="p4">{{lang.text4}}</p>
-      <div class="row"></div>
-      <div class="col-md-4"></div>
-      <div class="bloco-mario"></div>
-  </div>
-</section>
+  <section class="quemsomos">
+    <div class="mario">
+      <p id="texto-HMarios">
+        <p class="p4">{{lang.text4}}</p>
+        <div class="row"></div>
+        <div class="col-md-4"></div>
+        <div class="bloco-mario"></div>
+    </div>
+  </section>
 
 
-<ul class="blocos">
+  <ul class="blocos">
+    
+    <li (click)="histoy()" class="missao btnHistoria">HISTORIA</li>
+    <li (click)="missao()" class="missao btnMissao">MISSÃO</li>
+    <li (click)="visao()" class="visao btnVisao">VISÃO</li>
+    <li (click)="valores()" class="valores btnValores">VALORES</li>
 
-  <li class="missao btnHistoria">HISTORIA</li>
-  <li class="missao btnMissao">MISSÃO</li>
-  <li class="visao btnVisao">VISÃO</li>
-  <li class="valores btnValores">VALORES</li>
-
-</ul>
+  </ul>
 
 </section>
 <section class="mobile-none">
   <div class="logo-historic">
-    <div><img   src="../../../assets/media/logoo-min.png" alt=""> <div><p>Nossa Historia</p><p> Nosso lema é " Aqui além de clientes fazemos amigos".</p></div> </div>
+    <div><img src="../../../assets/media/logoo-min.png" alt="">
+      <div>
+        <p>Nossa Historia</p>
+        <p> Nosso lema é " Aqui além de clientes fazemos amigos".</p>
+      </div>
+    </div>
   </div>
   <div class="text">
     <p>{{lang.text4}}</p>

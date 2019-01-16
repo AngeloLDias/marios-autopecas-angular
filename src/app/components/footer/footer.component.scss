@@ -60,12 +60,14 @@
 
   .pagaments {
     .img-payment {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 82px) minmax(30px, 70px);
-
+      // display: grid;
+      // grid-template-columns: repeat(auto-fill, 82px) minmax(30px, 70px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       img {
-        display: grid;
         width: 70px;
+        height: 71px;
       }
     }
 

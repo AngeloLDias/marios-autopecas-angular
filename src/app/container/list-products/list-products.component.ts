@@ -63,21 +63,23 @@ add2(key: string, change){
   this.produtosRef.update(key, change);
   this.edit(Produto)
 }
-  add(_produto: Produto, change):void {
+  add(key,_produto: Produto, change):void {
     const list = this.db.list('/')
-    
-    console.log('aqs', _produto.key)
-    // console.log('aqs', this.produtos.key)
 
     if(_produto.key != null){
       alert('editado com sucesso')
-      this.produtosRef.update(_produto.key, change);
+      console.log('1111', key)
+      console.log('222', _produto)
 
+      // this.produtosRef.set(_produto.key, change);
+      list.update(key, _produto);
+      // this.edit(Produto)
     }
     else{
       alert('salvo com sucesso')
       list.push(_produto);
-      
+      console.log('1111', key)
+      console.log('222', _produto)
     }
       // if (_produto.id != 0) {
 

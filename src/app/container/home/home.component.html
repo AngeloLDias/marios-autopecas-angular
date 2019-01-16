@@ -1,20 +1,33 @@
 <!-- Carousel -->
 
-<ui-carousel class="carousel-main" #uiCarousel slidesToShow="3" [autoPlay]="false">
+<ui-carousel class="carousel-main" #uiCarousel slidesToShow="10" [autoPlay]="true"  autoPlaySpeed=5000>
 
-  <ui-carousel-item >
-      <div class="img1" [style.background-image]="imgCarousel1()">      <div class="text-carousel">
-          <p>{{lang.imageOne}}</p>
-        </div></div>
+  <ui-carousel-item>
+    <div class="img1" [style.background-image]="imgCarousel1()">
+      <div class="text-carousel">
+        <p>MELHOR PREÇO DA REGIÃO</p>
+        <p routerLink="/produtos">Nossos produtos</p>
+      </div>
+    </div>
 
   </ui-carousel-item>
 
   <ui-carousel-item>
-      <div class="img1" [style.background-image]="imgCarousel2()"></div>
-    </ui-carousel-item>
+    <div class="img1" [style.background-image]="imgCarousel2()">
+      <div class="text-carousel">
+        <p>{{lang.imageOne}}</p>
+        <p routerLink="/contato">Entre em contato</p>
+      </div>
+    </div>
+  </ui-carousel-item>
 
   <ui-carousel-item>
-    <div class="img1" [style.background-image]="imgCarousel3()"></div>
+    <div class="img1" [style.background-image]="imgCarousel3()">
+      <div class="text-carousel">
+        <p>AQUI, ALÉM DE CLIENTE FAZEMOS AMIGOS.</p>
+        <p routerLink="/quem-somos">Nossa história</p>
+      </div>
+    </div>
   </ui-carousel-item>
 
 </ui-carousel>

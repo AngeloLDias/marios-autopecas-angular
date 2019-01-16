@@ -11,6 +11,7 @@
 // };
 
 export class Produto {
+    key:string;
     id: number;
     name: string;
     stock: number;

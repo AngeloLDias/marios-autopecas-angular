@@ -26,13 +26,13 @@
       <div class="form">
 
         <input #name  type="text" placeholder="name" />
-        <input #tipo  type="text" placeholder="application" />
+        <!-- <input #tipo  type="text" placeholder="application" />
         <input #stock type="text" placeholder="stock" />
-        <input #id type="text" placeholder="id" />
+        <input #id type="text" placeholder="id" /> -->
         
       </div>
       <div class="btn-save">
-        <button (click)="add({name: name.value, stock:stock.value, id:id.value,tipo:tipo.value })" (click)="toggleModalAdd()">Continuar Comprando</button>
+        <button (click)="add(key, {name: name.value })" (click)="toggleModalAdd()">Continuar Comprando</button>
       </div>
     </section>
     </app-modal>
@@ -49,7 +49,7 @@
 
   <input #id  [(ngModel)]="produtosRef.id"  type="text" placeholder="stock" /> -->
   
-  <input class="btn new" type="button" (click)="add2(produtosRef, {name: name.value, key:key.value})" placeholder="telefone" value="Salvar" />
+  <input class="btn new" type="button" (click)="add(produtosRef.key, {name: name.value, key:key.value})" placeholder="telefone" value="Salvar" />
   <button (click)="toggleModalAdd()" class="btn edit">new</button>
 </div>
 

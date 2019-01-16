@@ -1,251 +1,117 @@
-/* =========== LOCAIS ============== */
-$cor-principal:rgba(25, 135, 25, 1);
-$cor-secundaria: green;
-$cor-terciaria: white;
+@import '../../theme/colors.scss';
 
-
-.locaisicon {
-  display: flex;
-  padding-top: 13vh;
-  justify-content: space-between;
-}
-
-/* =========== ORÇAMENTO ============== */
-select {
-  border: solid #000 20px;
-}
-
-.orçamento {
+.nossahistoria {
+  height: 90px;
   display: flex;
   align-items: flex-end;
-  width: 30%;
-}
-
-.orcamento {
-  font-size: 30px;
-  margin-top: 90px;
-  margin-left: 21px;
-  font-family: roboto;
-}
-
-/* =========== ICONES ============== */
-.telefone {
-  display: none;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.tel {
+  background: #2b632ae8;
   display: flex;
   align-items: center;
-}
+  padding-top: 89px;
+  height: 90px;
 
-.localizaçao {
-  display: flex;
-  align-items: center;
-}
-
-.info {
-  display: flex;
-  font-size: 20px;
-  margin: 10px;
-}
-
-/* =========== CONTATOS ============== */
-.sec-contato {
-  display: flex;
-  justify-content: space-between;
-  background-color: $cor-terciaria;
+  h1 {
+    color: white;
+    margin: 10px 20px;
+  }
 }
 
 #map {
   width: 60%;
   height: 800px;
-  margin: 30px;
+  margin: 0 20px
 }
 
 agm-map {
   height: 100%;
 }
 
-.formulario {
+.sec-contato {
   display: flex;
-  flex-wrap: wrap;
-  padding: 30px;
-  width: 40%;
-}
+  // align-items: center;
+  margin: 30px;
 
-input,
-textarea,
-select {
-  width: 100%;
-}
-
-#nome,
-#modelo,
-#ano,
-#tel,
-#comentario,
-#marca {
-  background-color: rgba(136, 0, 0, 0);
-  color: $cor-principal;
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  border: 1px solid #80808087;
-  margin-bottom: 10px;
-  cursor: pointer;
-  box-shadow: 3px 3px 3px #80808085;
-}
-
-label {
-  color: rgb(0, 0, 0);
-}
-
-.placeholder {
-  color: $cor-principal;
-}
-
-::-webkit-input-placeholder {
-  color: $cor-principal;
-}
-
-.btao {
-  background-color: $cor-terciaria;
-  padding: 5px;
-  color: $cor-secundaria;
-  box-shadow: 3px 3px 3px #80808085;
-  border: 1px solid;
-  width: 95px;
-  height: 44px;
-}
-
-.btao:hover {
-  border-style: none;
-  background-color: $cor-secundaria;
-  color: $cor-terciaria;
-  transition: 0.2s;
-}
-
-.dlocais {
-  display: none;
-}
-
-.nossahistoria {
-  height: 90px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.nossa {
-  box-shadow: 5px 5px 5px rgb(155, 155, 155);
-  background-color: $cor-principal;
-  width: 268px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $cor-terciaria;
-}
-
-.history {
-  background-color: $cor-principal;
-}
-
-.textlocalizacao {
-  font-size: 25px;
-  font-family: roboto;
-  color: $cor-terciaria;
-}
-
-@media(max-width:700px) {
-  .locaisicon {
+  .form {
+    width: 40%;
     display: flex;
-    padding-top: 6vh;
-    justify-content: space-between;
+    justify-content: center;
+
+    // align-items: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+
+      input,
+      select,
+      textarea,
+      option {
+        // width: 334px;
+        height: 61px;
+        text-align: center;
+        margin: 10px 0;
+        font-size: 23px;
+        border: 1px solid #80808087;
+        color: rgba(25, 135, 25, 1);
+        box-shadow: 3px 3px 3px #80808085;
+
+        &::placeholder {
+          text-align: center;
+          color: rgba(25, 135, 25, 1);
+
+        }
+      }
+
+      textarea {
+        height: 272px;
+      }
+    }
   }
-  .sec-contato {
-    display: flex;
+}
+
+.btn {
+  padding: 14px 25px;
+  background-color: transparent;
+  border: 1px solid $colorPrimary;
+  border-radius: 6px;
+  color: $colorPrimary;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #28a745;
+    transition: 0.7s;
+    color: white;
+  }
+
+}
+
+@media(max-width:758px) {
+  #map {
+    // width: 100%;
     width: 100%;
-    margin-left: -15px;
+    margin: 7px 0;
+    height: 450px; // margin: 0;
+  }
+
+  .sec-contato {
+    margin: 0px;
+    display: flex;
     flex-direction: column-reverse;
     justify-content: center;
+    width: 100%;
+    align-items: center;
+
+    .form {
+
+      width: 100%;
+
+    }
   }
 
-  .formulario,
-  #map {
-    width: 86%;
-  }
-
-  .btao,
   .botaoo {
-    width: 100%;
-  }
 
-  #map {
-    margin: 0px;
-    padding: 20px;
-    height: 450px;
-  }
-
-  .orçamento img {
     display: flex;
-    margin-top: 55px;
-    width: 70px;
-    height: 70px;
-    margin-left: 15px;
-  }
-
-  .nossahistoria {
-    margin-bottom: 30px;
-    display: none;
-  }
-
-  .telefone {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-  }
-
-  agm-map {
-    height: 100%;
-    width: 112%;
-  }
-
-  .tel,
-  .whatsapp,
-  .localizaçao {
-    padding: 0px;
-    margin-bottom: 20px;
-    width: 100%;
-    align-items: center;
     justify-content: center;
   }
-
-  .orçamento {
-    align-items: center;
-    text-align: center;
-  }
-
-  p.locais {
-    display: flex;
-    font-size: 20px;
-    height: 64px;
-    padding: 5px;
-    margin-bottom: -7px;
-    justify-content: center;
-  }
-
-  #nome,
-  #tel,
-  #marca,
-  #modelo,
-  #ano {
-    padding: 15px;
-  }
-}
-
-#sct-map {
-  width: 105%;
 }
