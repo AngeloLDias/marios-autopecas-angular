@@ -34,39 +34,23 @@ export class ListProductsComponent implements OnInit {
       )
     );
   }
-  private handleError(error) {
-    console.log(error);
-  }
 
-  updateCustomer(key: string, value: any): void {
-    this.produtosRef.update(key, value).catch(error => this.handleError(error));
-  }
-
-  add2(key: string, change) {
-    this.produtosRef.update(key, change);
-    this.edit(Produto)
-  }
-  add(key, _produto: Produto, change): void {
+  add(key, _produto: Produto): void {
     const list = this.db.list('/')
-
-    if (_produto.key != null) {
+    if (key != null) {
       alert('editado com sucesso')
-      console.log('1111', key)
-      console.log('222', _produto)
-
       list.update(key, _produto);
     }
     else {
       alert('salvo com sucesso')
       list.push(_produto);
-      console.log('1111', key)
-      console.log('222', _produto)
+      // console.log(this.produtosRef.key)
     }
   }
 
   edit(produto): void {
-    const list = this.db.list('/')
     this.produtosRef = Object(produto)
+    console.log(produto)
   }
 
   delete(key: string) {
@@ -76,28 +60,16 @@ export class ListProductsComponent implements OnInit {
   }
 
   toggleModal() {
-    if (this.showModal == false) {
-      this.showModal = true;
-    }
-    else {
-      this.showModal = false
-    }
+    this.showModal = !this.showModal;
   }
+
   toggleModalAdd() {
-    if (this.showModalAdd == false) {
-      this.showModalAdd = true;
-    }
-    else {
-      this.showModalAdd = false
-    }
+      this.showModalAdd = !this.showModalAdd
   }
 
   ngOnInit() {
 
   }
-
-
-
 }
 
 

@@ -11,13 +11,13 @@
 // };
 
 export class Produto {
-    key:string;
+    key:string
     id: number;
     name: string;
     stock: number;
+    application: string;
     categoria: {
         id: number;
         name: string;
     }
-    application: string;
 };
