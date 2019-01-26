@@ -1,13 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Produto } from '../../model/pruducts';
-// import { Pacientes } from '../../model/pruducts';
 import { ProductsService } from '../../services/products.service';
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 import { Observable } from 'rxjs';
-import { defineBase } from '@angular/core/src/render3';
-import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
 
+import { ModalAddComponent } from '../modal-add/modal-add.component'
+import { ModalEditComponent } from '../modal-edit/modal-edit.component'
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
@@ -17,56 +15,34 @@ import { map } from 'rxjs/operators';
 
 export class ListProductsComponent implements OnInit {
 
-  private produtosCollection: AngularFireList<Produto>
   public produtos: Observable<any[]>;
-  public produtos2: Observable<any[]>;
-  produtosRef: AngularFireList<any>;
-  public showModal: boolean = false;
   public showModalAdd: boolean = false;
+  public showModalEdit: boolean = false;
 
-  constructor(private db: AngularFireDatabase) {
-
-    this.produtosRef = db.list('/', ref => ref.orderByChild('/name').limitToFirst(10));
-
-    this.produtos = this.produtosRef.snapshotChanges().pipe(
-      map(change =>
-        change.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      )
-    );
+  constructor(
+    private productsService: ProductsService,
+    private dialog:MatDialog
+    ) {
+    this.produtos = this.productsService.produtos
   }
 
-  add(key, _produto: Produto): void {
-    const list = this.db.list('/')
-    if (key != null) {
-      alert('editado com sucesso')
-      list.update(key, _produto);
-    }
-    else {
-      alert('salvo com sucesso')
-      list.push(_produto);
-      // console.log(this.produtosRef.key)
-    }
-  }
-
-  edit(produto): void {
-    this.produtosRef = Object(produto)
-    console.log(produto)
+  edit(produto) {
+    this.productsService.edit(produto)
   }
 
   delete(key: string) {
-    const list = this.db.list('/')
-    list.remove(key);
+    this.productsService.delete(key)
 
   }
 
-  toggleModal() {
-    this.showModal = !this.showModal;
+  showdialog() {
+    this.dialog.open(ModalAddComponent)
   }
 
-  toggleModalAdd() {
-      this.showModalAdd = !this.showModalAdd
-  }
+  showDialogEdit(){
+    this.dialog.open(ModalEditComponent)
 
+  }
   ngOnInit() {
 
   }

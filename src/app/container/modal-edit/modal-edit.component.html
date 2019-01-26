@@ -1,0 +1,35 @@
+<mat-dialog-content class="modal-add">
+  
+  <div class="form">
+    <mat-form-field class="example-full-width">
+      <input matInput #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #application [(ngModel)]="produtosRef.application" type="text" placeholder="application" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #stock [(ngModel)]="produtosRef.stock" type="text" placeholder="stock" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #id [(ngModel)]="produtosRef.id" type="text" placeholder="id" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #key [(ngModel)]="produtosRef.key" placeholder="key (disabled)" disabled />
+    </mat-form-field>
+
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button color='red' matDialogClose>Cancel</button>
+  <button mat-raised-button color='warn' (click)="add(produtosRef.key,{
+        name:name.value,
+        application:application.value,
+        stock:stock.value,
+        id:id.value})" matDialogClose>Edit</button>
+</mat-dialog-actions>

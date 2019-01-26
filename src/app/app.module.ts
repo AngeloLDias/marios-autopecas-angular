@@ -35,6 +35,13 @@ import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from "@angular/fire/database";
 import { ModalAddComponent } from './container/modal-add/modal-add.component';
+import { ModalEditComponent } from './container/modal-edit/modal-edit.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -54,24 +61,30 @@ import { ModalAddComponent } from './container/modal-add/modal-add.component';
     ButtonComponent,
     CadastroComponent,
     ModalAddComponent,
-
-    // UICarouselComponent,
-    
+    ModalEditComponent,
+      
+  ],
+  entryComponents:[
+    ModalAddComponent,
+    ModalEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UICarouselModule,
     HttpClientModule,
+    MatDialogModule,
     SlickModule.forRoot(),
     BrowserModule,
     CommonModule,
     FormsModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGgHmDeD5_Q7Mh5sUPgaQKOtPE6vElSWA'
     }),
     AngularFireModule.initializeApp(environment.firebase, 'fcc-produtos-trading'),
-
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [AngularFirestore, AngularFireDatabase],
   bootstrap: [AppComponent]

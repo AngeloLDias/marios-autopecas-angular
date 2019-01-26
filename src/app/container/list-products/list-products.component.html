@@ -1,81 +1,19 @@
-<!-- <app-modal-add addprod={{add()}} *ngIf="showModal" prodname={{produtosRef.name}}></app-modal-add> -->
 
-<!-- Modal Edit -->
 
-<app-modal *ngIf="showModal">
-  <section class="modal-add">
-    <div class="form">
-      <input #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
-      <input #application [(ngModel)]="produtosRef.application" type="text" placeholder="application" />
-      <input #stock [(ngModel)]="produtosRef.stock" type="text" placeholder="stock" />
-      <input #id [(ngModel)]="produtosRef.id" type="text" placeholder="id" />
-      <input #key [(ngModel)]="produtosRef.key" type="hidden" placeholder="key" />
+<!-- <app-modal-add *ngIf="showModalAdd" ></app-modal-add> -->
 
-    </div>
+<!-- <app-modal-edit *ngIf="showModalEdit" toogleModal="{{toggleModalEdit()}}"></app-modal-edit>
+ -->
 
-    <div class="btn-save">
-      <button (click)="add(produtosRef.key,{
-        name:name.value,
-        application:application.value,
-        stock:stock.value,
-        id:id.value
-      } )" (click)="toggleModal()">Continuar Comprando</button>
-    </div>
-  </section>
-</app-modal>
-
-<!-- Modal add -->
-
-<app-modal *ngIf="showModalAdd">
-
-  <section class="modal-add">
-    <h1>new</h1>
-
-    <div class="form">
-      <input #name type="text" placeholder="name" />
-      <input #application type="text" placeholder="application" />
-      <input #stock type="text" placeholder="stock" />
-      <input #id type="text" placeholder="id" />
-    </div>
-
-    <div class="btn-save">
-      <button (click)="add(key,{
-        name: name.value,
-        application:application.value,
-        stock:stock.value,
-        id:id.value
-        
-      })" (click)="toggleModalAdd()">Continuar
-        Comprando</button>
-    </div>
-
-  </section>
-</app-modal>
 
 
 <div class="painel">
-
-  <!-- <input #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" /> -->
-  <!-- <input #key [(ngModel)]="produtosRef.key" type="text" placeholder="name" /> -->
-  <!-- 
-  <input  [(ngModel)]="produtosRef.application"  type="text" #tipo placeholder="application" />
-
-  <input [(ngModel)]="produtosRef.stock"  type="text" #stock placeholder="stock" />
-
-  <input #id  [(ngModel)]="produtosRef.id"  type="text" placeholder="stock" /> -->
-
-  <!-- <input class="btn new" type="button" (click)="add(produtosRef.key, {name: name.value})" placeholder="telefone" value="Salvar" />
-  <button (click)="toggleModalAdd()" class="btn edit">new</button> -->
-  <button (click)="toggleModalAdd()" class="btn edit">new</button>
+  <button (click)="showdialog()" mat-raised-button color="primary">new</button>
 </div>
 
-
-
-
 <table>
-
   <thead>
-    <tr>
+    <tr>  
       <th>item</th>
       <th>nome</th>
       <th>application</th>
@@ -95,9 +33,14 @@
       <td>{{produto.stock}}</td>
       <td>{{produto.id}}</td>
 
-      <td><button (click)="toggleModal()" (click)="edit(produto)" class="btn edit">Edit</button></td>
-      <td><button (click)="delete(produto.key)" class="btn delete">Delete</button></td>
+      <td><button  (click)="showDialogEdit()" (click)="edit(produto)" mat-raised-button color="primary">Edit</button>
+      </td>
+      
+      <td><button (click)="delete(produto.key)" mat-raised-button color="warn">Warn</button>
+      </td>
     </tr>
   </tbody>
 
 </table>
+
+

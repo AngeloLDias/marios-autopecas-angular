@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Variable } from '@angular/compiler/src/render3/r3_ast';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-modal-add',
@@ -8,20 +8,14 @@ import { Variable } from '@angular/compiler/src/render3/r3_ast';
 })
 export class ModalAddComponent implements OnInit {
 
-  constructor() { }
-  @Input() prodname:string
-  @Input() addprod:string
-  // @Input() newitem: Variable;
+  constructor(private productsService: ProductsService) { }
+
+  @Input() toogleModal: string;
+
   ngOnInit() {
   }
-  public showModal: boolean = true;
 
-  toggleModal() {
-    if (this.showModal == false) {
-      this.showModal = true;
-    }
-    else {
-      this.showModal = false
-    }
+  add(key, _produto) {
+    this.productsService.add(key, _produto)
   }
 }

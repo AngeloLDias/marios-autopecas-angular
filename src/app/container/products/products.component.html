@@ -9,10 +9,10 @@
   </div>
 
   <div class="product">
-    <div class="box-product" *ngFor="let produto of produtos; let i = index;">
+    <div class="box-product" *ngFor="let produto of produtos | async; let i = index;">
       <img src="../../../assets/media/Macaco.jpg" alt="">
-      <p>{{produto.nome}}</p>
-      <p>Por: R${{produto.peso}}</p>
+      <p>{{produto.name}}</p>
+      <!-- <p>Por: R${{produto.peso}}</p> -->
       <app-button
        (click)="toggleModal()"
        (click)="addToCart(produto)"
