@@ -25,6 +25,7 @@
   <tbody>
     <tr *ngFor="let produto of produtos | async; let i = index;">
       <td>{{i + 1}} </td>
+      <td><img class="photo" src="{{produto.photo}}" alt=""></td>
       <td>{{produto.name}}</td>
       <td>{{produto.application}}</td>
       <!-- <td>{{produto.categoria.id}}</td> -->
@@ -33,7 +34,7 @@
 
       <td><button (click)="showDialogEdit()" (click)="edit(produto)" mat-raised-button color="primary">Edit</button>
       </td>
- 
+
       <td><button (click)="delete(produto.key)" mat-raised-button color="warn">Warn</button>
       </td>
     </tr>
