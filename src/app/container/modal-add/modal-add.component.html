@@ -1,33 +1,43 @@
 <!-- <app-modal> -->
 <h1 MatDialogTitle>new</h1>
 <mat-dialog-content>
-<section class="modal-add">
-  <form class="example-form form">
-<!-- 
+  <section class="modal-add">
+    <form class="example-form form">
+      <!-- 
     <mat-form-field class="example-full-width">
       <input matInput #name type="text" placeholder="name">
     </mat-form-field> -->
 
-    <mat-form-field class="example-full-width">
-      <input matInput #name type="text" placeholder="name" />
-    </mat-form-field>
+      <input type="file" (change)="uploadFile($event)" />
 
-    <mat-form-field class="example-full-width">
-      <input matInput #application type="text" placeholder="application" />
-    </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput #stock type="text" placeholder="stock" />
-    </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput #name type="text" placeholder="name" />
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput #id type="text" placeholder="id" />
-    </mat-form-field>
 
-  </form>
-</section>
+
+      <mat-form-field class="example-full-width">
+        <input matInput #application type="text" placeholder="application" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput #stock type="text" placeholder="stock" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput #id type="text" placeholder="id" />
+      </mat-form-field>
+
+      <mat-form-field  class="example-full-width">
+        <input  matInput #photo value="{{photo3}}" type="text" placeholder="a" />
+      </mat-form-field>
+
+    </form>
+  </section>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-raised-button color='red' matDialogClose>Cancel</button>
-    <button mat-raised-button color='warn' (click)="add(key,{name:name.value,application:application.value,stock:stock.value,id:id.value})" matDialogClose>Save</button>
+  <button mat-raised-button color='warn' (click)="add(key,{name:name.value,application:application.value,stock:stock.value,id:id.value,photo:photo.value})"
+    matDialogClose>Save</button>
 </mat-dialog-actions>

@@ -1,5 +1,3 @@
-
-
 <!-- <app-modal-add *ngIf="showModalAdd" ></app-modal-add> -->
 
 <!-- <app-modal-edit *ngIf="showModalEdit" toogleModal="{{toggleModalEdit()}}"></app-modal-edit>
@@ -13,7 +11,7 @@
 
 <table>
   <thead>
-    <tr>  
+    <tr>
       <th>item</th>
       <th>nome</th>
       <th>application</th>
@@ -33,14 +31,12 @@
       <td>{{produto.stock}}</td>
       <td>{{produto.id}}</td>
 
-      <td><button  (click)="showDialogEdit()" (click)="edit(produto)" mat-raised-button color="primary">Edit</button>
+      <td><button (click)="showDialogEdit()" (click)="edit(produto)" mat-raised-button color="primary">Edit</button>
       </td>
-      
+ 
       <td><button (click)="delete(produto.key)" mat-raised-button color="warn">Warn</button>
       </td>
     </tr>
   </tbody>
 
 </table>
-
-

@@ -30,6 +30,7 @@ import { CadastroComponent } from './container/cadastro/cadastro.component';
 
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -79,6 +80,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
+    AngularFireStorageModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGgHmDeD5_Q7Mh5sUPgaQKOtPE6vElSWA'
     }),

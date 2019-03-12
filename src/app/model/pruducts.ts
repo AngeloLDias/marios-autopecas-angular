@@ -14,6 +14,7 @@ export class Produto {
     key:string
     id: number;
     name: string;
+    image: string;
     stock: number;
     application: string;
     categoria: {
