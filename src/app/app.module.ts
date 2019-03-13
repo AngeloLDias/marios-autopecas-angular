@@ -42,6 +42,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     BrowserAnimationsModule,
     AngularFireStorageModule,
+    ImageCropperModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGgHmDeD5_Q7Mh5sUPgaQKOtPE6vElSWA'
     }),

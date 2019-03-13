@@ -3,6 +3,7 @@ import { ProductsService } from 'src/app/services/products.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-modal-add',
@@ -31,12 +32,27 @@ export class ModalAddComponent implements OnInit {
 
   }
 
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+  
+  fileChangeEvent(event: any): void {
+      this.imageChangedEvent = event;
+      console.log(event)
+  }
+  imageCropped(event: ImageCroppedEvent) {
+      this.croppedImage = event.base64;
+  }
+  imageLoaded() {
+    // show cropper
+}
+loadImageFailed() {
+    // show message
+}
   uploadFile(event) {
-    const file = event.target.files[0];
     let r = Math.random().toString(36).substring(7);
     const filePath = r;
     const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath, file);
+    const task = this.storage.upload(filePath, this.croppedImage);
 
     // observe percentage changes
     this.uploadPercent = task.percentageChanges();

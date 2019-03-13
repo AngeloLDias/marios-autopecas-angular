@@ -8,8 +8,21 @@
       <input matInput #name type="text" placeholder="name">
     </mat-form-field> -->
 
+      <input type="file" (change)="fileChangeEvent($event)" />
       <input type="file" (change)="uploadFile($event)" />
-
+      <button></button>
+      <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 3"
+      [resizeToWidth]="128"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()"
+      (loadImageFailed)="loadImageFailed()"
+  ></image-cropper>
+  
+  <img [src]="croppedImage" />
 
       <mat-form-field class="example-full-width">
         <input matInput #name type="text" placeholder="name" />
@@ -29,8 +42,8 @@
         <input matInput #id type="text" placeholder="id" />
       </mat-form-field>
 
-      <mat-form-field  class="example-full-width">
-        <input  matInput #photo value="{{photo3}}" type="text" placeholder="a" />
+      <mat-form-field class="example-full-width">
+        <input matInput #photo value="{{photo3}}" type="text" placeholder="a" />
       </mat-form-field>
 
     </form>
@@ -38,6 +51,6 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-raised-button color='red' matDialogClose>Cancel</button>
-  <button mat-raised-button color='warn' (click)="add(key,{name:name.value,application:application.value,stock:stock.value,id:id.value,photo:photo.value})"
+  <button mat-raised-button color='warn' (click)="add(key,{name:name.value,application:application.value,stock:stock.value,id:id.value,photo:photo.value});uploadFile()"
     matDialogClose>Save</button>
 </mat-dialog-actions>
