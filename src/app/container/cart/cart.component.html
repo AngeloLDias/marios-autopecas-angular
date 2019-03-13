@@ -1,17 +1,17 @@
 <div class="title">
   <p>Produtos</p>
 </div>
-<table >
+<table>
 
-  <thead *ngIf="!cartEmpty"> 
+  <thead *ngIf="!cartEmpty">
     <tr>
       <th>item</th>
+      <th>imagem</th>
       <th>nome</th>
       <!-- <th>tipo</th> -->
       <th>preço</th>
       <th>quantidade</th>
       <!-- <th>marca</th> -->
-      <th>imagem</th>
       <th></th>
       <th></th>
     </tr>
@@ -19,11 +19,11 @@
 
   <tbody *ngFor="let produto of produtos; let i = index">
     <tr>
-      <td> </td>
-      <td class="nn">{{produto.nome}}</td>
-      <td>R$ {{produto.peso}}</td>
+      <td>{{i + 1}}</td>
+      <td><img src="{{produto.photo}}" width="95px" alt=""></td>
+      <td class="nn">{{produto.name}}</td>
+      <td>R$ 15,00</td>
       <td><input type="number"></td>
-      <td><img src="{{produto.imagem}}" width="95px" alt=""></td>
       <td><button (click)="deleteProduct(i)" class="btn delete">Delete</button></td>
 
     </tr>
@@ -36,13 +36,6 @@
 
 <div *ngIf="cartEmpty" class="cart-empty">
   <p>CARRINHO VAZIO</p>
-  <app-button
-  (click)="toggleModal()"
-  (click)="addToCart(produto)"
-  text="RETORNAR PARA A LOJA"
-  BC="#2a7023"
-  width="257px" 
-  height="50px"
-  color="#fff"
-  ></app-button>
+  <app-button (click)="toggleModal()" (click)="addToCart(produto)" text="RETORNAR PARA A LOJA" BC="#2a7023" width="257px"
+    height="50px" color="#fff"></app-button>
 </div>

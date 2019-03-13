@@ -1,6 +1,8 @@
 <mat-dialog-content class="modal-add">
-  
+
   <div class="form">
+    <input type="file" (change)="uploadFile($event)" />
+
     <mat-form-field class="example-full-width">
       <input matInput #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
     </mat-form-field>
@@ -19,8 +21,11 @@
 
     <mat-form-field class="example-full-width">
       <input matInput #key [(ngModel)]="produtosRef.key" placeholder="key (disabled)" disabled />
-    </mat-form-field>
+    </mat-form-field> 
 
+    <mat-form-field  class="example-full-width">
+        <input  matInput #photo value="{{photo3}}" type="text" placeholder="a" />
+      </mat-form-field>
   </div>
 
 </mat-dialog-content>
@@ -31,5 +36,6 @@
         name:name.value,
         application:application.value,
         stock:stock.value,
-        id:id.value})" matDialogClose>Edit</button>
+        id:id.value,photo:photo.value})"
+    matDialogClose>Edit</button>
 </mat-dialog-actions>
