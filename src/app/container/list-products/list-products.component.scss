@@ -1,10 +1,13 @@
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 * {
   text-transform: capitalize;
   text-align: center;
 }
-
+ 
 td {
-  padding: 5px 15px;
+  padding: 5px 15px;  
 }
 
 .btn {
