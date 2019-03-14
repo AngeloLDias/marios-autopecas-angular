@@ -8,13 +8,12 @@ import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { WhoWeAreComponent } from './container/who-we-are/who-we-are.component';
 import { SlickModule } from 'ngx-slick';
-import { AdminComponent } from './container/admin/admin.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { HttpModule } from '@angular/http'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
 import { LoginComponent } from './container/login/login.component';
-
+ 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -44,7 +43,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 
@@ -58,7 +56,6 @@ import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/materia
     ProductsComponent,
     ContactComponent,
     WhoWeAreComponent,
-    AdminComponent,
     ListProductsComponent,
     LoginComponent,
     CartComponent,
@@ -68,7 +65,6 @@ import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/materia
     CadastroComponent,
     ModalAddComponent,
     ModalEditComponent,
-    NavComponent,
     
       
   ],
