@@ -10,6 +10,7 @@ import { CartComponent } from './container/cart/cart.component';
 import { AdminComponent } from './container/admin/admin.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CadastroComponent } from './container/cadastro/cadastro.component';
+import { NavComponent } from './nav/nav.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'carrinho', component: CartComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'nav', component: NavComponent },
 
   { path: 'dev-a', component: ModalComponent },
   { path: 'dev-b', component: ListProductsComponent },

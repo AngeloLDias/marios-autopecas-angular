@@ -1,4 +1,54 @@
 @import '../../theme/colors.scss';
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  height: 100vh;
+}
+.nav-bar{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  box-shadow: 1px -2px 14px;
+
+  img {
+    width: 149px;
+    cursor: pointer;
+    // margin: 0px 85px;
+  }
+}
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+// .nav-bar{
+//   background-position: absolute;
+//   height: 100vh;
+// }
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.mat-drawer-container{
+  position: inherit;
+
+}
+.mat-drawer-transition .mat-drawer-backdrop{
+  position: fixed !important;
+} 
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 .header {
   background-color: #fff;
@@ -73,11 +123,13 @@
     .login {
       flex-direction: column;
       border-right: 1px solid;
+
       p {
         margin: 4px 0px;
         display: none;
       }
     }
+
     .car {
       p {
         font-weight: bolder;
@@ -157,20 +209,22 @@
     display: none;
 
   }
-  .open-dropDown{
+
+  .open-dropDown {
     display: block;
     position: absolute;
     margin: 20px 0px;
   }
 
-  .item-drop{
+  .item-drop {
     background-color: green;
     padding: 2px 17px;
     max-width: 274px;
     margin: -1px;
     align-items: end;
-    display: flex;  }
-    
+    display: flex;
+  }
+
 }
 
 // menu mobile
@@ -252,6 +306,7 @@
   //   background-color: black !important;
   // }
 }
+
 @media(max-width:768px) {
   .header {
     justify-content: space-between;

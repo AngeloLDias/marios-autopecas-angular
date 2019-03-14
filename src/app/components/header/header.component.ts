@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 
 import { LANG } from '../../theme/pt'
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,8 +16,12 @@ export class HeaderComponent implements OnInit {
   public toogleMenu = false;
   public toogle = false;
   public listMenu = [];
-
-  constructor(private cartService: CartService) {}
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(min-width: 0)'])
+    .pipe(
+      map(result => result.matches)
+    );
+  constructor(private cartService: CartService,
+    private breakpointObserver: BreakpointObserver) {}
   
 
   public lists = [

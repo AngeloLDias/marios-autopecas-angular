@@ -65,7 +65,9 @@ button{
 .slick-slide img {
   width: 138px !important;
 }
-
+.mat-drawer-transition .mat-drawer-backdrop{
+  position: fixed !important;
+} 
 @media(max-width:768px) {
   .slick-list {
     height: 100px;

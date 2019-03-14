@@ -1,12 +1,7 @@
-<!-- menu desktop -->
 <header class="header desktop">
-
   <p class="logo" routerLink="home">
     <img class="logo-marios" routerLink="" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
-
-
-
   <nav class="nav-header">
     <li>
       <p routerLink="" [ngClass]="{'active': homeActive}">{{lang.home}}</p>
@@ -22,7 +17,6 @@
     </li>
   </nav>
   <div class="search">
-    <!-- <div><input type="text"><button>BUSCA</button></div> -->
     <div class="user-buy">
       <div class="login"><img routerLink="login" class="img-login" src="../../../assets/media/iconmonstr-user-19.svg"
           alt="">
@@ -35,44 +29,17 @@
   </div>
 </header>
 
-<!-- sub menu -->
-
-<!-- <section class="sub-menu">
-  <ul>
-
-    <li *ngFor="let list of lists; let i = index" (click)='toogleDropDown(i)'>{{list.section}}
-      <div [ngClass]="{'open-dropDown': toogle}" class="dropDown">
-    <li class="item-drop" *ngFor="let cat of list.items">{{cat.item}}</li>
-
-    </div>
-    </li>
-
-  </ul>
-</section> -->
-
-<!-- menu mobile -->
-
 <header [ngClass]="{'colorSpan': toogleMenu}" class="header mobile ">
-  <!-- <div class="user-buy">
-    <img src="../../../assets/media/iconmonstr-user-19.svg" alt="">
-    <img src="../../../assets/media/294547.svg" alt="">
-  </div> -->
   <p class="logo-marios" routerLink="home">
     <img class="logo-marios" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
   </p>
-
   <div class="nav-header" (click)="toogleSideMenu()">
-    <!-- <div>
-      <img class="logo-menu" src="../../../assets/media/logoo-min.png" width="100px" alt="">
-    </div> -->
     <div>
       <div class="line-1"></div>
       <div class="line-2"></div>
       <div class="line-3"></div>
     </div>
-
   </div>
-
   <nav class="menu-mobile" [ngClass]="{'showMenu': toogleMenu}">
     <div>
       <img class="logo-menu" src="../../../assets/media/logoW.png" width="100px" alt="">
@@ -86,3 +53,42 @@
     </div>
   </nav>
 </header>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav mobile" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <p routerLink="">HOME</p>
+      <p routerLink="quem-somos">QUEM SOMOS</p>
+      <p routerLink="produtos">PRODUTOS</p>
+      <p routerLink="contato">CONTATO</p>
+      <p routerLink="login">LOGIN</p>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content class="nav-bar mobile">
+    <mat-toolbar class="nav-bar nav-header" color="primary">
+      <p class="logo-marios" routerLink="home">
+        <img class="logo-marios" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+      </p>
+      <div type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <div>
+          <div class="line-1"></div>
+          <div class="line-2"></div>
+          <div class="line-3"></div>
+        </div>
+      </div>
+      <!-- <div class="nav-header" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">
+          <div>
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+          </div>
+        </div> -->
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -43,6 +43,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 
 
 @NgModule({
@@ -64,6 +68,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     CadastroComponent,
     ModalAddComponent,
     ModalEditComponent,
+    NavComponent,
+    
       
   ],
   entryComponents:[
@@ -76,6 +82,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     UICarouselModule,
     HttpClientModule,
     MatDialogModule,
+    MatSidenavModule,
     SlickModule.forRoot(),
     BrowserModule,
     CommonModule,
@@ -88,7 +95,11 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     }),
     AngularFireModule.initializeApp(environment.firebase, 'fcc-produtos-trading'),
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [AngularFirestore, AngularFireDatabase],
   bootstrap: [AppComponent]
