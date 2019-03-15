@@ -15,11 +15,7 @@ export class ProductsService {
 
   private produtosCollection: AngularFireList<Produto>
   public produtos: Observable<any[]>;
-  public produtos2: Observable<any[]>;
-  produtosRef: AngularFireList<any>;
-  public showModal: boolean = false;
-  public showModalAdd: boolean = false;
-
+  public produtosRef: AngularFireList<any>;
 
   constructor(private db: AngularFireDatabase) {
     

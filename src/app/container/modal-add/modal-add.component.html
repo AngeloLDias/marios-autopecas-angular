@@ -43,7 +43,7 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput #photo value="{{photo3}}" type="text" placeholder="a" />
+        <input matInput #photo value="{{photoProduct}}" type="text" placeholder="Photo" />
       </mat-form-field>
 
     </form>
@@ -51,6 +51,6 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-raised-button color='red' matDialogClose>Cancel</button>
-  <button mat-raised-button color='warn' (click)="add(key,{name:name.value,application:application.value,stock:stock.value,id:id.value,photo:photo.value});uploadFile()"
+  <button mat-raised-button color='warn' (click)="add(key,{name:name.value,application:application.value,stock:stock.value,id:id.value,photo:photo.value})"
     matDialogClose>Save</button>
 </mat-dialog-actions>

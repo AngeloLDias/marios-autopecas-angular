@@ -1,12 +1,12 @@
 <div class="painel">
-  <button (click)="showdialog()" mat-raised-button color="primary">new</button>
+  <button (click)="showdialog()" class="btn btn-primary">new</button>
 </div>
-<button type="button" class="btn btn-primary">Primary</button>
 
 <table>
   <thead>
     <tr>
       <th>item</th>
+      <th>imagem</th>
       <th>nome</th>
       <th>application</th>
       <!-- <th>categoria</th> -->
@@ -25,11 +25,9 @@
       <!-- <td>{{produto.categoria.id}}</td> -->
       <td>{{produto.stock}}</td>
       <td>{{produto.id}}</td>
-
-      <td><button (click)="showDialogEdit()" (click)="edit(produto)" mat-raised-button color="primary">Edit</button>
+      <td><button (click)="showDialogEdit();edit(produto)" class="btn btn-primary">Editar</button>
       </td>
-
-      <td><button (click)="delete()" mat-raised-button color="warn">Warn</button>
+      <td><button (click)="delete(produto.key)" class="btn btn-danger">Deletar</button>
       </td>
     </tr>
   </tbody>

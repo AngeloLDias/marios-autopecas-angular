@@ -1,12 +1,13 @@
 @import '../../theme/colors.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 .products {
   display: flex;
   padding: 20px;
-  // margin-top:14vh;
   padding-top: 18vh;
+
   .filter {
-    width: 363px;
+    width: 330px;
     border: 1px solid #000;
     height: 100%;
 
@@ -14,7 +15,6 @@
       background-color: green;
       color: white;
       padding: 13px;
-      
       text-align: center;
     }
 
@@ -35,47 +35,42 @@
   }
 
   .product {
+    /* width: 100%; */
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, 25%); */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-wrap: wrap; */
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 25%);
-    // grid-template-columns: repeat(auto-fill,minmax(113px,279px));
-    height: 20%;
-
-
+    flex-wrap: wrap;
+    /* width: 100%; */
+    justify-content: space-between;
+    height: 1%;
   }
 
   .box-product {
-    // width: 187px;
     display: flex;
     flex-direction: column;
+    /* height: 20%; */
     margin: 16px 21px;
     justify-content: center;
+    width: 250px;
     align-items: center;
-    border: 1px solid transparent;
-    padding: 10px;
-    cursor: pointer;
 
-    &:hover{
-      border: 1px solid #333;
-      transition: 0.5s;
-      padding: 10px;
-      // background-color: red;
-      opacity: 0.8;
+    .icon-cart {
+      position: absolute;
+      align-items: center;
+      margin-left: 40px;
+      font-size: 24px;
     }
+
     img {
-      width: 187px;
+      width: 120px;
     }
 
     p:nth-child(2) {
-      font-size: 15px;
+      font-size: 14px;
       text-align: center;
       font-weight: 600;
-      margin: 10px 0px;
-      height: 113px;
+      // margin: 20px 0px;
+      height: 100px;
       display: flex;
       align-items: center;
     }
@@ -85,20 +80,11 @@
       text-align: center;
       font-weight: 600;
       margin: 10px 0px;
-      height: 113px;
+      // height: 113px;
       height: 25px;
-      font-size: 20px;
+      font-size: 18px;
+      white-space: nowrap;
     }
 
-    button {
-      background-color: #2a7023;
-      border: 1px solid #0c9f4b;
-      color: #fff;
-      border: none;
-      padding: 15px;
-      border-radius: 7px;
-      width: 100%;
-
-    }
   }
 }
