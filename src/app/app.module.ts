@@ -45,6 +45,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
+import { AngularFireAuth } from "@angular/fire/auth";
 
 
 @NgModule({
@@ -97,7 +98,7 @@ import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/materia
     MatIconModule,
     MatListModule
   ],
-  providers: [AngularFirestore, AngularFireDatabase],
+  providers: [AngularFirestore, AngularFireDatabase, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
