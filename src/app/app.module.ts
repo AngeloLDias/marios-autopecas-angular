@@ -12,7 +12,6 @@ import { ListProductsComponent } from './container/list-products/list-products.c
 import { HttpModule } from '@angular/http'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
-import { LoginComponent } from './container/login/login.component';
  
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -59,7 +58,6 @@ import { ModalLoginComponent } from './components/modals/modal-login/modal-login
     ContactComponent,
     WhoWeAreComponent,
     ListProductsComponent,
-    LoginComponent,
     CartComponent,
     ModalComponent,
     ModalConfirmProductComponent,
