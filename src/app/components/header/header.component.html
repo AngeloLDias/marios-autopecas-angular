@@ -4,25 +4,25 @@
   </p>
   <nav class="nav-header">
     <li>
-      <p routerLink="" [ngClass]="{'active': homeActive}">{{lang.home}}</p>
+      <p routerLink="">{{lang.home}}</p>
     </li>
     <li>
-      <p routerLink="/quem-somos" [ngClass]="{'active': companyActive}">{{lang.whoWeAre}}</p>
+      <p routerLink="/quem-somos">{{lang.whoWeAre}}</p>
     </li>
     <li>
-      <p routerLink="produtos" [ngClass]="{'active': contactActive}">{{lang.products}}</p>
+      <p routerLink="produtos">{{lang.products}}</p>
     </li>
     <li>
-      <p routerLink="contato" [ngClass]="{'active': productActive}">{{lang.contact}}</p>
+      <p routerLink="contato">{{lang.contact}}</p>
     </li>
   </nav>
   <div class="search">
     <div class="user-buy">
-      <div class="login"><img routerLink="login" class="img-login" src="../../../assets/media/iconmonstr-user-19.svg"
+      <div class="login" (click)="showdialog()"><img class="img-login" src="../../../assets/media/iconmonstr-user-19.svg"
           alt="">
         <p>Login</p>
       </div>
-      <div class="car" routerLink="carrinho"> <img src="../../../assets/media/294547.svg" alt="">
+      <div class="car" routerLink="carrinho"><img src="../../../assets/media/294547.svg" alt="">
         <p id="nome"></p>
       </div>
     </div>
@@ -54,3 +54,5 @@
   </nav>
 </header>
 
+
+  

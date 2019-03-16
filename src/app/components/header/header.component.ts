@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { MatDialog } from '@angular/material/dialog';
 
 import { LANG } from '../../theme/pt'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ModalLoginComponent } from '../modals/modal-login/modal-login.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,9 +23,18 @@ export class HeaderComponent implements OnInit {
       map(result => result.matches)
     );
   constructor(private cartService: CartService,
-    private breakpointObserver: BreakpointObserver) {}
+    private breakpointObserver: BreakpointObserver,
+    private dialog:MatDialog
+    ) {}
   
-
+    showdialog() {
+      // this.dialog.open(ModalLoginComponent) 
+      let dialogRef = this.dialog.open(ModalLoginComponent, {
+        height: '400px',
+        width: '400px',
+      });
+      
+    }
   public lists = [
     {
       'section': 'ACESSÓRIO',

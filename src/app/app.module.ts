@@ -46,6 +46,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 import { AngularFireAuth } from "@angular/fire/auth";
+import { ModalLoginComponent } from './components/modals/modal-login/modal-login.component';
 
 
 @NgModule({
@@ -66,12 +67,14 @@ import { AngularFireAuth } from "@angular/fire/auth";
     CadastroComponent,
     ModalAddComponent,
     ModalEditComponent,
+    ModalLoginComponent,
     
       
   ],
   entryComponents:[
     ModalAddComponent,
-    ModalEditComponent
+    ModalEditComponent,
+    ModalLoginComponent
   ],
   imports: [
     BrowserModule,

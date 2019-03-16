@@ -1,4 +1,9 @@
 @import '../../theme/colors.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+p{
+  margin-bottom: 0rem;
+}
 .sidenav-container {
   height: 100%;
 }
