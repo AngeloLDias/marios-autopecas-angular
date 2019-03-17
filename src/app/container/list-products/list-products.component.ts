@@ -3,9 +3,9 @@ import { Produto } from '../../model/pruducts';
 import { ProductsService } from '../../services/products.service';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { ModalAddComponent } from '../../components/modals/modal-add/modal-add.component'
+import { ModalEditComponent } from '../../components/modals/modal-edit/modal-edit.component'
 
-import { ModalAddComponent } from '../modal-add/modal-add.component'
-import { ModalEditComponent } from '../modal-edit/modal-edit.component'
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
@@ -15,9 +15,7 @@ import { ModalEditComponent } from '../modal-edit/modal-edit.component'
 
 export class ListProductsComponent implements OnInit {
 
-  public produtos: Observable<any[]>;
-  public showModalAdd: boolean = false;
-  public showModalEdit: boolean = false;
+  public produtos:any;
 
   constructor(
     private productsService: ProductsService,
@@ -26,13 +24,14 @@ export class ListProductsComponent implements OnInit {
     this.produtos = this.productsService.produtos
   }
 
+  ngOnInit() {}
+
   edit(produto) {
     this.productsService.edit(produto)
   }
 
   delete(key: string) {
     this.productsService.delete(key)
-
   }
 
   showdialog() {
@@ -41,10 +40,6 @@ export class ListProductsComponent implements OnInit {
 
   showDialogEdit(){
     this.dialog.open(ModalEditComponent)
-
-  }
-  ngOnInit() {
-
   }
 }
 

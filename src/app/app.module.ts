@@ -1,5 +1,4 @@
 import { UICarouselModule } from "ui-carousel";
-// import { UICarouselComponent } from '../../node_modules/ui-carousel/src/ui-carousel/ui-carousel.component'
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -18,24 +17,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
 import { AgmCoreModule } from '@agm/core';
 import { CartComponent } from './container/cart/cart.component';
-import { ModalComponent } from './components/modal/modal.component';
-import { ModalConfirmProductComponent } from './container/modal-content/modal-confirm-product/modal-confirm-product.component';
-import { ButtonComponent } from './components/button/button.component';
-import { CadastroComponent } from './container/cadastro/cadastro.component';
-
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from "@angular/fire/database";
-import { ModalAddComponent } from './container/modal-add/modal-add.component';
-import { ModalEditComponent } from './container/modal-edit/modal-edit.component';
-
+import { ModalAddComponent } from './components/modals/modal-add/modal-add.component';
+import { ModalEditComponent } from './components/modals/modal-edit/modal-edit.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -59,10 +49,6 @@ import { ModalLoginComponent } from './components/modals/modal-login/modal-login
     WhoWeAreComponent,
     ListProductsComponent,
     CartComponent,
-    ModalComponent,
-    ModalConfirmProductComponent,
-    ButtonComponent,
-    CadastroComponent,
     ModalAddComponent,
     ModalEditComponent,
     ModalLoginComponent,

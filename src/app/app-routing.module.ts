@@ -6,8 +6,6 @@ import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { CartComponent } from './container/cart/cart.component';
-import { ModalComponent } from './components/modal/modal.component';
-import { CadastroComponent } from './container/cadastro/cadastro.component';
 
 
 const routes: Routes = [
@@ -17,9 +15,6 @@ const routes: Routes = [
   { path: 'contato', component: ContactComponent },
   { path: 'lista-produtos', component: ListProductsComponent },
   { path: 'carrinho', component: CartComponent },
-  { path: 'cadastro', component: CadastroComponent },
-
-  { path: 'dev-a', component: ModalComponent },
   { path: 'dev-b', component: ListProductsComponent },
 
 ];

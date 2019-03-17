@@ -36,6 +36,5 @@
 
 <div *ngIf="cartEmpty" class="cart-empty">
   <p>CARRINHO VAZIO</p>
-  <app-button (click)="toggleModal()" (click)="addToCart(produto)" text="RETORNAR PARA A LOJA" BC="#2a7023" width="257px"
-    height="50px" color="#fff"></app-button>
+  <button (click)="toggleModal()" (click)="addToCart(produto)" height="50px" color="#fff">RETORNAR PARA A LOJA</button>
 </div>
