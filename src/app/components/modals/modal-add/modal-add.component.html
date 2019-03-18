@@ -10,6 +10,11 @@
 
       <input type="file" (change)="fileChangeEvent($event)" />
       <input type="file" (change)="uploadFile($event)" />
+
+        <!-- <ngx-cropper [config]="cropperConfig" fileName="ads" (returnData)="onReturnData($event)"
+        (initCropper)="imagecrop($event)"
+        ></ngx-cropper> -->
+
       <button></button>
       <image-cropper
       [imageChangedEvent]="imageChangedEvent"
@@ -23,7 +28,8 @@
   ></image-cropper>
   
   <img [src]="croppedImage" />
-
+  
+    <button (click)="uploadFile($event)">upload</button>
       <mat-form-field class="example-full-width">
         <input matInput #name type="text" placeholder="name" />
       </mat-form-field>

@@ -5,6 +5,7 @@ import other style files */
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900');
 @import url('https://fonts.googleapis.com/css?family=Crete+Round');
 @import './app/theme/colors.scss';
+@import '~ngx-cropper/lib/cropperjs.css';
 
 * {
   margin: 0;

@@ -30,6 +30,7 @@
     "firebase": "^5.7.0",
     "hammerjs": "^2.0.8",
     "materialize-css": "^1.0.0-rc.2",
+    "ngx-cropper": "^2.0.0-beta",
     "ngx-image-cropper": "^1.3.8",
     "ngx-slick": "^0.2.1",
     "rxjs": "~6.3.3",

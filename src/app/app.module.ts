@@ -36,6 +36,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { ModalLoginComponent } from './components/modals/modal-login/modal-login.component';
+import { CropperModule } from 'ngx-cropper';
+import { BuyFormComponent } from './container/buy-form/buy-form.component';
 
 
 @NgModule({
@@ -52,6 +54,7 @@ import { ModalLoginComponent } from './components/modals/modal-login/modal-login
     ModalAddComponent,
     ModalEditComponent,
     ModalLoginComponent,
+    BuyFormComponent,
     
       
   ],
@@ -67,6 +70,7 @@ import { ModalLoginComponent } from './components/modals/modal-login/modal-login
     HttpClientModule,
     MatDialogModule,
     MatSidenavModule,
+    CropperModule,
     SlickModule.forRoot(),
     BrowserModule,
     CommonModule,

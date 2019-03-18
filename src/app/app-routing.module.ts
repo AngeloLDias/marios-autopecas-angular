@@ -6,6 +6,7 @@ import { ProductsComponent } from './container/products/products.component';
 import { ContactComponent } from './container/contact/contact.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { CartComponent } from './container/cart/cart.component';
+import { BuyFormComponent } from './container/buy-form/buy-form.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'lista-produtos', component: ListProductsComponent },
   { path: 'carrinho', component: CartComponent },
   { path: 'dev-b', component: ListProductsComponent },
+  { path: 'dev-a', component: BuyFormComponent }
 
 ];
 
