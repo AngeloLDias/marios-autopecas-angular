@@ -1,39 +1,54 @@
-<div class="title">
-  <p>Produtos</p>
+<div class="cart">
+  <h1>MEU CARRINHO</h1>
 </div>
-<table>
+<div class="cart2">
+  <table id="fixedHeight">
+    <thead *ngIf="!cartEmpty">
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
 
-  <thead *ngIf="!cartEmpty">
-    <tr>
-      <th>item</th>
-      <th>imagem</th>
-      <th>nome</th>
-      <!-- <th>tipo</th> -->
-      <th>preço</th>
-      <th>quantidade</th>
-      <!-- <th>marca</th> -->
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos; let i = index">
+        <td>
+          <div class="info"><img src="{{produto.photo}}" width="95px" alt="">
+            <h2>{{produto.name}}</h2>
+          </div>
+        </td>
+        <td class="stock">{{produto.stock}}</td>
+        <td>
+          <div class="delete">
+            <input type="number">
+            <button (click)="deleteProduct(i)" class="btn delete">Remover</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-  <tbody *ngFor="let produto of produtos; let i = index">
-    <tr>
-      <td>{{i + 1}}</td>
-      <td><img src="{{produto.photo}}" width="95px" alt=""></td>
-      <td class="nn">{{produto.name}}</td>
-      <td>R$ 15,00</td>
-      <td><input type="number"></td>
-      <td><button (click)="deleteProduct(i)" class="btn delete">Delete</button></td>
-
-    </tr>
-  </tbody>
-</table>
-
-<div *ngIf="!cartEmpty" class="btn-finalizar">
-  <button class="btn edit">Finlizar Compra</button>
+  <div *ngIf="!cartEmpty" class="btn-finalizar desktop">
+    <div class="box">
+      <div>
+        <button class="btn edit desktop">
+          <img src="https://image.flaticon.com/icons/png/512/34/34102.png" width="95px" alt="">Finlizar Compra
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div *ngIf="!cartEmpty" class="btn-finalizar mobile">
+  <div class="box">
+    <div>
+      <button class="btn edit mobile">
+        <img src="https://image.flaticon.com/icons/png/512/34/34102.png" width="95px" alt="">Finlizar Compra
+      </button>
+    </div>
+  </div>
+</div>
 <div *ngIf="cartEmpty" class="cart-empty">
   <p>CARRINHO VAZIO</p>
   <button (click)="toggleModal()" (click)="addToCart(produto)" height="50px" color="#fff">RETORNAR PARA A LOJA</button>
