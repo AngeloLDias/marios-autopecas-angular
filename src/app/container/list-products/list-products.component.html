@@ -33,3 +33,16 @@
   </tbody>
 
 </table>
+
+<section>
+    <h1>pedidos</h1>
+  
+  <div *ngFor="let pedido of pedidos | async; let i = index">
+      <!-- <p>{{pedido.name}}</p> -->
+
+  </div>
+
+  <div *ngFor="let pedido2 of pedidos.produtos | async">
+    <p>{{pedido2}}</p>
+  </div>
+  </section>
