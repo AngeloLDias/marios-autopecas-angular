@@ -50,20 +50,92 @@
 
 
   .lado-direito {
-    background-color: red;
+    // background-color: red;
     width: 100%;
-    
-    .menu-fixed{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+    .dropdown{
+        display: none;
     }
-    .menu-list{
+
+
+    .menu-fixed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-list {
+      overflow: scroll;
+      width: 100%;
+      max-height: 517px;
+
+
+
+      .card-list {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        overflow: scroll;
-        height: 500px;
+        // background-color: blue;
+        margin: 3px;
+
+        .photo {
+          img {
+            width: 130px;
+          }
+        }
+
+        .produtos {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .btn-produtos {
+          display: flex;
+          flex-direction: column;
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .painel-adm {
+    .lado-esquerdo {
+      display: none;
+    }
+
+    .lado-direito {
+        .menu-fixed{
+            .dropdown{
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+        }
+        .menu-list {
+           
+        .card-list {
+            .photo{
+                img{
+                width: 100px;
+                height: 100px;
+            }
+            }
+          .produtos {
+            p {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              font-size: 14px;
+              width: 73px;
+
+            }
+          }
+
+        }
+      }
     }
   }
 }
