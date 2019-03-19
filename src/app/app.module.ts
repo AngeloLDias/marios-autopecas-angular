@@ -38,6 +38,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { ModalLoginComponent } from './components/modals/modal-login/modal-login.component';
 import { CropperModule } from 'ngx-cropper';
 import { BuyFormComponent } from './container/buy-form/buy-form.component';
+import { AdmComponent } from './container/adm/adm.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { BuyFormComponent } from './container/buy-form/buy-form.component';
     ModalEditComponent,
     ModalLoginComponent,
     BuyFormComponent,
+    AdmComponent,
     
       
   ],

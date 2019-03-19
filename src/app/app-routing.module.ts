@@ -7,6 +7,7 @@ import { ContactComponent } from './container/contact/contact.component';
 import { ListProductsComponent } from './container/list-products/list-products.component';
 import { CartComponent } from './container/cart/cart.component';
 import { BuyFormComponent } from './container/buy-form/buy-form.component';
+import { AdmComponent } from './container/adm/adm.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'lista-produtos', component: ListProductsComponent },
   { path: 'carrinho', component: CartComponent },
   { path: 'dev-b', component: ListProductsComponent },
-  { path: 'dev-a', component: BuyFormComponent }
+  { path: 'dev-a', component: BuyFormComponent },
+  {path: "adm", component: AdmComponent}
 
 ];
 
