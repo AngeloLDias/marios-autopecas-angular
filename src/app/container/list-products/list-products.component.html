@@ -25,7 +25,7 @@
       <!-- <td>{{produto.categoria.id}}</td> -->
       <td>{{produto.stock}}</td>
       <td>{{produto.id}}</td>
-      <td><button (click)="showDialogEdit();edit(produto)" class="btn btn-primary">Editar</button>
+      <td><button (click)="edit(produto);showDialogEdit()" class="btn btn-primary">Editar</button>
       </td>
       <td><button (click)="delete(produto.key)" class="btn btn-danger">Deletar</button>
       </td>
@@ -33,16 +33,3 @@
   </tbody>
 
 </table>
-
-<section>
-    <h1>pedidos</h1>
-  
-  <div *ngFor="let pedido of pedidos | async; let i = index">
-      <!-- <p>{{pedido.name}}</p> -->
-
-  </div>
-
-  <div *ngFor="let pedido2 of pedidos.produtos | async">
-    <p>{{pedido2}}</p>
-  </div>
-  </section>

@@ -17,48 +17,28 @@ export class ModalAddComponent implements OnInit {
   public photoProduct;
   public imageChangedEvent: any = '';
   public croppedImage: any = '';
-
+  public spinner: boolean;
   constructor(
     private productsService: ProductsService,
     private storage: AngularFireStorage
   ) { }
 
   ngOnInit() {
-
   }
 
   add(key, _produto) {
+    console.log(key)
     this.productsService.add(key, _produto)
   }
 
-  fileChangeEvent(event: any): void {
-    this.imageChangedEvent = event;
-    console.log(event)
-  }
-
-  imageCropped(event: ImageCroppedEvent) {
-    this.croppedImage = event.file;
-    // let png = this.croppedImage.split(',')[1];
-    console.log('64', this.croppedImage)
-    console.log(event)
-    // console.log('png',png)
-  }
-
-  imageLoaded() {
-    // show cropper
-  }
-
-  loadImageFailed() {
-    // show message
-  }
-
   uploadFile(event) {
+    console.log(event)
+    this.spinner = true;
     const file = event.target.files[0]
-    // const file64 =  this.croppedImage;  
     let r = Math.random().toString(36).substring(7);
     const filePath = r;
     const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath,file);
+    const task = this.storage.upload(filePath, file);
     // observe percentage changes
     this.uploadPercent = task.percentageChanges();
     // get notified when the download URL is available
@@ -66,6 +46,7 @@ export class ModalAddComponent implements OnInit {
       finalize(() => this.photoProduct = fileRef.getDownloadURL().subscribe(
         link => {
           this.photoProduct = link.toString()
+          this.spinner = false;
           console.log('up feito com sucesso')
         }
       )

@@ -1,41 +1,58 @@
-<mat-dialog-content class="modal-add">
-
-  <div class="form">
-    <input type="file" (change)="uploadFile($event)" />
-
-    <mat-form-field class="example-full-width">
-      <input matInput #name [(ngModel)]="produtosRef.name" type="text" placeholder="name" />
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput #application [(ngModel)]="produtosRef.application" type="text" placeholder="application" />
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput #stock [(ngModel)]="produtosRef.stock" type="text" placeholder="stock" />
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput #id [(ngModel)]="produtosRef.id" type="text" placeholder="id" />
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput #key [(ngModel)]="produtosRef.key" placeholder="key (disabled)" disabled />
-    </mat-form-field> 
-
-    <mat-form-field  class="example-full-width">
-        <input  matInput #photo value="{{photo3}}" type="text" placeholder="a" />
-      </mat-form-field>
-  </div>
-
+<h2 MatDialogTitle>Adicionar Produto</h2>
+<mat-dialog-content>
+  <section class="modal-add">
+    <div class="row">
+      <div class="col-12 img-product">
+        <mat-spinner class="position-absolute" *ngIf="spinner"></mat-spinner>
+        <label for="imgProduct">
+          <img class="border" [src]="photoProduct ? photoProduct : produtosRef.photo" alt="">
+        </label>
+        <input class="d-none" (change)="uploadFile($event)" type="file" name="" id="imgProduct">
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input [(ngModel)]="produtosRef.name" #name type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Nome">
+          <small id="emailHelp" class="form-text text-muted">EX: "HASTE BAGAGITO GM"</small>
+        </div>
+        <div class="form-group">
+          <label for="application">Aplicação</label>
+          <input [(ngModel)]="produtosRef.application" #application type="text" class="form-control" id="application" aria-describedby="emailHelp"
+            placeholder="Aplicação">
+          <small id="emailHelp" class="form-text text-muted">EX: "KADETT TODOS"</small>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <input [(ngModel)]="produtosRef.categoria" #categoria type="text" class="form-control" id="categoria" aria-describedby="emailHelp" placeholder="Categoria">
+          <small id="emailHelp" class="form-text text-muted">EX: "DIVERSOS"</small>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="marca">Marca</label>
+          <input [(ngModel)]="produtosRef.marca" #marca type="text" class="form-control" id="marca" aria-describedby="emailHelp" placeholder="Marca">
+          <small id="emailHelp" class="form-text text-muted">EX: "AXIOS"</small>
+        </div>
+        <div class="form-group">
+          <label for="estoque">Estoque</label>
+          <input [(ngModel)]="produtosRef.stock" #stock type="text" class="form-control" id="estoque" aria-describedby="emailHelp" placeholder="Estoque">
+          <small id="emailHelp" class="form-text text-muted">EX: "52"</small>
+        </div>
+        <div class="form-group">
+          <label for="photo">Foto</label>
+          <input disabled [(ngModel)]="produtosRef.photo" #photo type="text" class="form-control" id="photo" value="{{photoProduct}}" aria-describedby="emailHelp"
+            placeholder="Foto">
+          <small id="emailHelp" class="form-text text-muted">EX: "DIVERSOS"</small>
+        </div>
+      </div>
+    </div>
+  </section>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-raised-button color='red' matDialogClose>Cancel</button>
-  <button mat-raised-button color='warn' (click)="add(produtosRef.key,{
-        name:name.value,
-        application:application.value,
-        stock:stock.value,
-        id:id.value,photo:photo.value})"
-    matDialogClose>Edit</button>
+  <div class="action-btn w-100 d-flex justify-content-end">
+    <button type="button" class="btn btn-danger" matDialogClose>Cancelar</button>
+    <button type="button" class="btn btn-primary ml-1" (click)="add(produtosRef.key,{name:name.value,application:application.value,stock:stock.value,categoria:categoria.value,photo:photo.value})"
+      matDialogClose>Salvar</button>
+  </div>
 </mat-dialog-actions>
