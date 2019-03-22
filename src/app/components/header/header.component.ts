@@ -1,12 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { MatDialog } from '@angular/material/dialog';
-
 import { LANG } from '../../theme/pt'
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { ModalLoginComponent } from '../modals/modal-login/modal-login.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,27 +9,16 @@ import { ModalLoginComponent } from '../modals/modal-login/modal-login.component
 })
 export class HeaderComponent implements OnInit {
 
+  public _toggleMenu = false
   public lang = LANG
-  public toogleMenu = false;
-  public toogle = false;
-  public listMenu = [];
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(min-width: 0)'])
-    .pipe(
-      map(result => result.matches)
-    );
+
   constructor(private cartService: CartService,
-    private breakpointObserver: BreakpointObserver,
-    private dialog:MatDialog
-    ) {}
-  
-    showdialog() {
-      // this.dialog.open(ModalLoginComponent) 
-      let dialogRef = this.dialog.open(ModalLoginComponent, {
-        height: '400px',
-        width: '400px',
-      });
-      
-    }
+  ) { }
+
+  ngOnInit() {
+    this.cartService.contItemCart()
+  }
+
   public lists = [
     {
       'section': 'ACESSÓRIO',
@@ -90,47 +74,8 @@ export class HeaderComponent implements OnInit {
       ]
     },
   ];
-  @Input() active: string;
 
-  public homeActive: boolean = false;
-
-  public productActive: boolean = false;
-
-  public companyActive: boolean = false;
-
-  public contactActive: boolean = false;
-
-
-  
-
-
-
-  ngOnInit() {
-this.cartService.contItemCart()
-
-    // console.log(this.active);
-    // switch (this.active) {
-    //   case 'home':
-    //     this.homeActive = true;
-    //     break;
-    //   case 'produtos':
-    //     this.productActive = true;
-    //     break;
-    //   case 'quem-somos':
-    //     this.companyActive = true;
-    //     break;
-    //   case 'contato':
-    //     this.contactActive = true;
-    //     break;
-    //   default:
-    //     break;
-    // }
-  }
-
-  toogleSideMenu() {
-    this.toogleMenu = !this.toogleMenu;
-  }
-  toogleDropDown(index) {
-    this.toogle = !this.toogle
+  toggleMenu() {
+    this._toggleMenu = !this._toggleMenu
   }
 }

@@ -28,12 +28,7 @@ export class ListProductsComponent implements OnInit {
     this.pedidos = this.orderService.order
   }
 
-  ngOnInit() {
-    this.pedidos
-    .subscribe(aa =>{
-      console.log(aa)
-    })
-  }
+  ngOnInit() {}
 
   edit(produto) {
     this.productsService.edit(produto)

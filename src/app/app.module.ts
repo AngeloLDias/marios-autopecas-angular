@@ -11,7 +11,7 @@ import { ListProductsComponent } from './container/list-products/list-products.c
 import { HttpModule } from '@angular/http'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
- 
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -26,19 +26,20 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from "@angular/fire/database";
 import { ModalAddComponent } from './components/modals/modal-add/modal-add.component';
 import { ModalEditComponent } from './components/modals/modal-edit/modal-edit.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatListModule, MatProgressSpinnerModule } from '@angular/material';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { ModalLoginComponent } from './components/modals/modal-login/modal-login.component';
 import { CropperModule } from 'ngx-cropper';
 import { BuyFormComponent } from './container/buy-form/buy-form.component';
 import { AdmComponent } from './container/adm/adm.component';
+import { ModalCartComponent } from './components/modals/modal-cart/modal-cart.component';
 
 
 @NgModule({
@@ -57,10 +58,11 @@ import { AdmComponent } from './container/adm/adm.component';
     ModalLoginComponent,
     BuyFormComponent,
     AdmComponent,
-    
-      
+    ModalCartComponent,
+
+
   ],
-  entryComponents:[
+  entryComponents: [
     ModalAddComponent,
     ModalEditComponent,
     ModalLoginComponent
@@ -89,7 +91,8 @@ import { AdmComponent } from './container/adm/adm.component';
     LayoutModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: [AngularFirestore, AngularFireDatabase, AngularFireAuth],
   bootstrap: [AppComponent]

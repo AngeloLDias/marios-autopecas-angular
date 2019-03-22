@@ -19,7 +19,7 @@ export class ProductsService {
 
   constructor(private db: AngularFireDatabase) {
     
-    this.produtosRef = db.list('/');
+    this.produtosRef = db.list('/', ref => ref.orderByChild('name').limitToFirst(10));
 
     this.produtos = this.produtosRef.snapshotChanges().pipe(
       map(change =>
@@ -28,8 +28,8 @@ export class ProductsService {
     );
   }
 
-  add(key, _produto: Produto) {
-    const list = this.db.list('/Produtos')
+  add(key, _produto) {
+    const list = this.db.list('/')
     if (key != null) {
       alert('editado com sucesso')
       list.update(key, _produto);
@@ -37,7 +37,6 @@ export class ProductsService {
     else {
       alert('salvo com sucesso')
       list.push(_produto);
-      // console.log(this.produtosRef.key)
     }
   }
 
@@ -49,10 +48,7 @@ export class ProductsService {
   delete(key: string) {
     const list = this.db.list('/')
     list.remove(key);
-
   }
-  
-
 }
 
 
