@@ -15,13 +15,14 @@ export class ModalAddComponent implements OnInit {
   public uploadPercent: Observable<number>;
   public downloadURL: Observable<string>;
   public photoProduct;
-  public imageChangedEvent: any = '';
-  public croppedImage: any = '';
   public spinner: boolean;
+  public produtosRef:any;
   constructor(
     private productsService: ProductsService,
     private storage: AngularFireStorage
-  ) { }
+  ) { 
+    this.produtosRef = this.productsService.produtosRef
+  }
 
   ngOnInit() {
   }

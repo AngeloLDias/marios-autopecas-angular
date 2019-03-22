@@ -39,6 +39,7 @@ import { ModalLoginComponent } from './components/modals/modal-login/modal-login
 import { CropperModule } from 'ngx-cropper';
 import { BuyFormComponent } from './container/buy-form/buy-form.component';
 import { AdmComponent } from './container/adm/adm.component';
+import { ModalCartComponent } from './components/modals/modal-cart/modal-cart.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { AdmComponent } from './container/adm/adm.component';
     ModalLoginComponent,
     BuyFormComponent,
     AdmComponent,
+    ModalCartComponent,
 
 
   ],

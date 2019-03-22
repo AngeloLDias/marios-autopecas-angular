@@ -13,7 +13,7 @@ import { finalize } from 'rxjs/operators';
 })
 export class ModalEditComponent implements OnInit {
   public spinner: boolean;
-  public produtosRef: AngularFireList<any>
+  public produtosRef:any;
   public uploadPercent: Observable<number>;
   public downloadURL: Observable<string>;
   public photoProduct: any;
@@ -26,7 +26,7 @@ export class ModalEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(key, _produto: Produto) {
+  add(key, _produto) {
     this.productsService.add(key, _produto)
   }
 

@@ -33,3 +33,37 @@
   </tbody>
 
 </table>
+
+<div class="painel">
+  <button (click)="showdialog()" class="btn btn-primary">new</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>item</th>
+      <th>imagem</th>
+      <th>nome</th>
+      <th>Quantidade</th>
+      <!-- <th>application</th> -->
+      <!-- <th>categoria</th> -->
+      <!-- <th>stock</th> -->
+      <!-- <th>id</th> -->
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let pedido of pedidos | async; let i = index;">
+      <td>{{i + 1}} </td>
+      <td><img *ngFor="let produtos of pedidos.produtos.index" class="photo" src="{{produtos.name}}" alt=""></td>
+      <td>{{pedido.name}}</td>
+      <td>5</td>
+      <td><button (click)="edit(produto);showDialogEdit()" class="btn btn-primary">Editar</button>
+      </td>
+      <td><button (click)="delete(produto.key)" class="btn btn-danger">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
