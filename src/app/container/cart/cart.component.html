@@ -1,0 +1,55 @@
+<div class="cart">
+  <h1>MEU CARRINHO</h1>
+</div>
+<div class="cart2">
+  <table id="fixedHeight">
+    <thead *ngIf="!cartEmpty">
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let produto of produtos; let i = index">
+        <td>
+          <div class="info"><img src="{{produto.photo}}" width="95px" alt="">
+            <h2>{{produto.name}}</h2>
+          </div>
+        </td>
+        <td class="stock">{{produto.stock}}</td>
+        <td>
+          <div class="delete">
+            <input type="number">
+            <button (click)="deleteProduct(i)" class="btn delete">Remover</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!cartEmpty" class="btn-finalizar desktop">
+    <div class="box">
+      <div>
+        <button class="btn edit desktop">
+          <img src="https://image.flaticon.com/icons/png/512/34/34102.png" width="95px" alt="">Finlizar Compra
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!cartEmpty" class="btn-finalizar mobile">
+  <div class="box">
+    <div>
+      <button class="btn edit mobile">
+        <img src="https://image.flaticon.com/icons/png/512/34/34102.png" width="95px" alt="">Finlizar Compra
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="cartEmpty" class="cart-empty">
+  <p>CARRINHO VAZIO</p>
+  <button (click)="toggleModal()" (click)="addToCart(produto)" height="50px" color="#fff">RETORNAR PARA A LOJA</button>
+</div>

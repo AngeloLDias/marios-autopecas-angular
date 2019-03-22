@@ -1,3 +1,126 @@
-<p>
-  home works!
-</p>
+<!-- Carousel -->
+
+<ui-carousel class="carousel-main" #uiCarousel slidesToShow="10" [autoPlay]="true"  autoPlaySpeed=5000>
+
+  <ui-carousel-item>
+    <div class="img1" [style.background-image]="imgCarousel1()">
+      <div class="text-carousel">
+        <p>MELHOR PREÇO DA REGIÃO</p>
+        <p routerLink="/produtos">Nossos produtos</p>
+      </div>
+    </div>
+
+  </ui-carousel-item>
+
+  <ui-carousel-item>
+    <div class="img1" [style.background-image]="imgCarousel2()">
+      <div class="text-carousel">
+        <p>{{lang.imageOne}}</p>
+        <p routerLink="/contato">Entre em contato</p>
+      </div>
+    </div>
+  </ui-carousel-item>
+
+  <ui-carousel-item>
+    <div class="img1" [style.background-image]="imgCarousel3()">
+      <div class="text-carousel">
+        <p>AQUI, ALÉM DE CLIENTE FAZEMOS AMIGOS.</p>
+        <p routerLink="/quem-somos">Nossa história</p>
+      </div>
+    </div>
+  </ui-carousel-item>
+
+</ui-carousel>
+
+<!-- Carosel Marcar -->
+
+<ngx-slick class="carousel desktop" [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let item of items" class="slide">
+    <img src="{{ item.name }}" alt="" width="100%">
+  </div>
+</ngx-slick>
+
+<ngx-slick class="carousel mobileB" [config]="slideConfigM">
+  <div ngxSlickItem *ngFor="let item of items" class="slide">
+    <img src="{{ item.name }}" alt="" width="100%">
+  </div>
+</ngx-slick>
+  
+<!-- depositions -->
+
+<section class="depoiment">
+  <p>{{lang.depositions}}</p>
+  <hr>
+  <div class="container-depoiment">
+    <div class="box">
+
+      <img src="../../../assets/media/rafael.jpeg" alt="">
+
+      <h3>{{lang.rafael}}</h3>
+      <p>{{lang.depositionsRafael}}</p>
+    </div>
+
+
+    <div class="box">
+
+      <img src="../../../assets/media/felipe.jpg" alt="">
+
+      <h3>{{lang.felipe}}</h3>
+      <p>{{lang.depositionsFelipe}}</p>
+
+    </div>
+
+
+    <div class="box">
+
+      <img src="../../../assets/media/alan.jpeg" alt="">
+
+      <h3>{{lang.alan}}</h3>
+      <p>{{lang.depositionsAlan}}</p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- fast acess -->
+
+<section class="fast-acess">
+  <h1 class="">{{lang.fastAcess}}</h1>
+  <hr>
+  <div class="container-fastAcess">
+    <div class="box">
+
+      <img src="../../../assets/media/box.png" alt="">
+
+      <h3>{{lang.products}}</h3>
+      <p>{{lang.productDescription}}</p>
+
+      <button routerLink="produtos" class="produtos btn btn-outline-success">{{lang.ViewMore}}</button>
+
+    </div>
+
+
+    <div class="box">
+
+      <img src="../../../assets/media/phone.png" alt="">
+
+      <h3>{{lang.contact}}</h3>
+      <p>{{lang.contactDescription}}</p>
+
+      <button routerLink="contato" class="btn btn-outline-success">{{lang.ViewMore}}</button>
+    </div>
+
+
+    <div class="box">
+
+      <img src="../../../assets/media/team.png" alt="">
+
+      <h3>{{lang.story}}
+      </h3>
+      <p>{{lang.storyDescription}}</p>
+
+      <button routerLink="quem-somos" class="btn btn-outline-success">{{lang.ViewMore}}</button>
+    </div>
+  </div>
+</section>

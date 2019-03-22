@@ -1,31 +1,23 @@
+
 <footer>
   <section class="footer">
     <div class="socialNetworks">
       <p>{{lang.socialNetwork}}</p>
-      <hr>
+      <hr class="mobile">
       <img src="../../../assets/media/facebook.svg" alt="">
     </div>
     <div class="fast-acess-Footer">
       <p>{{lang.quickAccess}}</p>
-      <hr>
-      <ul>
-        <li class="home">
-          <p>{{lang.home}}</p>
-        </li>
-        <li class="quem-somos">
-          <p>{{lang.whoWeAre}}</p>
-        </li>
-        <li class="home">
-          <p>{{lang.products}}</p>
-        </li>
-        <li class="home">
-          <p>{{lang.contact}}</p>
-        </li>
-      </ul>
+      <hr class="mobile">
+      <p routerLink="">{{lang.home}}</p>
+      <p routerLink="quem-somos">{{lang.whoWeAre}}</p>
+      <p routerLink="produtos">{{lang.products}}</p>
+      <p routerLink="contato">{{lang.contact}}</p>
+
     </div>
     <div class="contats">
       <p>{{lang.contact}}</p>
-      <hr>
+      <hr class="mobile">
       <p><img src="../../../assets/media/home.svg" alt="">{{lang.address}}</p>
       <p><img src="../../../assets/media/email.svg" alt="">{{lang.email}}</p>
       <p><img src="../../../assets/media/phone.svg" alt="">{{lang.phoneOne}}</p>
@@ -36,11 +28,15 @@
     </div>
     <div class="pagaments">
       <p>{{lang.payment}}</p>
-      <hr>
-      <img src="./images/American-Express-PNG-Clipart-min.png" alt="">
-      <img src="./images/Elo_logo-min.png" alt="">
-      <img src="./images/mastercard-min.png" alt="">
-      <img src="./images/visa-min.png" alt="">
+      <hr class="mobile">
+      <div class="img-payment">
+        <div class="img-payment">
+          <img src="../../../assets/media/ccamerican.svg" alt="">
+          <img src="../../../assets/media/elo-servicos-s-a-seeklogo.com.svg" alt="">
+          <img src="../../../assets/media/ccvisa.svg" alt="">
+          <img src="../../../assets/media/Mastercard_icon-icons.com_60554.svg" alt="">
+        </div>
+      </div>
     </div>
   </section>
 </footer>

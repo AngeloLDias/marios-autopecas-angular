@@ -1,0 +1,244 @@
+@import '../../theme/colors.scss';
+
+// carousel
+
+.carousel-main {
+  height: 437px !important;
+  padding-top: 87px;
+
+  .img1 {
+    height: 436px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-size: cover;
+    background-position: center;
+  }
+
+  .text-carousel {
+    /* position: absolute; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 0px; */
+
+    p:nth-child(1) {
+      font-size: 30pt;
+      color: white;
+      // margin: 0px 145px;
+      text-shadow: 1px 1px 3px #000;
+      font-family: Crete Round;
+      text-align: center;
+      margin: 0px 50px
+    }
+
+    p:nth-child(2) {
+      font-size: 19pt;
+      color: white;
+      margin: 15px 0px;
+      text-shadow: 1px 1px 3px #000;
+      font-family: Crete Round;
+      cursor: pointer;
+      text-align: center;
+      &:hover{
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
+
+// depositions
+
+.depoiment {
+  text-align: center;
+
+  p {
+    margin: $marginTitle;
+    font-size: 30px;
+  }
+
+  hr {
+    width: 35%;
+    height: 2px;
+    margin: 0px 41% 0px 33%;
+    background-color: $colorPrimary;
+  }
+
+  .container-depoiment {
+
+    text-align: center;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33% minmax(575px, 300px);
+    margin: 27px 0px;
+
+
+    .box {
+
+      img {
+        width: 130px;
+        border-radius: 500px;
+      }
+
+      h3 {
+        margin: $marginTitle;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0px 50px;
+      }
+    }
+  }
+}
+
+
+// Fast acess
+
+.fast-acess {
+  text-align: center;
+
+  h1 {
+    margin: $marginTitle;
+    font-size: 30px;
+    font-weight: 400;
+
+  }
+
+  hr {
+    width: 35%;
+    height: 2px;
+    margin: 0px 41% 0px 33%;
+    background-color: $colorPrimary;
+  }
+
+  .container-fastAcess {
+    display: flex;
+    justify-content: space-around;
+    margin: 70px;
+
+    .box {
+      width: 500px;
+
+      img {
+        width: 110px;
+        border: 2px solid $colorPrimary;
+        padding: 20px;
+        border-radius: 500px;
+      }
+
+      h3 {
+        margin: $marginTitle;
+        font-size: 25px;
+        font-weight: 400;
+
+      }
+
+      p {
+        margin: 15px 40px;
+        font-size: 1rem;
+      }
+
+      .btn {
+
+        padding: 14px 25px;
+        background-color: transparent;
+        border: 1px solid $colorPrimary;
+        border-radius: 6px;
+        color: $colorPrimary;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #28a745;
+          transition: 0.7s;
+          color: white;
+        }
+
+      }
+
+    }
+  }
+}
+
+
+@media(max-width:768px) {
+
+  // carousel
+
+  .carousel-main {
+    height: 383px !important;
+
+    img {
+      width: 100%;
+      height: 300px;
+      position: absolute;
+      top: -2px;
+      margin-top: 85px;
+    }
+
+    .text-carousel {
+      position: absolute;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      // margin-top: 35px; s  
+      background-color: rgba(0, 0, 0, 0.4);
+
+      p {
+        font-size: 37px;
+        color: white;
+        text-shadow: 1px 1px 3px #000;
+      }
+    }
+  }
+
+  .slick-slide, .slick-list {
+    height: 100px !important;
+    img {
+      width: 100px !important;
+
+    }
+  } 
+    // depositions
+
+    .depoiment {
+      .container-depoiment {
+        display: grid;
+        margin: 27px 0px;
+        text-align: center;
+        grid-template-columns: auto;
+      }
+
+      .container-depoiment {
+        .box {
+          margin: $marginTitle;
+          width: inherit;
+
+          p {
+            max-width: initial;
+          }
+        }
+      }
+    }
+
+    // Fast acess
+
+    .fast-acess {
+      .container-fastAcess {
+        display: grid;
+
+        .box {
+          margin: $marginTitle;
+          width: inherit;
+        }
+      }
+    }
+
+  }

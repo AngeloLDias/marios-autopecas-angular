@@ -1,0 +1,58 @@
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  text-transform: capitalize;
+  text-align: center;
+}
+ 
+td {
+  padding: 5px 15px;  
+}
+
+.btn {
+  padding: 12px 25px;
+  cursor: pointer;
+//   border: none;
+}
+.photo{
+  width: 100px;
+}
+.new-filter {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+
+  button,
+  input,
+  input {
+    margin: 0px 10px;
+  }
+}
+
+.delete {
+  background-color: #f33e3e;
+}
+
+.edit{
+    background-color: #4f80f9;
+}
+
+.new{
+    background-color: #50e850;
+}
+
+.painel{
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  input{
+    padding: 1px 42px;
+    margin: 10px 0px;
+  }
+
+
+}

@@ -1,0 +1,118 @@
+@import '../../theme/colors.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.nossahistoria {
+  height: 90px;
+  display: flex;
+  align-items: flex-end;
+  background: #2b632ae8;
+  display: flex;
+  align-items: center;
+  padding-top: 89px;
+  height: 90px;
+
+  h1 {
+    color: white;
+    margin: 10px 20px;
+  }
+}
+
+#map {
+  width: 60%;
+  height: 800px;
+  margin: 0 20px
+}
+
+agm-map {
+  height: 100%;
+}
+
+.sec-contato {
+  display: flex;
+  // align-items: center;
+  margin: 30px;
+
+  .form {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+
+    // align-items: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+
+      input,
+      select,
+      textarea,
+      option {
+        // width: 334px;
+        height: 61px;
+        text-align: center;
+        margin: 10px 0;
+        font-size: 23px;
+        border: 1px solid #80808087;
+        color: rgba(25, 135, 25, 1);
+        box-shadow: 3px 3px 3px #80808085;
+
+        &::placeholder {
+          text-align: center;
+          color: rgba(25, 135, 25, 1);
+
+        }
+      }
+
+      textarea {
+        height: 272px;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 14px 25px;
+  background-color: transparent;
+  border: 1px solid $colorPrimary;
+  border-radius: 6px;
+  color: $colorPrimary;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #28a745;
+    transition: 0.7s;
+    color: white;
+  }
+
+}
+
+@media(max-width:758px) {
+  #map {
+    // width: 100%;
+    width: 100%;
+    margin: 7px 0;
+    height: 450px; // margin: 0;
+  }
+
+  .sec-contato {
+    margin: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+    .form {
+
+      width: 100%;
+
+    }
+  }
+
+  .botaoo {
+
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,27 +1,39 @@
 @import '../../theme/colors.scss';
 
 .footer {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 19% repeat(3, 27% 27% 27%);
   background-color: #e8e9ea;
+  padding: 10px;
+
+  hr {
+    background-color: green;
+    height: 1px;
+    margin: 10px 0px;
+  }
 
   p {
     font-family: roboto;
   }
 
+  p:nth-child(1) {
+    font-size: 24px;
+    // width: 320px;
+    // text-align: center;
+  }
+
   .socialNetworks {
     img {
       width: 50px;
+      margin: 10px 0px
     }
   }
 
   .fast-acess-Footer {
-
-    li {
-      list-style: none;
-      margin-bottom: 10px;
+    p:nth-child(n+2):nth-child(-n+6) {
       font-size: 20px;
       cursor: pointer;
+      margin: 10px;
 
       &:hover {
         color: $colorPrimary;
@@ -32,8 +44,12 @@
   }
 
   .contats {
-    p {
-      width: 300px;
+    p:nth-child(n+2):nth-child(-n+10) {
+      font-size: 15px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      max-width: 300px;
     }
 
     img {
@@ -41,10 +57,36 @@
       margin-right: 10px;
     }
   }
+
+  .pagaments {
+    .img-payment {
+      // display: grid;
+      // grid-template-columns: repeat(auto-fill, 82px) minmax(30px, 70px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      img {
+        width: 70px;
+        height: 71px;
+      }
+    }
+
+  }
 }
 
-.pagaments {
-  img {
-    width: 70px;
+@media(max-width:768px) {
+  .footer {
+    background-color: #e8e9ea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contats {
+    p:nth-child(n+2):nth-child(-n+10) {
+      display: inherit !important;
+    }
   }
 }

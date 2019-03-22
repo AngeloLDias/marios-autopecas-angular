@@ -1,0 +1,305 @@
+@import '../../theme/colors.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+p {
+  margin-bottom: 0rem;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  height: 100vh;
+}
+
+.nav-bar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  box-shadow: 1px -2px 14px;
+
+  img {
+    width: 149px;
+    cursor: pointer;
+  }
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-drawer-container {
+  position: inherit;
+
+}
+
+.mat-drawer-transition .mat-drawer-backdrop {
+  position: fixed !important;
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  box-shadow: 1px -2px 14px;
+  z-index: 3;
+
+  .logo {
+    flex: 1;
+  }
+
+  img {
+    width: 149px;
+    // cursor: pointer;
+    margin: 0px 85px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      list-style: none;
+    }
+
+    p {
+      font-family: roboto;
+      color: $colorPrimary;
+      font-size: 20px;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+
+      .active {
+        border-bottom: 2px solid $colorPrimary;
+        background-color: black;
+        font-size: 300px;
+      }
+
+      &:hover {
+        border-bottom: 2px solid $colorPrimary;
+        transition: 0.8s;
+      }
+    }
+  }
+
+  .search {
+    display: flex;
+    margin: 0px 13px;
+
+    .user-buy {
+      display: flex;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0px 10px;
+      }
+
+    }
+
+    .login {
+      flex-direction: column;
+      border-right: 1px solid;
+      opacity: 0;
+
+      p {
+        margin: 4px 0px;
+        display: none;
+      }
+    }
+
+    .car {
+      cursor: pointer;
+      p {
+        font-weight: bolder;
+        color: green;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -15px;
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      button {
+        width: 73px;
+        height: 38px;
+        position: absolute;
+        margin: 0px -7px;
+        background-color: $colorPrimary;
+        color: #fff;
+        border: none;
+        border-radius: 7px;
+
+      }
+
+      input {
+        width: 287px;
+        height: 44px;
+        padding: 0px 11px;
+        font-size: 17px;
+        box-shadow: #e5e5e5 3px 3px 0 inset;
+        border-radius: 7px;
+
+      }
+    }
+  }
+}
+
+// menu mobile
+
+.line-1,
+.line-2,
+.line-3 {
+  width: 32px;
+  height: 5px;
+  margin: 5px 0px;
+  background-color: $colorPrimary;
+  transition: all .5s ease-in-out;
+
+}
+
+
+.menu {
+  position: fixed;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  height: 100%;
+  left: 4299px;
+  transition: 1s;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+
+  p {
+    margin: 15px 0
+  }
+}
+
+.colorSpan {
+
+  .logo-menu {
+    opacity: 1;
+    position: inherit;
+    transition: 0.7s;
+  }
+
+  .line-1,
+  .line-2,
+  .line-3 {
+    background-color: $colorPrimary;
+  }
+
+  .line-1 {
+    transform: rotateZ(48deg);
+    position: absolute;
+  }
+
+  .line-2 {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .line-3 {
+    transform: rotateZ(-48deg);
+  }
+}
+
+.showMenu {
+  left: 0;
+  transition: 1s;
+}
+
+@media(max-width:768px) {
+  .nav-header2 {
+    position: absolute;
+    top: 41px;
+    display: flex;
+    align-items: center;
+    z-index: 4;
+    left: 12px;
+  }
+
+  .header {
+    justify-content: space-between;
+    height: 85px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: initial;
+      flex-direction: column;
+
+      justify-content: flex-end;
+      width: 100%;
+      margin: 0 30px;
+
+
+      img {
+        margin-top: 20px;
+        opacity: 0;
+      }
+
+      p {
+        color: #000;
+        width: 100%;
+
+        &:hover {
+          background-color: #f1f1f1;
+          color: black;
+        }
+      }
+    }
+
+    .nav-header {
+      display: flex;
+      align-items: center;
+      z-index: 4;
+    }
+
+    .logo-marios {
+      img {
+        width: 125px;
+        margin: -30px 10px;
+      }
+    }
+
+    .nav-header {
+      margin: 0px 10px;
+    }
+
+  }
+}

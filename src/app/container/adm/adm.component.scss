@@ -1,0 +1,141 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.painel-adm {
+  padding-top: 55px;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+
+  .lado-esquerdo {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .menu-btn {
+      display: flex;
+      flex-direction: column;
+      height: 50%;
+      width: 100%;
+      justify-content: center;
+
+      button {
+        background-color: #007e29;
+        border: none;
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem #007e29;
+        }
+      }
+    }
+  }
+
+
+
+  .container-logo {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 210px;
+    }
+  }
+
+
+  .lado-direito {
+    // background-color: red;
+    width: 100%;
+
+    .dropdown{
+        display: none;
+    }
+
+
+    .menu-fixed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-list {
+      overflow: scroll;
+      width: 100%;
+      max-height: 517px;
+
+
+
+      .card-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        // background-color: blue;
+        margin: 3px;
+
+        .photo {
+          img {
+            width: 130px;
+          }
+        }
+
+        .produtos {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .btn-produtos {
+          display: flex;
+          flex-direction: column;
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .painel-adm {
+    .lado-esquerdo {
+      display: none;
+    }
+
+    .lado-direito {
+        .menu-fixed{
+            .dropdown{
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+        }
+        .menu-list {
+           
+        .card-list {
+            .photo{
+                img{
+                width: 100px;
+                height: 100px;
+            }
+            }
+          .produtos {
+            p {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              font-size: 14px;
+              width: 73px;
+
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

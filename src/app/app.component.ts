@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'marios-autopecas-angular';
+  lat: number = -22.9871293;
+  lng: number = -43.6514069;
 }

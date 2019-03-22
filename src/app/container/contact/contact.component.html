@@ -1,0 +1,37 @@
+
+<div class="nossahistoria">
+  <h1 class="titulo5">CONTATO</h1>
+</div>
+
+<section class="sec-contato">
+
+  <div id="map">
+    <agm-map class="amg" [zoom]="13" [latitude]="-22.9871293" [longitude]="-43.6514069">
+      <agm-marker [latitude]="-22.9871293" [longitude]="-43.6514069"></agm-marker>
+    </agm-map>
+  </div>
+
+  <div class="form">
+
+    <form class="formulario" action="crud.php" method="POST">
+      <input type="text" name="nomes" id="nome" placeholder="Digite Seu Nome">
+      <input type="text" name="telefone" id="tel" placeholder="Digite Seu Telefone">
+      <select form="carform" id="marca" name="marca">
+        <option value="">Selecione Uma Marca</option>
+      </select>
+      <select id="modelo" name="modelo">
+        <option value="">Modelo</option>
+      </select>
+      <select id="ano" name="ano">
+        <option value="">Ano</option>
+      </select>
+      <textarea name="mensagem" id="comentario" rows="10" placeholder="Digite Seu Comentario"></textarea>
+      <div class="botaoo">
+        <button  type="button" class="btn" onClick="envioFormulario()"> Enviar </button>
+      </div>
+    </form>
+
+  </div>
+
+</section>
+

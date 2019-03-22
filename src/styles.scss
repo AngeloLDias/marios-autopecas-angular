@@ -1,8 +1,91 @@
 /* You can add global styles to this file, and also 
 import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900');
+@import url('https://fonts.googleapis.com/css?family=Crete+Round');
 @import './app/theme/colors.scss';
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+// @import '~ngx-cropper/lib/cropperjs.css';
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+  background-color: #f5eeee;
+  width: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $colorPrimary;
+  border-radius: 10px;
+}
+
+// .content{
+//   padding-top: 14vh;
+// }
+button{
+  cursor: pointer;
+}
+// carousel
+
+.arrow {
+  z-index: 0 !important;
+}
+
+.middle {
+  z-index: 0 !important;
+}
+
+.mobile {
+  display: none !important;
+}
+
+.mobileB {
+  display: none !important;
+}
+
+.ui-carousel-item {
+  background: black !important;
+  cursor: grab;
+}
+
+.slick-list {
+  height: 138px;
+}
+.slick-slide img {
+  width: 138px !important;
+}
+.mat-drawer-transition .mat-drawer-backdrop{
+  position: fixed !important;
+} 
+@media(max-width:768px) {
+  .slick-list {
+    height: 100px;
+  }
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: flex !important;
+  }
+
+  .mobileB {
+    display: block !important;
+  }
+  .slick-slide img {
+    width: 83px !important;
+  }
 }

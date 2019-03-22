@@ -1,3 +1,67 @@
-<p>
-  header works!
-</p>
+<header class="header desktop">
+  <p class="logo" routerLink="home">
+    <img class="logo-marios" routerLink="" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+  </p>
+  <nav class="nav-header">
+    <li>
+      <p routerLink="">{{lang.home}}</p>
+    </li>
+    <li>
+      <p routerLink="/quem-somos">{{lang.whoWeAre}}</p>
+    </li>
+    <li>
+      <p routerLink="produtos">{{lang.products}}</p>
+    </li>
+    <li>
+      <p routerLink="contato">{{lang.contact}}</p>
+    </li>
+  </nav>
+  <div class="search">
+    <div class="user-buy">
+      <div class="login"><img class="img-login" src="../../../assets/media/iconmonstr-user-19.svg" alt="">
+      </div>
+      <div class="car" routerLink="carrinho"><img src="../../../assets/media/294547.svg" alt="">
+        <p id="nome"></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Menu Mobile -->
+
+<header class="header mobile ">
+
+  <p class="logo-marios" routerLink="home">
+    <img class="logo-marios" src="../../../assets/media/logoo-min.png" alt="Mario´s Auto Peças">
+  </p>
+
+  <div class="nav-header" [ngClass]="{'colorSpan':_toggleMenu}" (click)="toggleMenu()">
+
+    <div>
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
+
+  </div>
+
+</header>
+
+<div class="menu mobile" [ngClass]="{'showMenu':_toggleMenu}">
+
+  <div class="nav-header2" [ngClass]="{'colorSpan':_toggleMenu}" (click)="toggleMenu()">
+    <div>
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
+  </div>
+
+  <div>
+    <p (click)="toggleMenu()" routerLink="">HOME</p>
+    <p (click)="toggleMenu()" routerLink="quem-somos">QUEM SOMOS</p>
+    <p (click)="toggleMenu()" routerLink="produtos">PRODUTOS</p>
+    <p (click)="toggleMenu()" routerLink="contato">CONTATO</p>
+  </div>
+
+</div>
