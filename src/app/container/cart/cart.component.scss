@@ -1,5 +1,3 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-
 * {
   text-transform: capitalize;
   text-align: center;
@@ -17,7 +15,6 @@
 
   h1 {
     color: white;
-    margin: 5px;
   }
 }
 
@@ -34,19 +31,20 @@
     tr {
       border: none;
       width: 100%;
-      height: 100%;
-      max-width: 500px;
-      max-height: 500px;
+
+      th {
+        width: 0%;
+        border-bottom: 1px solid #3e713d;
+
+      }
     }
 
     tbody {
       position: absolute;
       flex-direction: column;
       width: 100%;
+      height: 63vh;
       overflow-y: scroll;
-      height: 605%;
-      padding: 0;
-      min-height: 100%;
 
       .info {
         display: flex;
@@ -55,16 +53,17 @@
         padding: 3px;
 
         img {
-          width: 65px;
-          height: 45px;
+          width: 80px;
+          height: 60px;
         }
 
         h2 {
-          text-overflow: ellipsis;
           white-space: nowrap;
+          width: 140px;
           overflow: hidden;
-          font-size: 14px;
-          margin-top: 20px;
+          margin-right: -70px;
+          text-overflow: ellipsis;
+          font-size: 15px;
         }
 
       }
@@ -72,8 +71,9 @@
       td {
         padding: 0;
         margin: 0;
-        width: 19%;
-        border-bottom: 2.3px solid #e9e9e9;
+        width: 15%;
+        border-bottom: 1px solid #3e713d;
+
 
         .delete {
           display: flex;
@@ -89,6 +89,13 @@
             border: 0.1px solid #e9e9e9;
             margin-top: 10px;
             margin-left: -3px;
+            -webkit-appearance: none;
+
+
+          }
+
+          input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
 
           }
 
@@ -102,6 +109,32 @@
       }
     }
 
+    tbody::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    tbody:hover::-webkit-scrollbar-thumb {
+      background: #0b0b0ba3;
+    }
+
+    tbody::-webkit-scrollbar-thumb {
+      height: 6px;
+      background-clip: padding-box;
+      border-radius: 7px;
+      background-color: none;
+    }
+
+    tbody::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    tbody::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+
+
   }
 
 }
@@ -109,8 +142,8 @@
 .btn-finalizar {
 
   .box {
-    width: 300px;
-    height: 353px;
+    width: 297px;
+    height: 71vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -204,6 +237,11 @@
       width: 100%
     }
 
+    th {
+      width: 50%;
+      border-bottom: 1px solid #3e713d;
+    }
+
     tbody {
       position: initial !important;
       flex-direction: column;
@@ -261,16 +299,17 @@
 
 
     .box {
-      width: 300px;
-      height: 370px;
+      width: 100%;
+      height: 55px;
+      margin: 0px 2px 4px 0px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: flex-end;
-      background: #ececec;
-      margin: 10px 0px 10px 0px;
+      background: none;
 
 
-      div {
+
+      button {
 
         img {
           margin-right: 5px;
@@ -278,11 +317,12 @@
         }
       }
 
+
     }
   }
 
   .btn {
-    width: 293px;
+    width: 170px;
     padding: 14px 27px;
     border-radius: 5px;
     margin-bottom: 3px;
