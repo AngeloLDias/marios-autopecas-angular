@@ -3,6 +3,8 @@ import { LANG } from '../../theme/pt'
 
 import { ProductsService } from '../../services/products.service';
 import { CartService } from '../../services/cart.service';
+import { MatDialog } from '@angular/material';
+import { ModalCartComponent } from 'src/app/components/modals/modal-cart/modal-cart.component';
 
 @Component({
   selector: 'app-products',
@@ -19,7 +21,8 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private productsSevice: ProductsService) {
+    private productsSevice: ProductsService,
+    private dialog: MatDialog) {
     this.produtos = this.productsSevice.produtos;
   }
 
@@ -29,6 +32,10 @@ export class ProductsComponent implements OnInit {
   };
 
   ngOnInit() { }
+
+  showdialogCart() {
+    this.dialog.open(ModalCartComponent)
+  }
 
   public lists = [
     {

@@ -45,6 +45,9 @@ export class ListProductsComponent implements OnInit {
   showDialogEdit(){
     this.dialog.open(ModalEditComponent)
   }
+
+
+  
 }
 
 

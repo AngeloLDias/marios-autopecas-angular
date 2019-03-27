@@ -59,13 +59,13 @@ import { ModalCartComponent } from './components/modals/modal-cart/modal-cart.co
     BuyFormComponent,
     AdmComponent,
     ModalCartComponent,
-
-
   ],
   entryComponents: [
     ModalAddComponent,
     ModalEditComponent,
-    ModalLoginComponent
+    ModalCartComponent,
+    ModalLoginComponent,
+
   ],
   imports: [
     BrowserModule,
