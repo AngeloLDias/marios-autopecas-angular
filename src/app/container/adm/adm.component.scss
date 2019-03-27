@@ -8,7 +8,7 @@
 
 
   .lado-esquerdo {
-    width: 600px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,14 +44,50 @@
     align-items: center;
 
     img {
-      width: 210px;
+      width: 150px;
     }
   }
 
 
   .lado-direito {
-    // background-color: red;
     width: 100%;
+
+    .list-org{
+      display: flex;
+      flex-direction: column;
+      margin-top: 34px;
+      margin-left: 8px;
+      margin-right: 5px;
+
+      .list-name{
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .t-img{
+          width: 130px;
+          text-align: start;
+        }
+        .t-name{
+          width: 350px;
+          text-align: center;
+        }
+        .t-stock{
+          width: 17px;
+          text-align: center;
+        }
+        .t-none{
+          width: 75px;
+        }
+        
+        
+      }
+
+    }
 
     .dropdown{
         display: none;
@@ -67,14 +103,19 @@
     .menu-list {
       overflow: scroll;
       width: 100%;
-      max-height: 517px;
+      max-height: 456px;
+
+      hr{
+        margin: 5px 0 5px 0 !important;
+      }
+     
 
 
 
       .card-list {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         // background-color: blue;
         margin: 3px;
@@ -84,16 +125,26 @@
             width: 130px;
           }
         }
+        
 
         .produtos {
           display: flex;
           flex-direction: row;
+          text-align: center;
+
+          p{
+            text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              font-size: 14px;
+              width: 350px;
+          }
+
         }
 
         .btn-produtos {
           display: flex;
           flex-direction: column;
-
         }
       }
     }
@@ -107,6 +158,27 @@
     }
 
     .lado-direito {
+      .list-org{
+        .list-name{
+          
+       
+        .t-img{
+          width: 70px;
+          text-align: start;
+        }
+        .t-name{
+          width: 73px;
+          text-align: center;
+        }
+        .t-stock{
+          width: 17px;
+          text-align: center;
+        }
+        .t-none{
+          width: 73px;
+        }
+      }
+      }
         .menu-fixed{
             .dropdown{
                 display: flex;
@@ -115,12 +187,15 @@
 
         }
         .menu-list {
+         //  max-height: 368px;
+         // overflow: scroll;
+
            
         .card-list {
             .photo{
                 img{
-                width: 100px;
-                height: 100px;
+                width: 70px;
+                height: 70px;
             }
             }
           .produtos {
