@@ -9,142 +9,63 @@
   <div class="lado-direito">
 
     <div class="list-org">
-    <div class="menu-fixed">
+      <div class="menu-fixed">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-bars"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Produtos</a>
-              <a class="dropdown-item" href="#">Pedidos</a>
-            </div>
-            <div></div>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Produtos</a>
+            <a class="dropdown-item" href="#">Pedidos</a>
           </div>
-       
+          <div></div>
+        </div>
+
 
         <div class="input-group m-2">
-            <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Recipient's username"
-              aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-            </div>
+          <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Recipient's username"
+            aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
           </div>
+        </div>
 
-          <button type="button" class="btn btn-outline-success m-1">Adicionar</button>  
-           
-    </div>
-    <div class="list-name">
-      <p class="t-img">Imagem</p>
-      <p class="t-name">Nome</p>
-      <p class="t-stock">Stock</p>
-      <p class="t-none"></p>
+        <button type="button" class="btn btn-outline-success m-1" (click)="showDialogAdd()">Adicionar</button>
 
+      </div>
+      <div class="list-name">
+        <p class="t-img">Imagem</p>
+        <p class="t-name">Nome</p>
+        <p class="t-stock">Stock</p>
+        <p class="t-none"></p>
+
+      </div>
     </div>
-  </div>
 
     <div class="menu-list">
-        <div class="card-list">
-          <div class="photo"> 
-            <img src="../../../assets/media/volante.jpg" alt="">
-          </div>
-          <div class="produtos">
-            <p>AMORTECEDOR DIANTEIRO NAKATA PRESSURIZADO RENAULT CLIO 1.0 HATCH E SEDAN 2000 ATÉ 2011</p>
-            </div>
-            <div class="produt">
-            <p>30</p>
-          </div>
-          <div class="btn-produtos">
-              <button type="button" class="btn btn-outline-success col-12">Editar</button>
-              <button type="button" class="btn btn-outline-danger col-12 mt-2 " >Excluir</button>
-            </div>
+      <div class="d-flex justify-content-center">
+        <mat-spinner *ngIf="spinner"></mat-spinner>
+      </div>
+      <div class="card-list" *ngFor="let product of products | async">
+        <div class="photo">
+          <img src="../../../assets/media/volante.jpg" alt="">
+        </div>
+        <div class="produtos">
+          <p>{{product.name}}</p>
+        </div>
+        <div class="produt">
+          <p>{{product.stock}}</p>
+        </div>
+        <div class="btn-produtos">
+          <button type="button" class="btn btn-outline-success col-12"
+            (click)="edit(product);showDialogEdit()">Editar</button>
+          <button type="button" class="btn btn-outline-danger col-12 mt-2"
+            (click)="delete(product.key)">Excluir</button>
         </div>
         <hr>
-
-        <div class="card-list">
-            <div class="photo"> 
-              <img src="../../../assets/media/volante.jpg" alt="">
-            </div>
-            <div class="produtos">
-                <p>AMORTECEDOR DIANTEIRO NAKATA PRESSURIZADO RENAULT CLIO 1.0 HATCH E SEDAN 2000 ATÉ 2011</p>
-                </div>
-                <div class="produt">
-                <p>30</p>
-              </div>
-            <div class="btn-produtos">
-                <button type="button" class="btn btn-outline-success col-12">Editar</button>
-                <button type="button" class="btn btn-outline-danger col-12 mt-2 " >Excluir</button>
-              </div>
-          </div>
-          <hr>
-
-          <div class="card-list">
-              <div class="photo"> 
-                <img src="../../../assets/media/volante.jpg" alt="">
-              </div>
-              <div class="produtos">
-                  <p>AMORTECEDOR DIANTEIRO NAKATA PRESSURIZADO RENAULT CLIO 1.0 HATCH E SEDAN 2000 ATÉ 2011</p>
-                  </div>
-                  <div class="produt">
-                  <p>30</p>
-                </div>
-              <div class="btn-produtos">
-                  <button type="button" class="btn btn-outline-success col-12">Editar</button>
-                  <button type="button" class="btn btn-outline-danger col-12 mt-2 " >Excluir</button>
-                </div>
-            </div>
-            <hr>
-
-            <div class="card-list">
-                <div class="photo"> 
-                  <img src="../../../assets/media/volante.jpg" alt="">
-                </div>
-                <div class="produtos">
-                    <p>AMORTECEDOR DIANTEIRO NAKATA PRESSURIZADO RENAULT CLIO 1.0 HATCH E SEDAN 2000 ATÉ 2011</p>
-                    </div>
-                    <div class="produt">
-                    <p>30</p>
-                  </div>
-                <div class="btn-produtos">
-                    <button type="button" class="btn btn-outline-success col-12">Editar</button>
-                    <button type="button" class="btn btn-outline-danger col-12 mt-2 " >Excluir</button>
-                  </div>
-              </div>
-              <hr>
-
-              <div class="card-list">
-                  <div class="photo"> 
-                    <img src="../../../assets/media/volante.jpg" alt="">
-                  </div>
-                  <div class="produtos">
-                      <p>AMORTECEDOR DIANTEIRO NAKATA PRESSURIZADO RENAULT CLIO 1.0 HATCH E SEDAN 2000 ATÉ 2011</p>
-                      </div>
-                      <div class="produt">
-                      <p>30</p>
-                    </div>
-                  <div class="btn-produtos">
-                      <button type="button" class="btn btn-outline-success col-12">Editar</button>
-                      <button type="button" class="btn btn-outline-danger col-12 mt-2 " >Excluir</button>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="card-list">
-                    <div class="photo"> 
-                      <img src="../../../assets/media/volante.jpg" alt="">
-                    </div>
-                    <div class="produtos">
-                        <p>AMORTECEDOR DIANTEIRO NAKATA PRESSURIZADO RENAULT CLIO 1.0 HATCH E SEDAN 2000 ATÉ 2011</p>
-                        </div>
-                        <div class="produt">
-                        <p>30</p>
-                      </div>
-                    <div class="btn-produtos">
-                        <button type="button" class="btn btn-outline-success col-12">Editar</button>
-                        <button type="button" class="btn btn-outline-danger col-12 mt-2 " >Excluir</button>
-                    </div>
-                  </div>
-    
+      </div>
+    </div>
   </div>
-</div>
 
 </section>

@@ -16,6 +16,8 @@ export class ProductsService {
   private produtosCollection: AngularFireList<Produto>
   public produtos: Observable<any[]>;
   public produtosRef: AngularFireList<any>;
+  public notFoundCustomers: boolean;
+  public nome: string = '';
 
   constructor(private db: AngularFireDatabase) {
     
@@ -49,6 +51,33 @@ export class ProductsService {
     const list = this.db.list('/')
     list.remove(key);
   }
+
+    // FILTER CLIENT
+    filterItens() {
+      setTimeout(() => {
+        this.produtos = this.filterNomes(this.nome);
+        var itemsList = document.querySelectorAll('.items-list')
+        if (itemsList.length >= 0) {
+          this.notFoundCustomers = true
+        }
+        if (itemsList.length != 0) {
+          this.notFoundCustomers = false
+  
+        }
+  
+      }, 800);
+    }
+  
+    filterNomes(nome) {
+      this.produtos = this.produtos;
+      return this.produtos.pipe(
+        map((customers: Produto[]) =>
+          customers.filter((item) => {
+            return item.name.toLowerCase().includes(nome.toLowerCase());
+          })
+        )
+      )
+    }
 }
 
 

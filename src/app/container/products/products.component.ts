@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
   public produtos: any;
   public produtosRef: any;
   public showModal: boolean = false;
+  public spinner:boolean = true;
 
   constructor(
     private cartService: CartService,
@@ -31,7 +32,12 @@ export class ProductsComponent implements OnInit {
     this.produtosRef = produto
   };
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.produtos
+    .subscribe(() =>{
+      this.spinner = false
+    })
+   }
 
   showdialogCart() {
     this.dialog.open(ModalCartComponent)
