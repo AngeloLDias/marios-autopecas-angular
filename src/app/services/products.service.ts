@@ -21,7 +21,7 @@ export class ProductsService {
 
   constructor(private db: AngularFireDatabase) {
     
-    this.produtosRef = db.list('/', ref => ref.orderByChild('name').limitToFirst(10));
+    this.produtosRef = db.list('/', ref => ref.orderByChild('name').limitToFirst(30));
 
     this.produtos = this.produtosRef.snapshotChanges().pipe(
       map(change =>

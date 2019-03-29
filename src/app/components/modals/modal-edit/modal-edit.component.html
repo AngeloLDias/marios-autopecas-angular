@@ -5,7 +5,7 @@
       <div class="col-12 img-product">
         <mat-spinner class="position-absolute" *ngIf="spinner"></mat-spinner>
         <label for="imgProduct">
-          <img class="border" [src]="photoProduct ? photoProduct : produtosRef.photo" alt="">
+          <img class="border" [src]="verifyPhoto()" alt="">
         </label>
         <input (change)="uploadFile($event)" type="file" name="" id="imgProduct">
       </div>

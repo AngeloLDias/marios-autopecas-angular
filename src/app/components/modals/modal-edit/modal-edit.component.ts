@@ -26,6 +26,14 @@ export class ModalEditComponent implements OnInit {
   ngOnInit() {
   }
 
+  verifyPhoto(){
+    if(!this.photoProduct && !this.produtosRef.photo){
+      console.log('sadsasd')
+      return '../../../../assets/media/default-image.jpg'
+    }console.log( this.photoProduct ? this.photoProduct : this.produtosRef.photo)
+    return this.photoProduct ? this.photoProduct : this.produtosRef.photo
+  }
+
   add(key, _produto) {
     this.productsService.add(key, _produto)
   }

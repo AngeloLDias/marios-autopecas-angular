@@ -1,6 +1,6 @@
 <h2 MatDialogTitle>Adicionar Produto</h2>
 <mat-dialog-content>
-  <section class="modal-add">
+  <section class="modal-cart">
     <form class="row">
       <div class="col-12 img-product">
         <mat-spinner class="position-absolute" *ngIf="spinner"></mat-spinner>
@@ -8,7 +8,7 @@
           <img class="border" [src]="photoProduct ? photoProduct : '../../../../assets/media/default-image.jpg'" alt="">
         </label>
         <input class="d-none" (change)="uploadFile($event)" type="file" name="" id="imgProduct">
-      </div>
+      </div>  
       <div class="col-md-6">
         <div class="form-group">
           <label for="name">Nome</label>
@@ -26,7 +26,7 @@
           <input #categoria type="text" class="form-control" id="categoria" aria-describedby="emailHelp" placeholder="Categoria">
           <small id="emailHelp" class="form-text text-muted">EX: "DIVERSOS"</small>
         </div>
-      </div>
+      </div>   
       <div class="col-md-6">
         <div class="form-group">
           <label for="marca">Marca</label>

@@ -49,7 +49,7 @@
       </div>
       <div class="card-list" *ngFor="let product of products | async">
         <div class="photo">
-          <img src="../../../assets/media/volante.jpg" alt="">
+          <img [src]="product.photo ? product.photo : '../../../../assets/media/default-image.jpg'" alt="">
         </div>
         <div class="produtos">
           <p>{{product.name}}</p>

@@ -39,8 +39,9 @@ export class ProductsComponent implements OnInit {
     })
    }
 
-  showdialogCart() {
+  showdialogCart(produto) {
     this.dialog.open(ModalCartComponent)
+    console.log(produto)
   }
 
   public lists = [

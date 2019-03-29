@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { LANG } from '../../theme/pt'
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,11 +13,14 @@ export class HeaderComponent implements OnInit {
   public lang = LANG
 
   constructor(private cartService: CartService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.cartService.contItemCart()
   }
+
+
 
   public lists = [
     {

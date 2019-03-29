@@ -33,10 +33,10 @@
     </div>
     <mat-spinner *ngIf="spinner"></mat-spinner>
     <div class="box-product" *ngFor="let produto of produtos | async; let i = index;">
-      <img src="../../../assets/media/roda-de-4-furos.png" alt="">
+      <img [src]="produto.photo ? produto.photo : '../../../../assets/media/default-image.jpg'" alt="">
       <p class="mb-0">{{produto.name}}</p>
       <!-- <p>{{produto.application}}</p> -->
-      <p>Por: R${{produto.stock}}</p>
+      <!-- <p>Por: R${{produto.stock}}</p> -->
       <button class="btn btn-success w-100 p-2" (click)="addToCart(produto);showdialogCart()" >ADICIONAR<i 
           class="fas fa-shopping-cart icon-cart"></i></button>
     </div>

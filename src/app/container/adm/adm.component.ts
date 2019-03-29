@@ -12,6 +12,7 @@ import { ModalEditComponent } from 'src/app/components/modals/modal-edit/modal-e
 export class AdmComponent implements OnInit {
 
   public products:any;
+  public productsRef:any;
   public spinner:boolean = true;
 
   constructor(
@@ -19,6 +20,7 @@ export class AdmComponent implements OnInit {
     private dialog: MatDialog
     ) { 
     this.products = this.productsService.produtos;
+    this.productsRef = this.productsService.produtosRef;
   }
 
   ngOnInit() {

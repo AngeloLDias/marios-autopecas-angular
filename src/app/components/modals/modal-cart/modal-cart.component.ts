@@ -8,7 +8,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ModalCartComponent implements OnInit {
 
-  public produtosRef:any;
+  public produtosRef;
 
   constructor(private productsService: ProductsService) {
     this.produtosRef = this.productsService.produtosRef

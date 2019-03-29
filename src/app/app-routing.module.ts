@@ -8,6 +8,7 @@ import { ListProductsComponent } from './container/list-products/list-products.c
 import { CartComponent } from './container/cart/cart.component';
 import { BuyFormComponent } from './container/buy-form/buy-form.component';
 import { AdmComponent } from './container/adm/adm.component';
+import { ModalLoginComponent } from './components/modals/modal-login/modal-login.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'carrinho', component: CartComponent },
   { path: 'dev-b', component: ListProductsComponent },
   { path: 'dev-a', component: BuyFormComponent },
-  { path: 'adm', component: AdmComponent }
+  { path: 'adm', component: AdmComponent },
+  { path: 'login', component: ModalLoginComponent },
 
 ];
 

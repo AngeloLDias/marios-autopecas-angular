@@ -14,7 +14,7 @@
         <tr *ngFor="let produto of produtos; let i = index">
           <td>
             <div class="info">
-              <img src="{{produto.photo}}" width="95px" alt="">
+              <img [src]="produto.photo ? produto.photo : '../../../../assets/media/default-image.jpg'" width="95px" alt="">
               <h2>{{produto.name}}</h2>
             </div>
           </td>

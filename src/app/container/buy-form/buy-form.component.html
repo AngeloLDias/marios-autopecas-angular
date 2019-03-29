@@ -1,69 +1,43 @@
+<div class="nossahistoria">
+  <h1 class="titulo5">ORÇAMENTO</h1>
+</div>
+
 <div class="col-md-12 col-sm-12 col-12 pt-3" id="conteudo">
   <div class="row">
-    <div class="col-6">
-
-      <div class="card-deck d-flex flex-wrap justify-content-start">
-        <div class="card col-4 mt-2" *ngFor="let produto of produtos">
-          <div class="d-flex justify-content-center align-items-center mt-2"> <img class="card-img-top w-75" src="{{produto.photo}}"
-              alt="Card image cap"></div>
+    <div class="col-md-6">
+      <div class="card-deck d-flex flex-wrap justify-content-center">
+        <div class="card col-2 mt-2" *ngFor="let produto of produtos">
+          <div class="d-flex justify-content-center align-items-center mt-2"> <img class="card-img-top w-75"
+              [src]="produto.photo ? produto.photo : '../../../../assets/media/default-image.jpg'" alt="Card image cap">
+          </div>
           <div class="card-body text-center col-12 text-truncate">
-            <p class="card-text" >{{produto.name}}</p>
+            <p class="card-text">{{produto.name}}</p>
             <button type="button" class="btn btn-danger" (click)="deleteProduct(index)">Remover</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <form>
 
         <div class="form-group">
-          <label for="exampleInputEmail1" >Digite seu Nome</label>
+          <label for="exampleInputEmail1">Digite seu Nome</label>
           <input #name class="form-control">
         </div>
 
         <div class="form-group">
-          <label for="exampleInputPassword1" >Digite seu Celular</label>
+          <label for="exampleInputPassword1">Digite seu Celular</label>
           <input #phone class="form-control">
         </div>
 
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Selecione uma Marca</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Selecione um Modelo</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Selecione um Ano</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" >Deixe seu Comentario</label>
+          <label for="exampleFormControlTextarea1">Deixe seu Comentario</label>
           <textarea #text class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
         </div>
 
         <div class="d-flex w-100 justify-content-end mb-2">
-          <button type="submit" class="btn btn-primary" (click)="add({produtos:produtos,name:name.value,phone:phone.value,text:text.value})">Fazer
+          <button type="submit" class="btn btn-primary"
+            (click)="add({produtos:produtos,name:name.value,phone:phone.value,text:text.value})">Fazer
             Orçamento</button>
         </div>
       </form>
