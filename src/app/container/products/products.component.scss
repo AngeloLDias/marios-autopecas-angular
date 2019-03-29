@@ -63,6 +63,7 @@
 
     img {
       width: 120px;
+      height: 120px;
     }
 
     p:nth-child(2) {
@@ -89,20 +90,21 @@
   }
 }
 
-@media(max-width: 526px){
-  .products{
-    .box-product{
-     background-color: blue;  
-     width: 141px;
-     margin: 15px 0;
-     img{
-      width: 97px;
-     }
-     button{
-       i{
-         display: none;
-       }
-     }
+@media(max-width: 526px) {
+  .products {
+    .box-product {
+      width: 141px;
+      margin: 15px 0;
+
+      img {
+        width: 97px;
+      }
+
+      button {
+        i {
+          display: none;
+        }
+      }
     }
   }
 }

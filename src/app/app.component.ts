@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,17 @@ import { Router } from '@angular/router'
 })
 export class AppComponent {
 
-  constructor(private router:Router){
+  constructor(
+    private router:Router,
+    private afAuth: AngularFireAuth
+    ){
   }
 
   ngOnInit() {
+
+    if (this.afAuth.idToken == null){
+      this.router.navigate(['#'])
+    }
     const header = document.querySelector('app-header');
     const footer = document.querySelector('app-footer');
     if(window.location.href == 'http://localhost:4200/adm'){
