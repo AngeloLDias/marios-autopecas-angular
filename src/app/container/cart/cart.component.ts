@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   public produtos: Produto[];
   public qtdOptions = [];
   public cartEmpty: boolean = false;
+  public cart: boolean = true;
   public productClicked: any;
   public cartArray: Produto[];
 
@@ -33,9 +34,11 @@ export class CartComponent implements OnInit {
   itemCartEmtpy() {
     if (this.cartService.cartArray.length == 0) {
       this.cartEmpty = true;
+      this.cart = false;
     }
     else {
       this.cartEmpty = false;
+      this.cart = true;
     }
   }
 

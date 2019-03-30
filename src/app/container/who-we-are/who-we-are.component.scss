@@ -12,8 +12,8 @@
   /* justify-content: center; */
   align-items: center;
   padding-top: 89px;
-  height: 90px;
-
+  height: 10px;
+  opacity: 0;
   h1 {
     // box-shadow: 4px 4px 7px #9b9b9b;
     color: white;
@@ -97,6 +97,7 @@
   align-items: center;
   justify-content: center;
   height: 65px;
+  cursor: pointer;
 }
 
 .missao {
