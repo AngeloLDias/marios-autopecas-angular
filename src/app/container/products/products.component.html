@@ -14,8 +14,8 @@
       </div>
       <nav aria-label="...">
         <ul class="pagination mb-0 ml-3">
-          <li class="page-item disabled">
-            <span class="page-link">Previous</span>
+          <li class="page-item">
+            <span class="page-link" (click)="prev()">Previous</span>
           </li>
           <li class="page-item"><a class="page-link">1</a></li>
           <li class="page-item active">
@@ -26,13 +26,13 @@
           </li>
           <li class="page-item"><a class="page-link">3</a></li>
           <li class="page-item">
-            <a class="page-link">Next</a>
+            <a class="page-link" (click)="next()">Next</a>
           </li>
         </ul>
       </nav>
     </div>
     <mat-spinner *ngIf="spinner"></mat-spinner>
-    <div class="box-product" *ngFor="let produto of produtos | async; let i = index;">
+    <div class="box-product" *ngFor="let produto of produtos">
       <img [src]="produto.photo ? produto.photo : '../../../../assets/media/default-image.jpg'" alt="">
       <p class="mb-0">{{produto.name}}</p>
       <!-- <p>{{produto.application}}</p> -->

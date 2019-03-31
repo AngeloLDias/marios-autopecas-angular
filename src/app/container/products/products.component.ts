@@ -18,13 +18,29 @@ export class ProductsComponent implements OnInit {
   public produtos: any;
   public produtosRef: any;
   public showModal: boolean = false;
-  public spinner:boolean = true;
+  public spinner: boolean = true;
 
   constructor(
     private cartService: CartService,
     private productsSevice: ProductsService,
     private dialog: MatDialog) {
-    this.produtos = this.productsSevice.produtos;
+
+  }
+
+  ngOnInit() {
+    this.productsSevice.getProducts(this.productsSevice.startAt)
+    this.productsSevice.products.subscribe(res => {
+      this.produtos = res;
+      this.spinner = false;
+    });
+  }
+
+  next() {
+    this.productsSevice.next()
+  }
+
+  prev() {
+    this.productsSevice.prev()
   }
 
   addToCart(produto) {
@@ -32,12 +48,7 @@ export class ProductsComponent implements OnInit {
     this.produtosRef = produto
   };
 
-  ngOnInit() {
-    this.produtos
-    .subscribe(() =>{
-      this.spinner = false
-    })
-   }
+
 
   showdialogCart(produto) {
     this.dialog.open(ModalCartComponent)

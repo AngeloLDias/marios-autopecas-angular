@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment'
 import { Produto } from '../model/pruducts';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -15,21 +15,28 @@ export class ProductsService {
 
   private produtosCollection: AngularFireList<Produto>
   public produtos: Observable<any[]>;
+  public products = new Subject<any[]>();
   public produtosRef: AngularFireList<any>;
   public notFoundCustomers: boolean;
   public nome: string = '';
-
+  public startAt = 1;
   constructor(private db: AngularFireDatabase) {
-    
-    this.produtosRef = db.list('/', ref => ref.orderByChild('name').limitToFirst(30));
+    this.getProducts(this.startAt)
+  }
+
+
+  getProducts(startAt){
+    this.produtosRef = this.db.list('/', ref => ref.orderByKey().startAt(startAt.toString()).limitToFirst(20));
+    // this.produtosRef = db.list('/', ref => );
 
     this.produtos = this.produtosRef.snapshotChanges().pipe(
       map(change =>
         change.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
     );
+ 
+  this.produtos.subscribe( res => this.products.next(res))
   }
-
   add(key, _produto) {
     const list = this.db.list('/')
     if (key != null) {
@@ -40,6 +47,16 @@ export class ProductsService {
       alert('salvo com sucesso')
       list.push(_produto);
     }
+  }
+
+  next(){
+    this.startAt+=20
+    this.getProducts(this.startAt)
+  } 
+
+  prev(){
+    this.startAt > 9 ? this.startAt-=20 : null
+    this.getProducts(this.startAt)
   }
 
   edit(produto) {
