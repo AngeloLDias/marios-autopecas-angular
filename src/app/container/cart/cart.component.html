@@ -31,11 +31,11 @@
   </table>
 
   <div class="btn-buy  mt-5 mb-5">
-    <button type="button" class="btn btn-primary btn-lg">Finalizar Compra</button>
+    <button routerLink="/orcamento" type="button" class="btn btn-primary btn-lg">Finalizar Compra</button>
   </div>
 </section>
 
-<div *ngIf="!cartEmpty" class="btn-finalizar mobile">
+<!-- <div *ngIf="!cartEmpty" class="btn-finalizar mobile">
 
   <div class="box">
     <div>
@@ -44,7 +44,7 @@
       </button>
     </div>
   </div>
-</div>
+</div> -->
 <div *ngIf="cartEmpty" class="cart-empty">
   <p>CARRINHO VAZIO</p>
   <button class="btn btn-primary btn-lg" (click)="toggleModal()" (click)="addToCart(produto)" height="50px" color="#fff">RETORNAR PARA A LOJA</button>

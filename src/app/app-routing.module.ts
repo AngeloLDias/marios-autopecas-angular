@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'lista-produtos', component: ListProductsComponent },
   { path: 'carrinho', component: CartComponent },
   { path: 'dev-b', component: ListProductsComponent },
-  { path: 'dev-a', component: BuyFormComponent },
+  { path: 'orcamento', component: BuyFormComponent },
   { path: 'adm', component: AdmComponent },
   { path: 'login', component: ModalLoginComponent },
 

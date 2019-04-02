@@ -6,6 +6,7 @@ import { ModalEditComponent } from 'src/app/components/modals/modal-edit/modal-e
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order.service';
 @Component({
   selector: 'app-adm',
   templateUrl: './adm.component.html',
@@ -14,16 +15,22 @@ import { Router } from '@angular/router';
 export class AdmComponent implements OnInit {
 
   public products: any;
+  public orders: any;
   public productsRef: any;
   public spinner: boolean = true;
   public login: any;
+  public tabProducts: boolean = true;
+  public tabOrder: boolean = false;
+
   constructor(
     private productsService: ProductsService,
     private dialog: MatDialog,
     private router: Router,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private orderService: OrderService
   ) {
     this.products = this.productsService.produtos;
+    this.orders = this.orderService.order
     this.productsRef = this.productsService.produtosRef;
     this.afAuth.idToken.subscribe(login => {
       console.log('1', login)
@@ -39,6 +46,22 @@ export class AdmComponent implements OnInit {
       .subscribe(() => {
         this.spinner = false;
       })
+
+      this.orders.subscribe(aa =>{
+        console.log(aa)
+      })
+  }
+
+  btnTabOrder() {
+    this.tabProducts = false;
+    this.tabOrder = true;
+    console.log('click')
+  }
+
+  btnTabProducts() {
+    this.tabProducts = true;
+    this.tabOrder = false;
+    console.log('click')
   }
 
   logout() {

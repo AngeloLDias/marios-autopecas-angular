@@ -7,7 +7,7 @@
   </div>
   <div class="product">
     <div class="input-group ml-3 mb-3 d-flex align-items-center">
-      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+      <input type="text" class="form-control" [(ngModel)]="nome" placeholder="Recipient's username" (change)="filterItens()" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>

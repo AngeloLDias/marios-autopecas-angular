@@ -2,11 +2,9 @@
   <div class="lado-esquerdo border">
     <div class="container-logo border"> <img src="../../../assets/media/logoo-min.png" alt=""> </div>
     <div class="menu-btn">
-      <button type="button" class="btn btn-primary btn-lg m-1">Produtos</button>
-      <button type="button" class="btn btn-primary btn-lg m-1">Pedidos</button>
+      <button type="button" class="btn btn-primary btn-lg m-1" (click)="btnTabProducts()">Produtos</button>
+      <button type="button" class="btn btn-primary btn-lg m-1" (click)="btnTabOrder()">Pedidos</button>
       <button *ngIf="afAuth.user | async as user" (click)="logout()" type="button" class="btn btn-primary btn-lg m-1">Sair</button>
-      <!-- <button type="button" class="btn btn-primary btn-lg m-1"><a class="nav-item nav-link active" data-toggle="tab" href="#nav-prod">Produtos</a></button>
-      <button type="button" class="btn btn-primary btn-lg m-1"><a class="nav-item nav-link" data-toggle="tab" href="#nav-ped">Pedidos</a></button> -->
     </div>
   </div>
   <div class="lado-direito">
@@ -19,8 +17,8 @@
             <i class="fas fa-bars"></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Produtos</a>
-            <a class="dropdown-item" href="#">Pedidos</a>
+            <a class="dropdown-item" (click)="btnTabProducts()">Produtos</a>
+            <a class="dropdown-item" (click)="btnTabOrder()">Pedidos</a>
           </div>
           <div></div>
         </div>
@@ -37,40 +35,11 @@
         <button type="button" class="btn btn-outline-success m-1" (click)="showDialogAdd()">Adicionar</button>
 
       </div>
-      <!-- <div class="list-name">
-        <p class="t-img">Imagem</p>
-        <p class="t-name">Nome</p>
-        <p class="t-stock">Stock</p>
-        <p class="t-none"></p>
-
-      </div> -->
     </div>
 
-    <!-- <div class="menu-list">
-      <div class="d-flex justify-content-center">
-        <mat-spinner *ngIf="spinner"></mat-spinner>
-      </div>
-      <div class="card-list border-bottom" *ngFor="let product of products | async">
-        <div class="photo">
-          <img [src]="product.photo ? product.photo : '../../../../assets/media/default-image.jpg'" alt="">
-        </div>
-        <div class="produtos">
-          <p>{{product.name}}</p>
-        </div>
-        <div class="produt">
-          <p>{{product.stock}}</p>
-        </div>
-        <div class="btn-produtos">
-          <button type="button" class="btn btn-outline-success col-12"
-            (click)="edit(product);showDialogEdit()">Editar</button>
-          <button type="button" class="btn btn-outline-danger col-12 mt-2"
-            (click)="delete(product.key)">Excluir</button>
-        </div>
-        <hr>
-      </div>
-    </div> -->
 
-    <table class="table-products tab-pane fade show active" id="nav-prod" role="tabpanel">
+
+    <table *ngIf="tabProducts" class="table-products tab-pane fade show active" id="nav-prod" role="tabpanel">
       <thead>
         <th>Imagem</th>
         <th>Nome</th>
@@ -97,35 +66,30 @@
       </tbody>
     </table>
 
-    <table class="table-products tab-pane fade" id="nav-ped" role="tabpanel">
-      <!-- <thead>
-        <th>Imagem</th>
+    <table *ngIf="tabOrder" class="table-products tab-pane fade show active" id="nav-prod" role="tabpanel">
+      <thead>
         <th>Nome</th>
-        <th>Stock</th>
+        <th>Telefone</th>
+        <th>Comentario</th>
         <th>Botao</th>
       </thead>
       <tbody class="mt-4">
         <mat-spinner *ngIf="spinner"></mat-spinner>
 
-        <tr class="border-bottom" *ngFor="let product of products | async">
-          <td><img class="w-25 mb-3 mt-3" [src]="product.photo ? product.photo : '../../../../assets/media/default-image.jpg'"
-              alt=""></td>
-          <td>{{product.name}}</td>
-          <td>{{product.stock}}</td>
+        <tr class="border-bottom" *ngFor="let order of orders | async">
+
+          <td>{{order.name}}</td>
+          <td>{{order.phone}}</td>
+          <td>{{order.text}}</td>
           <td>
             <div class="btn-produtos">
-              <button type="button" class="btn btn-outline-success col-12"
-                (click)="edit(product);showDialogEdit()">Editar</button>
               <button type="button" class="btn btn-outline-danger col-12 mt-2"
-                (click)="delete(product.key)">Excluir</button>
+                (click)="delete(order.key)">Excluir</button>
             </div>
           </td>
         </tr>
-      </tbody> -->
-
-      <div>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam veniam adipisci illum natus provident fugit accusantium corporis enim aperiam dolores, suscipit ut. Harum inventore mollitia nobis amet vel impedit ut?</p>
-      </div>
+      </tbody>
     </table>
+
   </div>
 </section>

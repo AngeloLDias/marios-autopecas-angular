@@ -27,8 +27,6 @@ export class ProductsService {
 
   getProducts(startAt){
     this.produtosRef = this.db.list('/', ref => ref.orderByKey().startAt(startAt.toString()).limitToFirst(20));
-    // this.produtosRef = db.list('/', ref => );
-
     this.produtos = this.produtosRef.snapshotChanges().pipe(
       map(change =>
         change.map(c => ({ key: c.payload.key, ...c.payload.val() }))
@@ -70,9 +68,9 @@ export class ProductsService {
   }
 
     // FILTER CLIENT
-    filterItens() {
+    filterItens(nome) {
       setTimeout(() => {
-        this.produtos = this.filterNomes(this.nome);
+        this.produtos = this.filterNomes(nome);
         var itemsList = document.querySelectorAll('.items-list')
         if (itemsList.length >= 0) {
           this.notFoundCustomers = true

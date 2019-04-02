@@ -5,6 +5,7 @@ import { ProductsService } from '../../services/products.service';
 import { CartService } from '../../services/cart.service';
 import { MatDialog } from '@angular/material';
 import { ModalCartComponent } from 'src/app/components/modals/modal-cart/modal-cart.component';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
@@ -19,6 +20,7 @@ export class ProductsComponent implements OnInit {
   public produtosRef: any;
   public showModal: boolean = false;
   public spinner: boolean = true;
+  public nome: string = '';
 
   constructor(
     private cartService: CartService,
@@ -37,6 +39,41 @@ export class ProductsComponent implements OnInit {
 
   next() {
     this.productsSevice.next()
+  }
+  // filter(event) {
+  //   let nome = event.target.value
+
+  //   this.productsSevice.filterItens(nome)
+  // }
+
+  filterItens() {
+    // setTimeout(() => {
+      this.produtos = this.filterNomes(this.nome);
+      // var itemsList = document.querySelectorAll('.items-list')
+      // if (itemsList.length >= 0) {
+      //   this.notFoundCustomers = true
+      // }
+      // if (itemsList.length != 0) {
+      //   this.notFoundCustomers = false
+
+      // }
+
+    // }, 800);
+  }
+
+  filterNomes(nome) {
+    console.log(nome)
+     this.productsSevice.products.subscribe(res => {
+      console.log(res) 
+      this.produtos = res 
+       });
+    return this.produtos.pipe(
+      map((products: any[]) =>
+      products.filter((item) => {
+          return item.name.toLowerCase().includes(nome.toLowerCase());
+        })
+      )
+    )
   }
 
   prev() {

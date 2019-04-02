@@ -3,8 +3,19 @@
 .card {
   min-width: 150px;
   max-width: 150px;
+  height: 250px;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+
+  &:hover{
+    color:white;
+    text-decoration: none;
+  }
+
+}
 .card-deck {
   overflow: scroll;
   overflow-x: hidden;
@@ -14,18 +25,11 @@
 
 .nossahistoria {
   padding-top: 100px;
-  // height: 90px;
   display: flex;
-  // align-items: flex-end;
   background: #2b632ae8;
-  // display: flex;
-  /* justify-content: center; */
   align-items: center;
-  // padding-top: 89px;
-  // height: 90px;
 
   h1 {
-    // box-shadow: 4px 4px 7px #9b9b9b;
     color: white;
     margin: 10px 20px;
   }
