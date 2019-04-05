@@ -81,6 +81,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(produto) {
+    this.productsSevice.edit(produto)
     this.cartService.addToCart(produto);
     this.produtosRef = produto
   };

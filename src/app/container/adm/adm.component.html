@@ -4,7 +4,8 @@
     <div class="menu-btn">
       <button type="button" class="btn btn-primary btn-lg m-1" (click)="btnTabProducts()">Produtos</button>
       <button type="button" class="btn btn-primary btn-lg m-1" (click)="btnTabOrder()">Pedidos</button>
-      <button *ngIf="afAuth.user | async as user" (click)="logout()" type="button" class="btn btn-primary btn-lg m-1">Sair</button>
+      <button *ngIf="afAuth.user | async as user" (click)="logout()" type="button"
+        class="btn btn-primary btn-lg m-1">Sair</button>
     </div>
   </div>
   <div class="lado-direito">
@@ -20,15 +21,15 @@
             <a class="dropdown-item" (click)="btnTabProducts()">Produtos</a>
             <a class="dropdown-item" (click)="btnTabOrder()">Pedidos</a>
           </div>
-          <div></div>
         </div>
 
 
         <div class="input-group m-2">
-          <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Recipient's username"
-            aria-describedby="basic-addon2">
+          <input [(ngModel)]="textInput" type="text" class="form-control" placeholder="Pesquisar..."
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            <button (click)="filterItens()" class="btn btn-outline-secondary" type="button"><i
+                class="fas fa-search"></i></button>
           </div>
         </div>
 
@@ -50,8 +51,8 @@
         <mat-spinner *ngIf="spinner"></mat-spinner>
 
         <tr class="border-bottom" *ngFor="let product of products | async">
-          <td><img class="w-25 mb-3 mt-3" [src]="product.photo ? product.photo : '../../../../assets/media/default-image.jpg'"
-              alt=""></td>
+          <td><img class="w-25 mb-3 mt-3"
+              [src]="product.photo ? product.photo : '../../../../assets/media/default-image.jpg'" alt=""></td>
           <td>{{product.name}}</td>
           <td>{{product.stock}}</td>
           <td>

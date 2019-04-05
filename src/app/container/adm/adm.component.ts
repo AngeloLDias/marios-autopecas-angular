@@ -7,6 +7,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
+import { map } from 'rxjs/operators';
+import { Produto } from 'src/app/model/pruducts';
 @Component({
   selector: 'app-adm',
   templateUrl: './adm.component.html',
@@ -21,6 +23,7 @@ export class AdmComponent implements OnInit {
   public login: any;
   public tabProducts: boolean = true;
   public tabOrder: boolean = false;
+  public textInput: string;
 
   constructor(
     private productsService: ProductsService,
@@ -47,9 +50,9 @@ export class AdmComponent implements OnInit {
         this.spinner = false;
       })
 
-      this.orders.subscribe(aa =>{
-        console.log(aa)
-      })
+    this.orders.subscribe(aa => {
+      console.log(aa)
+    })
   }
 
   btnTabOrder() {
@@ -81,7 +84,40 @@ export class AdmComponent implements OnInit {
   }
 
   showDialogEdit() {
+    console.log(this.productsRef, 'aq')
     this.dialog.open(ModalEditComponent)
   }
 
+  input(event) {
+    console.log(event)
+  }
+
+  // FILTER CLIENT
+  filterItens() {
+    setTimeout(() => {
+      this.products = this.filterNomes(this.textInput);
+      var itemsList = document.querySelectorAll('.items-list')
+      // if (itemsList.length >= 0) {
+      //   this.notFoundCustomers = true
+      // }
+      // if (itemsList.length != 0) {
+      //   this.notFoundCustomers = false
+
+      // }
+
+    }, 800);
+  }
+
+  filterNomes(nome) {
+    console.log(nome, "noem")
+    this.products = this.productsService.produtos;
+    return this.products.pipe(
+      map((products: any[]) =>
+        products.filter((item) => {
+          console.log('items', item)
+          return item.name.toLowerCase().includes(nome.toLowerCase());
+        })
+      )
+    )
+  }
 }

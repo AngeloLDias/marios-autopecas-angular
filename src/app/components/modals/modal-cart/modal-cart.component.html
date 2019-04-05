@@ -1,16 +1,18 @@
-<h2 MatDialogTitle>Adicionar Produto</h2>
+<h2 MatDialogTitle class="text-center">ADICIONADO COM SUCESSO</h2>
 <mat-dialog-content>
   <section class="modal-cart">
-<p>{{produtosRef.name}}</p>
+    <div class="img-product">
+      <img [src]="produtosRef.photo ? produtosRef.photo : '../../../../assets/media/default-image.jpg'" alt="">
+    </div>
+    <h2>{{produtosRef.name}}</h2>
   </section>
 </mat-dialog-content>
-<p>{{produtosRef.name}}</p>
    
-<mat-dialog-actions> 
-  <div class="action-btn w-100 d-flex justify-content-end">
-    <button type="button" class="btn btn-danger" matDialogClose>Cancelar</button>
-    <button type="button" class="btn btn-primary ml-1" (click)="add(produtosRef.key,{name:name.value,application:application.value,stock:stock.value,marca:marca.value,categoria:categoria.value,photo:photo.value})"
-      matDialogClose>Salvar-</button>
+<mat-dialog-actions class="d-flex justify-content-center"> 
+  <div class="action-btn w-100 d-flex justify-content-end flex-column align-items-center">
+    <button type="button" class="btn btn-danger w-75" matDialogClose>FINALIZAR COMPRA</button>
+    <button type="button" class="btn btn-primary mt-2 ml-1 w-75" (click)="add(produtosRef.key,{name:name.value,application:application.value,stock:stock.value,marca:marca.value,categoria:categoria.value,photo:photo.value})"
+      matDialogClose>CONTINUAR COMPRANDO</button>
   </div>
 <hr>
 </mat-dialog-actions>
