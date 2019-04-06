@@ -7,26 +7,22 @@
   </div>
   <div class="product">
     <div class="input-group ml-3 mb-3 d-flex align-items-center">
-      <input type="text" class="form-control" [(ngModel)]="nome" placeholder="Recipient's username" (change)="filterItens()" aria-label="Recipient's username"
-        aria-describedby="basic-addon2">
+      <input type="text" class="form-control" [(ngModel)]="nome" placeholder="Recipient's username"
+        (change)="filterItens()" aria-label="Recipient's username" aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
       </div>
       <nav aria-label="...">
         <ul class="pagination mb-0 ml-3">
           <li class="page-item">
-            <span class="page-link" (click)="prev()">Previous</span>
+            <!-- <span class="page-link mr-3" (click)="prev()">Previous</span> -->
+            <button (click)="prev()" type="button" class="btn btn-outline-primary mr-3">Voltar</button>
+
           </li>
-          <li class="page-item"><a class="page-link">1</a></li>
-          <li class="page-item active">
-            <span class="page-link">
-              2
-              <span class="sr-only">(current)</span>
-            </span>
-          </li>
-          <li class="page-item"><a class="page-link">3</a></li>
           <li class="page-item">
-            <a class="page-link" (click)="next()">Next</a>
+            <!-- <a class="page-link" (click)="next()">Next</a> -->
+            <button (click)="next()" type="button" class="btn btn-outline-primary mr-3">Avançar</button>
+
           </li>
         </ul>
       </nav>
@@ -37,8 +33,13 @@
       <p class="mb-0">{{produto.name}}</p>
       <!-- <p>{{produto.application}}</p> -->
       <!-- <p>Por: R${{produto.stock}}</p> -->
-      <button class="btn btn-success w-100 p-2" (click)="addToCart(produto);showdialogCart()" >ADICIONAR<i 
+      <button class="btn btn-success w-100 p-2" (click)="addToCart(produto);showdialogCart()">ADICIONAR<i
           class="fas fa-shopping-cart icon-cart"></i></button>
     </div>
+    <div class="w-100 d-flex justify-content-end align-items-center">
+      <button (click)="prev()" type="button" class="btn btn-outline-primary mr-3">Voltar</button>
+      <button (click)="next()" type="button" class="btn btn-outline-primary mr-3">Avançar</button>
+    </div>
   </div>
+
 </section>
