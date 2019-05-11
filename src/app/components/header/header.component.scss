@@ -64,7 +64,8 @@ p {
   align-items: center;
   width: 100%;
   height: 89px;
-  position: fixed;
+  position: sticky;
+  top: 0;
   box-shadow: 1px -2px 14px;
   z-index: 3;
 
@@ -184,13 +185,12 @@ p {
   margin: 5px 0px;
   background-color: $colorPrimary;
   transition: all .5s ease-in-out;
-
 }
 
 
 .menu {
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   background: white;
   width: 100%;
   height: 100%;
@@ -200,7 +200,6 @@ p {
   font-size: 30px;
   align-items: center;
   text-align: center;
-
   p {
     margin: 15px 0
   }
@@ -219,17 +218,14 @@ p {
   .line-3 {
     background-color: $colorPrimary;
   }
-
   .line-1 {
     transform: rotateZ(48deg);
     position: absolute;
   }
-
   .line-2 {
     opacity: 0;
     position: absolute;
   }
-
   .line-3 {
     transform: rotateZ(-48deg);
   }
@@ -253,7 +249,7 @@ p {
   .header {
     justify-content: space-between;
     height: 85px;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1;
     
